@@ -1,0 +1,22 @@
+{
+  "modules": true,
+  "plugins": {
+    "autoprefixer": {
+      "grid": true
+    },
+    "postcss-extend": true,
+    "postcss-nested": true,
+    "postcss-css-variables": true,
+    "postcss-modules": {
+        "camelCase": true
+    },
+    "postcss-rtl": true
+  },
+  "env": {
+    "production": {
+      "plugins": {
+        "cssnano": true
+      }
+    }
+  }
+}
