@@ -1,2 +1,2 @@
-# jibrel-com-front
-Frontend for Jibrel.com
+# Jibrel.com Promo Page
+
