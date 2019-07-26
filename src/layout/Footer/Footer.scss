@@ -1,0 +1,41 @@
+@import '/assets/style/mixins.scss';
+
+.footer {
+  @include from-mobile {
+    justify-content: space-between;
+  }
+
+  @include to-mobile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  display: flex;
+}
+
+.info {
+  position: relative;
+  color: $main-black-50;
+  font-size: 12px;
+  margin-top: 24px;
+  letter-spacing: -0.54px;
+}
+
+.social {
+  display: flex;
+
+  @include from-mobile {
+    order: 1;
+  }
+
+  @include to-mobile {
+    margin-bottom: 72px;
+  }
+}
+
+.link {
+  &:not(:first-child) {
+    margin-left: 24px;
+  }
+}
