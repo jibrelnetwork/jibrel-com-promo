@@ -1,5 +1,9 @@
 dist/
 
+# Lingui
+src/locales/_build
+src/locales/**/messages.js
+
 # Parcel Bundler
 .cache/
 
