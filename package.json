@@ -4,7 +4,7 @@
   "description": "Jibrel.com Promo Page",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "npm run lingui:compile && parcel src/index.html",
     "build": "rimraf dist/* && npm run lingui:compile && parcel build ./src/index.html --experimental-scope-hoisting",
     "lint:js": "eslint src/**/*.js",
     "lingui:extract": "lingui extract --clean",
