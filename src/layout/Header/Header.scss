@@ -1,0 +1,18 @@
+@import '/assets/style/mixins.scss';
+
+.header {
+  @include from-mobile {
+    height: 184px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  @include to-mobile {
+    height: 24px;
+  }
+}

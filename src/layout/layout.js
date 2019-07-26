@@ -1,10 +1,10 @@
 import React from 'react'
-import TranslationChanger from './translation-changer'
+import Header from './Header/Header.js'
 
 export default function Layout ({ children }) {
   return (
     <div>
-      <TranslationChanger />
+      <Header />
       <div>
         {children}
       </div>
