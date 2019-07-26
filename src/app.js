@@ -1,6 +1,6 @@
 import React from 'react'
 import { useI18n } from './hooks/i18n'
-import Layout from './layout'
+import Layout from './layout/layout'
 
 const App = () => {
   const i18n = useI18n()
