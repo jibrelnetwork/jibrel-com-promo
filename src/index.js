@@ -6,6 +6,8 @@ import { I18nProvider } from './app/i18n-provider'
 import { router } from './app/router'
 import Pages from './pages'
 
+import '/assets/style/core.scss'
+
 const mountNode = document.getElementById('root')
 
 if (mountNode) {
