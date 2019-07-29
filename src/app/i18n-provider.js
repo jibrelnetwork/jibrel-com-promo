@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   I18nProvider as LinguiI18nProvider,
   I18n,
@@ -19,10 +20,15 @@ export const I18nContext = React.createContext({
 })
 
 export class I18nProvider extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+  }
+
   state = {
     languageCode: DEFAULT_LANGUAGE_CODE,
   }
 
+  // FIXME: should redirect?
   changeLanguage = async (languageCode) => new Promise(
     (resolve, reject) => {
       if (LANGUAGES[languageCode]) {

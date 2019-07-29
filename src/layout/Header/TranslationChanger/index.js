@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { I18nContext } from '../../../app/i18n-provider'
+import { I18nContext } from '/app/i18n-provider'
 
 import { LanguageSelect } from './LanguageSelect'
 

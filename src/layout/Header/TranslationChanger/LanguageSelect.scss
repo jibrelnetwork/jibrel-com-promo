@@ -19,8 +19,21 @@
   color: $main-blue;
 }
 
+// TODO
+// replace actual size with variable 
+.lang {
+  @media (max-width: 599px) {
+    display: none;
+  }
+}
+.short-lang {
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
 .arrow {
-  margin-left: 15px;
+  margin-left: 7px;
 }
 
 .select {

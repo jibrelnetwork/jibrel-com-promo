@@ -4,8 +4,8 @@
   "description": "Jibrel.com Promo Page",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build ./src/prerender/*.html",
+    "dev": "npm run lingui:compile && parcel src/index.html",
+    "build": "rimraf dist/* && npm run lingui:compile && parcel build ./src/index.html --experimental-scope-hoisting",
     "lint:js": "eslint src/**/*.js",
     "lingui:extract": "lingui extract --clean",
     "lingui:compile": "lingui compile"
@@ -26,17 +26,17 @@
     "@babel/preset-react": "~7.0.0",
     "@lingui/babel-preset-react": "~2.8.3",
     "@lingui/cli": "~2.8.3",
-    "@prerenderer/prerenderer": "~0.7.2",
-    "@prerenderer/renderer-puppeteer": "~0.2.0",
     "autoprefixer": "~9.6.1",
     "babel-core": "~7.0.0-bridge.0",
     "babel-eslint": "~10.0.2",
     "babel-plugin-macros": "~2.6.1",
+    "cssnano": "~4.1.10",
     "eslint": "~6.1.0",
     "eslint-plugin-babel": "~5.3.0",
     "eslint-plugin-react": "~7.14.3",
-    "lodash-es": "~4.17.15",
     "parcel-bundler": "~1.12.3",
+    "parcel-plugin-bundle-visualiser": "~1.2.0",
+    "parcel-plugin-prerender": "~1.4.1",
     "postcss-css-variables": "~0.13.0",
     "postcss-extend": "~1.0.5",
     "postcss-modules": "~1.4.1",
@@ -52,8 +52,13 @@
     "@lingui/react": "~2.8.3",
     "axios": "~0.19.0",
     "classcat": "~4.0.2",
+    "lodash-es": "~4.17.15",
     "normalize.css": "~8.0.1",
     "react": "~16.8.6",
-    "react-dom": "~16.8.6"
+    "react-dom": "~16.8.6",
+    "react-helmet": "~5.2.1",
+    "react-router5": "~7.1.0",
+    "router5": "~7.0.2",
+    "router5-plugin-browser": "~7.0.2"
   }
 }
