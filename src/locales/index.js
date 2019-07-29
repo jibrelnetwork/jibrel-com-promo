@@ -1,6 +1,6 @@
-import ar from './ar/messages.json'
-import en from './en/messages.json'
-import zhHans from './zh-Hans/messages.json'
+import ar from './ar/messages.js'
+import en from './en/messages.js'
+import zhHans from './zh-Hans/messages.js'
 
 export default {
   ar,
