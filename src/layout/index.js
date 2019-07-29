@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import TranslationChanger from './translation-changer'
 
 export default function Layout ({ children }) {
@@ -10,4 +11,8 @@ export default function Layout ({ children }) {
       </div>
     </div>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node,
 }
