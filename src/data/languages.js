@@ -1,7 +1,7 @@
 export const LANGUAGE_CODES = {
   EN: 'en',
   AR: 'ar',
-  ZH: 'zh',
+  ZH: 'zh-hans',
 }
 
 export const DEFAULT_LANGUAGE_CODE = LANGUAGE_CODES.EN
