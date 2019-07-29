@@ -1,4 +1,4 @@
-@import '/assets/style/vars.scss';
+@value main-blue-10, main-blue, from-mobile, to-mobile from '/theme/vars.css';
 
 .languages {
   position: relative;
@@ -15,19 +15,18 @@
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 20px;
-  background-color: $main-blue-10;
-  color: $main-blue;
+  background-color: main-blue-10;
+  color: main-blue;
 }
 
-// TODO
-// replace actual size with variable 
 .lang {
-  @media (max-width: 599px) {
+  @media (max-width: to-mobile) {
     display: none;
   }
 }
+
 .short-lang {
-  @media (min-width: 600px) {
+  @media (min-width: from-mobile) {
     display: none;
   }
 }

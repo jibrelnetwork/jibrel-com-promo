@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 import * as PropTypes from 'prop-types'
 
-import style from './Container.scss'
+import style from './style.css'
 
 Container.propTypes = {
   children: PropTypes.node,

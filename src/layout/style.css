@@ -1,3 +1,4 @@
+@value main-black from '/theme/vars.css';
 
 * {
   margin: 0;
@@ -15,7 +16,7 @@ html {
 }
 
 body {
-  color: $main-black;
+  color: main-black;
   line-height: 1.4;
 }
 

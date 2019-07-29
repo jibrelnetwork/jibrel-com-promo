@@ -4,7 +4,7 @@ import {
   LANGUAGES,
 } from '/data/languages'
 
-import style from './LanguageSelect.scss'
+import style from './style.css'
 import { arrowDown } from '/assets/icons/'
 
 export const LanguageSelect = ({

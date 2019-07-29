@@ -3,7 +3,7 @@ import TranslationChanger from './TranslationChanger'
 
 import { Container } from '/components'
 
-import style from './Header.scss'
+import style from './style.css'
 import { logoHeader } from '/assets/icons/'
 
 function Header() {

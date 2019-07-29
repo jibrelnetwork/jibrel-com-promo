@@ -1,11 +1,11 @@
-@import '/assets/style/mixins.scss';
+@value from-mobile, from-tablet from '/theme/vars.css';
 
 .container {
-  @include from-mobile {
+  @media (min-width: from-mobile) {
     width: calc(100% - 88px);
   }
 
-  @include from-tablet {
+  @media (min-width: from-tablet) {
     width: calc(100% - 152px);
   }
 
