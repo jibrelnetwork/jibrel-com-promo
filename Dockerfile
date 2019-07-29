@@ -26,8 +26,8 @@ RUN npm run build
 
 FROM nginx:alpine
 
-ENV AUTOPILOT_API_KEY=undefined
-ENV AUTOPILOT_API_DOMAIN='api2.autopilothq.com'
+ENV MAILERLITE_API_KEY=undefined
+ENV MAILERLITE_API_DOMAIN='api.mailerlite.com'
 
 RUN wget https://github.com/jibrelnetwork/dockerize/releases/latest/download/dockerize-alpine-linux-amd64-latest.tar.gz \
  && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-latest.tar.gz \
