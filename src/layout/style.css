@@ -33,17 +33,6 @@ button {
   border-radius: 0;
 }
 
-input,
-textarea,
-button {
-  -webkit-appearance: none;
-  border-radius: 0;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
 p,
 ul,
 h1,

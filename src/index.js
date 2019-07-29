@@ -1,17 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { RouterProvider } from 'react-router5'
 import { I18nProvider } from './app/i18n-provider'
 
-import App from './app'
+import { router } from './app/router'
+import Pages from './pages'
 
 const mountNode = document.getElementById('root')
 
 if (mountNode) {
   ReactDOM.render(
     (
-      <I18nProvider >
-        <App />
-      </I18nProvider>
+      <RouterProvider router={router}>
+        <I18nProvider>
+          <Pages />
+        </I18nProvider>
+      </RouterProvider>
     ),
     mountNode,
   )

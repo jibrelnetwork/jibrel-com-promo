@@ -2,7 +2,7 @@ import React from 'react'
 import { map } from 'lodash-es'
 import {
   LANGUAGES,
-} from '../../../data/languages'
+} from '/data/languages'
 
 import style from './style.css'
 import { arrowDown } from '/assets/icons/'
@@ -15,10 +15,11 @@ export const LanguageSelect = ({
 
   return (
     <div className={style.languages}>
-      <button type='button' className={style.toggle}>
-        English
+      <button type='button' className={style.toggle}> 
+        <span className={style.lang}>{ LANGUAGES[defaultValue].title }</span>
+        <span className={style.shortLang}>{ LANGUAGES[defaultValue].shorthand }</span>
         <img src={arrowDown} className={style.arrow} />
-      </button>
+      </button>      
       <select
         onChange={onChangeSelect}
         defaultValue={defaultValue}
