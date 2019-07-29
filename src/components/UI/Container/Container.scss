@@ -1,5 +1,15 @@
+@import '/assets/style/mixins.scss';
+
 .container {
-  width: calc(100% - 152px);
+  @include from-mobile {
+    width: calc(100% - 88px);
+  }
+
+  @include from-tablet {
+    width: calc(100% - 152px);
+  }
+
+  width: calc(100% - 56px);
   max-width: 1128px;
   margin-left: auto;
   margin-right: auto;
