@@ -1,11 +1,11 @@
 import React from 'react'
+import Header from './Header/Header.js'
 import PropTypes from 'prop-types'
-import TranslationChanger from './translation-changer'
 
 export default function Layout ({ children }) {
   return (
     <div>
-      <TranslationChanger />
+      <Header />
       <div>
         {children}
       </div>

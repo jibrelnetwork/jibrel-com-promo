@@ -1,0 +1,46 @@
+@import '/assets/style/vars.scss';
+
+.languages {
+  position: relative;
+}
+
+.toggle {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  background-color: $main-blue-10;
+  color: $main-blue;
+}
+
+// TODO
+// replace actual size with variable 
+.lang {
+  @media (max-width: 599px) {
+    display: none;
+  }
+}
+.short-lang {
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
+.arrow {
+  margin-left: 7px;
+}
+
+.select {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
