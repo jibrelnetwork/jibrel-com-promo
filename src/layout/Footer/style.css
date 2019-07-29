@@ -1,11 +1,11 @@
-@value main-black-50, mobile-width from '/theme/vars.css';
+@value main-black-50, to-mobile, from-mobile from '/theme/vars.css';
 
 .footer {
-  @media (min-width: mobile-width + 1) {
+  @media (min-width: from-mobile) {
     justify-content: space-between;
   }
 
-  @media (max-width: mobile-width) {
+  @media (max-width: to-mobile) {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -25,11 +25,11 @@
 .social {
   display: flex;
 
-  @media (min-width: mobile-width + 1) {
+  @media (min-width: from-mobile) {
     order: 1;
   }
 
-  @media (max-width: mobile-width) {
+  @media (max-width: to-mobile) {
     margin-bottom: 72px;
   }
 }

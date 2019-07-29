@@ -1,7 +1,7 @@
-@value mobile-width from '/theme/vars.css';
+@value to-mobile, from-mobile from '/theme/vars.css';
 
 .header {
-  @media (min-width: mobile-width + 1) {
+  @media (min-width: from-mobile) {
     height: 184px;
   }
 
@@ -12,7 +12,7 @@
 }
 
 .logo {
-  @media (max-width: mobile-width) {
+  @media (max-width: to-mobile) {
     height: 24px;
   }
 }

@@ -6,5 +6,7 @@
 @value main-blue-10: rgba(0, 61, 198, 0.1);
 
 /* Break point */
-@value tablet-width: 1023px;
-@value mobile-width: 599px;
+@value from-tablet: 1024px;
+@value to-tablet: 1023px;
+@value from-mobile: 600px;
+@value to-mobile: 599px;

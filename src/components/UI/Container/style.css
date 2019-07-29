@@ -1,11 +1,11 @@
-@value mobile-width, tablet-width from '/theme/vars.css';
+@value from-mobile, from-tablet from '/theme/vars.css';
 
 .container {
-  @media (min-width: mobile-width + 1) {
+  @media (min-width: from-mobile) {
     width: calc(100% - 88px);
   }
 
-  @media (min-width: tablet-width + 1) {
+  @media (min-width: from-tablet) {
     width: calc(100% - 152px);
   }
 

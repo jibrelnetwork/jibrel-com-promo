@@ -1,4 +1,4 @@
-@value main-blue-10, main-blue from '/theme/vars.css';
+@value main-blue-10, main-blue, from-mobile, to-mobile from '/theme/vars.css';
 
 .languages {
   position: relative;
@@ -19,15 +19,14 @@
   color: main-blue;
 }
 
-// TODO
-// replace actual size with variable 
 .lang {
-  @media (max-width: 599px) {
+  @media (max-width: to-mobile) {
     display: none;
   }
 }
+
 .short-lang {
-  @media (min-width: 600px) {
+  @media (min-width: from-mobile) {
     display: none;
   }
 }
