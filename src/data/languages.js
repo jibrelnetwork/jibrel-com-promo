@@ -17,7 +17,7 @@ export const LANGUAGES = {
     tag: 'ar',
     dir: 'rtl',
     title: 'العربية',
-    shorthand: 'ar',
+    shorthand: 'ع',
   },
   [LANGUAGE_CODES.ZH]: {
     tag: 'zh-Hans',
