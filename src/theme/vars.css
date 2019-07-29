@@ -1,0 +1,10 @@
+/* Color */
+
+@value main-black: #081e39;
+@value main-black-50: rgba(8, 30, 57, 0.5);
+@value main-blue: #003dc6;
+@value main-blue-10: rgba(0, 61, 198, 0.1);
+
+/* Break point */
+@value tablet-width: 1023px;
+@value mobile-width: 599px;

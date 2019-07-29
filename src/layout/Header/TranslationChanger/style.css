@@ -1,4 +1,4 @@
-@import '/assets/style/vars.scss';
+@value main-blue-10, main-blue from '/theme/vars.css';
 
 .languages {
   position: relative;
@@ -15,8 +15,8 @@
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 20px;
-  background-color: $main-blue-10;
-  color: $main-blue;
+  background-color: main-blue-10;
+  color: main-blue;
 }
 
 .arrow {

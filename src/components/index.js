@@ -1,1 +1,1 @@
-export { default as Container } from './UI/Container/Container'
+export { default as Container } from './UI/Container'

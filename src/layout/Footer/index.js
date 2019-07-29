@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Container } from '/components'
 
-import style from './Footer.scss'
+import style from './style.css'
 import { 
   logoFooter,
   twitter,
