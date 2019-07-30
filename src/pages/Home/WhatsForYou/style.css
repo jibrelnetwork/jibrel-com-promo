@@ -1,5 +1,5 @@
 @value from-tablet, to-tablet, from-tablet-portrait, from-mobile, main-blue-5 from '/theme/vars.css';
-@value radius, normal-padding, large-padding, normal-title, large-title, weight-title, size-descr, offset-descr from '/theme/card.css';
+@value radius, normal-padding, large-padding, normal-title, large-title, weight-title, size-description, offset-description from '/theme/card.css';
 
 .whats-for-you {
   padding-top: 48px;
@@ -80,7 +80,7 @@
   }
 }
 
-.descr {
-  font-size: size-descr;
-  margin-top: offset-descr;
+.description {
+  font-size: size-description;
+  margin-top: offset-description;
 }

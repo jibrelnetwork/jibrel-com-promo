@@ -1,17 +1,19 @@
 import React from 'react'
+import cc from 'classcat'
 import TranslationChanger from './TranslationChanger'
 
-import { Container } from '/components'
 
 import style from './style.css'
+import container from '/theme/container.css'
+
 import { logoHeader } from '/assets/icons/'
 
 function Header() {
   return (
-    <Container className={style.header} tag='header'>
+    <header className={cc([style.header, container.container])}>
       <a><img src={logoHeader} className={style.logo} /></a>
       <TranslationChanger />
-    </Container>
+    </header>
   )
 }
 

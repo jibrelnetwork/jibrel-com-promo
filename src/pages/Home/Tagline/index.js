@@ -2,6 +2,7 @@
 import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
+import { Trans } from '@lingui/react'
 
 import style from './style.css'
 import title from '/theme/title.css'
@@ -13,12 +14,13 @@ function Tagline() {
   return (  
     <section className={style.tagline}>
       <div className={container.container}>
-        <h2 className={cc([title.title, title.center, title.white])}>
-          {i18n._('Tagline.jibrel')}
-          <br/>
-          {i18n._('Tagline.message')}
-        </h2>
-        <a className={cc([button.button, button.white, button.large, style.button])}>{i18n._('Tagline.offer')}</a>
+        <Trans 
+          render='h2' 
+          className={cc([title.title, title.center, title.white])} 
+          id='Home.tagline.title' 
+          components={[<br/>]}
+        />
+        <a className={cc([button.button, button.white, button.large, style.button])}>{i18n._('Home.tagline.offer')}</a>
       </div>
     </section>
   )

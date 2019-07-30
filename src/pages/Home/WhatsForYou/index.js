@@ -16,32 +16,32 @@ function WhatsForYou() {
   const i18n = useI18n()
   return (  
     <section className={cc([style.whatsForYou, container.container])}>
-      <h2 className={cc([title.title, title.center, title.offset])}>{i18n._('WhatsForYou.title')}</h2>
+      <h2 className={cc([title.title, title.center, title.offset])}>{i18n._('Home.whatsForYou.title')}</h2>
       <div className={style.card}>
         <div className={style.text}>
-          <h2 className={style.title}>{i18n._('WhatsForYou.card_1.title')}</h2>
-          <p className={style.descr}>{i18n._('WhatsForYou.card_1.descr')}</p>
+          <h2 className={style.title}>{i18n._('Home.whatsForYou.globalLiquidity.title')}</h2>
+          <p className={style.description}>{i18n._('Home.whatsForYou.globalLiquidity.description')}</p>
         </div> 
         <img src={picDoor} className={style.img} alt=''/> 
       </div>  
       <div className={style.card}>
         <div className={style.text}>
-          <h2 className={style.title}>{i18n._('WhatsForYou.card_2.title')}</h2>
-          <p className={style.descr}>{i18n._('WhatsForYou.card_2.descr')}</p>
+          <h2 className={style.title}>{i18n._('Home.whatsForYou.getInEarly.title')}</h2>
+          <p className={style.description}>{i18n._('Home.whatsForYou.getInEarly.description')}</p>
         </div>
         <img src={picSunrise} className={style.img} alt=''/>
       </div> 
       <div className={style.card}>
         <div className={style.text}> 
-          <h2 className={style.title}>{i18n._('WhatsForYou.card_3.title')}</h2>
-          <p className={style.descr}>{i18n._('WhatsForYou.card_3.descr')}</p>
+          <h2 className={style.title}>{i18n._('Home.whatsForYou.secureSimpleFast.title')}</h2>
+          <p className={style.description}>{i18n._('Home.whatsForYou.secureSimpleFast.description')}</p>
         </div>
         <img src={picButton} className={style.img} alt=''/>
       </div> 
       <div className={style.card}>
         <div className={style.text}>
-          <h2 className={style.title}>{i18n._('WhatsForYou.card_4.title')}</h2>
-          <p className={style.descr}>{i18n._('WhatsForYou.card_4.descr')}</p>
+          <h2 className={style.title}>{i18n._('Home.whatsForYou.experience.title')}</h2>
+          <p className={style.description}>{i18n._('Home.whatsForYou.experience.description')}</p>
         </div>
         <img src={picStairs} className={style.img} alt=''/>
       </div> 

@@ -16,27 +16,27 @@ function Advantages() {
   return (
     <section className={style.advantages}>
       <div className={container.container}>
-        <h2 className={cc([title.title, title.center, title.offset])}>{i18n._('Advantages.title')}</h2>
+        <h2 className={cc([title.title, title.center, title.offset])}>{i18n._('Home.advantages.title')}</h2>
         <div className={style.cards}>
           <div className={style.card}>
             <img src={picPlanet} className={style.img} alt=''/>
             <div className={style.body}>
-              <div className={style.title}>{i18n._('Advantages.card_1.title')}</div>
-              <p className={style.descr}>{i18n._('Advantages.card_1.descr')}</p>
+              <div className={style.title}>{i18n._('Home.advantages.markets.title')}</div>
+              <p className={style.description}>{i18n._('Home.advantages.markets.description')}</p>
             </div>
           </div> 
           <div className={style.card}>
             <img src={picTransparency} className={style.img} alt=''/>
             <div className={style.body}>
-              <div className={style.title}>{i18n._('Advantages.card_2.title')}</div>
-              <p className={style.descr}>{i18n._('Advantages.card_2.descr')}</p>
+              <div className={style.title}>{i18n._('Home.advantages.transparency.title')}</div>
+              <p className={style.description}>{i18n._('Home.advantages.transparency.description')}</p>
             </div>
           </div>
           <div className={style.card}>
             <img src={picRadar} className={style.img} alt=''/>
             <div className={style.body}>
-              <div className={style.title}>{i18n._('Advantages.card_3.title')}</div>
-              <p className={style.descr}>{i18n._('Advantages.card_3.descr')}</p>
+              <div className={style.title}>{i18n._('Home.advantages.reach.title')}</div>
+              <p className={style.description}>{i18n._('Home.advantages.reach.description')}</p>
             </div>
           </div>
         </div>

@@ -17,16 +17,16 @@ function Welcome() {
   const i18n = useI18n()
   return ( 
     <section className={cc([style.welcome, container.container])}>
-      <h1 className={cc([title.title, title.blue, title.center])}>{i18n._('Welcome.title')}</h1>
-      <p className={style.descr}>{i18n._('Welcome.descr')}</p>
-      <p className={style.offer}>{i18n._('Welcome.offer')}</p>
+      <h1 className={cc([title.title, title.blue, title.center])}>{i18n._('Home.welcome.title')}</h1>
+      <p className={style.description}>{i18n._('Home.welcome.description')}</p>
+      <p className={style.offer}>{i18n._('Home.welcome.offer')}</p>
       <div className={style.cards}>
         <div className={style.card}>
           <img src={picInvestor} alt='' className={style.img} />
           <div className={style.text}>
-            <div className={style.title}>{i18n._('LeadTile.investor')}</div>
+            <div className={style.title}>{i18n._('Home.welcome.investor')}</div>
             <a className={cc([button.button, button.blue, button.normal])}>
-              {i18n._('LeadTile.signUp')}
+              {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
             </a>
@@ -35,9 +35,9 @@ function Welcome() {
         <div className={style.card}>
           <img src={picFounder} alt='' className={style.img} />
           <div className={style.text}>
-            <div className={style.title}>{i18n._('LeadTile.founder')}</div>
+            <div className={style.title}>{i18n._('Home.welcome.founder')}</div>
             <a className={cc([button.button, button.blue, button.normal])}>
-              {i18n._('LeadTile.signUp')}
+              {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
             </a>

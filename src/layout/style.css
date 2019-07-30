@@ -19,6 +19,7 @@ body {
   color: main-black;
   line-height: 1.4;
   font-family: font;
+  min-width: 360px;
 }
 
 [dir="rtl"] body {
