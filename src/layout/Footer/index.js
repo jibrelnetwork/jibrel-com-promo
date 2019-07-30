@@ -1,17 +1,12 @@
 import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
+import LanguageLink from '/components/LanguageLink'
 
 import style from './style.css'
 import container from '/theme/container.css'
 
-import { 
-  logoFooter,
-  twitter,
-  medium,
-  linkedin,
-  instagram 
-} from '/assets/icons/'
+import { logoFooter } from '/assets/icons/'
 
 function Footer() {
   const i18n = useI18n()
@@ -40,8 +35,10 @@ function Footer() {
         </a>
       </div>
       <div>
-        <a className={style.logo}><img src={logoFooter} /></a>
-        <div className={style.info}>{i18n._('Layout.copyright')}</div>
+        <LanguageLink routeName='Home'>
+          <img src={logoFooter} />
+        </LanguageLink>
+        <div className={style.info}>{i18n._('layout.copyright')}</div>
       </div>
     </footer>
   )

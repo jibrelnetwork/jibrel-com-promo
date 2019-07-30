@@ -2,6 +2,7 @@
 import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
+import LanguageLink from '/components/LanguageLink'
 
 import { arrowRightWhite, arrowRightBlue } from '/assets/icons/'
 
@@ -25,22 +26,22 @@ function Welcome() {
           <img src={picInvestor} alt='' className={style.img} />
           <div className={style.text}>
             <div className={style.title}>{i18n._('Home.welcome.investor')}</div>
-            <a className={cc([button.button, button.blue, button.normal, button.withIcon])}>
+            <LanguageLink routeName='SubscribeInvestor' className={cc([button.button, button.blue, button.normal, button.withIcon])}>
               {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
-            </a>
+            </LanguageLink>
           </div>
         </div> 
         <div className={style.card}>
           <img src={picFounder} alt='' className={style.img} />
           <div className={style.text}>
             <div className={style.title}>{i18n._('Home.welcome.founder')}</div>
-            <a className={cc([button.button, button.blue, button.normal, button.withIcon])}>
+            <LanguageLink routeName='SubscribeFounder' className={cc([button.button, button.blue, button.normal, button.withIcon])}>
               {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
-            </a>
+            </LanguageLink>
           </div>
         </div>
       </div>

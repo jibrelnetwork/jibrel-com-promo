@@ -3,6 +3,7 @@ import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
 import { Trans } from '@lingui/react'
+import LanguageLink from '/components/LanguageLink'
 
 import style from './style.css'
 import title from '/theme/title.css'
@@ -20,7 +21,9 @@ function Tagline() {
           id='Home.tagline.title' 
           components={[<br/>]}
         />
-        <a className={cc([button.button, button.white, button.large, style.button])}>{i18n._('Home.tagline.offer')}</a>
+        <LanguageLink routeName='#' className={cc([button.button, button.white, button.large, style.button])}>
+          {i18n._('Home.tagline.offer')}
+        </LanguageLink>
       </div>
     </section>
   )
