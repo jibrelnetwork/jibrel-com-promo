@@ -1,0 +1,97 @@
+@value main-blue, main-blue-10, main-blue-20, main-blue-30 from '/theme/vars.css';
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 100px;
+  position: relative;
+  padding-left: 14px;
+  padding-right: 14px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+  &.with-icon {
+    padding-right: 38px;
+  }
+
+  &:hover {
+    .hover-icon {
+      opacity: 1;
+    }
+  }
+
+  &.blue {
+    color: #fff;
+    background-color: main-blue;
+    border: 2px solid main-blue;
+
+    &:hover {
+      background-color: #fff;
+      color: main-blue;
+    }
+
+    &:active {
+      background-color: main-blue-10;
+    }
+  }
+
+  &.white {
+    color: main-blue;
+    background-color: #fff;
+    border: 2px solid #fff;
+
+    &:hover {
+      background-color: main-blue-10;
+      border-color: main-blue-10
+    }
+
+    &:active {
+      background-color: main-blue-20;
+      border-color: main-blue-20
+    } 
+  }
+
+  &.light-blue {
+    color: main-blue;
+    background-color: main-blue-10;
+    border: 2px solid main-blue-10;
+
+    &:hover {
+      background-color: main-blue-20;
+      border-color: main-blue-20
+    }
+
+    &:active {
+      background-color: main-blue-30;
+      border-color: main-blue-30
+    }
+  }
+
+  &.normal {
+    height: 28px;
+    font-size: 12px;
+  }
+
+  &.large {
+    height: 64px;
+    font-size: 16px;
+  }
+}
+
+.icon,
+.hover-icon {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.hover-icon {
+  opacity: 0;
+}

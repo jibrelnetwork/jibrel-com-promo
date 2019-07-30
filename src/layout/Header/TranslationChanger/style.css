@@ -4,21 +4,6 @@
   position: relative;
 }
 
-.toggle {
-  height: 32px;
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: bold;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 20px;
-  background-color: main-blue-10;
-  color: main-blue;
-}
-
 .lang {
   @media (max-width: to-mobile) {
     display: none;
@@ -42,4 +27,5 @@
   left: 0;
   height: 100%;
   width: 100%;
+  cursor: pointer;
 }

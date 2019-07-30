@@ -1,0 +1,32 @@
+@value from-tablet, from-mobile from '/theme/vars.css';
+
+.tagline {
+  padding-top: 80px;
+  padding-bottom: 64px;
+  background-image: linear-gradient(272.05deg, #003dc6 0.9%, rgba(0, 61, 198, 0.7) 99.1%);
+  text-align: center;
+
+  @media (min-width: from-mobile) {
+    padding-top: 120px;
+    padding-bottom: 96px;
+  }
+
+  @media (min-width: from-tablet) {
+    padding-top: 128px;
+    padding-bottom: 160px;
+  }
+}
+
+.button {
+  margin-top: 64px;
+  width: 100%;
+  max-width: 304px;
+
+  @media (min-width: from-mobile) {
+    margin-top: 56px;
+  }
+
+  @media (min-width: from-tablet) {
+    margin-top: 72px;
+  }
+}

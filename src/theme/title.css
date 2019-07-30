@@ -1,0 +1,32 @@
+@value main-blue, from-mobile from '/theme/vars.css';
+
+.title {
+  font-size: 32px;
+  line-height: 1.1875;
+  font-weight: 800;
+
+  @media (min-width: from-mobile) {
+    font-size: 64px;
+    line-height: 1.1875;
+  }
+}
+
+.blue {
+  color: main-blue;
+}
+
+.white {
+  color: #fff;
+}
+
+.center {
+  text-align: center;
+}
+
+.offset {
+  padding-bottom: 48px;
+
+  @media (min-width: from-mobile) {
+    padding-bottom: 64px;
+  }
+}

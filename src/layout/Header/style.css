@@ -1,18 +1,12 @@
 @value to-mobile, from-mobile from '/theme/vars.css';
 
 .header {
-  @media (min-width: from-mobile) {
-    height: 184px;
-  }
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
-}
 
-.logo {
-  @media (max-width: to-mobile) {
-    height: 24px;
+  @media (min-width: from-mobile) {
+    height: 184px;
   }
 }

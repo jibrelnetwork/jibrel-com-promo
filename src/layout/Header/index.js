@@ -1,17 +1,21 @@
 import React from 'react'
+import cc from 'classcat'
 import TranslationChanger from './TranslationChanger'
-
-import { Container } from '/components'
+import LanguageLink from '/components/LanguageLink'
 
 import style from './style.css'
+import container from '/theme/container.css'
+
 import { logoHeader } from '/assets/icons/'
 
 function Header() {
   return (
-    <Container className={style.header} tag='header'>
-      <a><img src={logoHeader} className={style.logo} /></a>
+    <header className={cc([style.header, container.container])}>
+      <LanguageLink routeName='Home'>
+        <img src={logoHeader} className={style.logo} />
+      </LanguageLink>
       <TranslationChanger />
-    </Container>
+    </header>
   )
 }
 
