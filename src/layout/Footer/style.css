@@ -1,4 +1,4 @@
-@value main-black-50, to-mobile, from-mobile from '/theme/vars.css';
+@value main-black-50, main-blue, to-mobile, from-mobile from '/theme/vars.css';
 
 .footer {
   padding-top: 52px;
@@ -40,6 +40,15 @@
 }
 
 .link {
+  fill: #081E39;
+  opacity: 0.3;
+  transition: fill 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    fill: main-blue;
+  }
+
   &:not(:first-child) {
     margin-left: 24px;
   }

@@ -25,7 +25,7 @@ function Welcome() {
           <img src={picInvestor} alt='' className={style.img} />
           <div className={style.text}>
             <div className={style.title}>{i18n._('Home.welcome.investor')}</div>
-            <a className={cc([button.button, button.blue, button.normal])}>
+            <a className={cc([button.button, button.blue, button.normal, button.withIcon])}>
               {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
@@ -36,7 +36,7 @@ function Welcome() {
           <img src={picFounder} alt='' className={style.img} />
           <div className={style.text}>
             <div className={style.title}>{i18n._('Home.welcome.founder')}</div>
-            <a className={cc([button.button, button.blue, button.normal])}>
+            <a className={cc([button.button, button.blue, button.normal, button.withIcon])}>
               {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />

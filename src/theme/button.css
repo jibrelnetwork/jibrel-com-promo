@@ -1,6 +1,7 @@
-@value main-blue from '/theme/vars.css';
+@value main-blue, main-blue-10, main-blue-20, main-blue-30 from '/theme/vars.css';
 
 .button {
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -12,13 +13,13 @@
   position: relative;
   padding-left: 14px;
   padding-right: 14px;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+  &.with-icon {
+    padding-right: 38px;
+  }
 
   &:hover {
-    .icon {
-      opacity: 0;
-    }
-
     .hover-icon {
       opacity: 1;
     }
@@ -33,6 +34,10 @@
       background-color: #fff;
       color: main-blue;
     }
+
+    &:active {
+      background-color: main-blue-10;
+    }
   }
 
   &.white {
@@ -41,8 +46,29 @@
     border: 2px solid #fff;
 
     &:hover {
-      background-color: main-blue;
-      color: #fff;
+      background-color: main-blue-10;
+      border-color: main-blue-10
+    }
+
+    &:active {
+      background-color: main-blue-20;
+      border-color: main-blue-20
+    } 
+  }
+
+  &.light-blue {
+    color: main-blue;
+    background-color: main-blue-10;
+    border: 2px solid main-blue-10;
+
+    &:hover {
+      background-color: main-blue-20;
+      border-color: main-blue-20
+    }
+
+    &:active {
+      background-color: main-blue-30;
+      border-color: main-blue-30
     }
   }
 
@@ -57,16 +83,15 @@
   }
 }
 
-.icon {
-  margin-left: 15px;
+.icon,
+.hover-icon {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
   transition: opacity 0.2s ease-in-out;
 }
 
 .hover-icon {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
 }
