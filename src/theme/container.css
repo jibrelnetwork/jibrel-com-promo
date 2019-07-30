@@ -1,0 +1,16 @@
+@value from-mobile, from-tablet from '/theme/vars.css';
+
+.container {
+  @media (min-width: from-mobile) {
+    width: calc(100% - 88px);
+  }
+
+  @media (min-width: from-tablet) {
+    width: calc(100% - 152px);
+  }
+
+  width: calc(100% - 56px);
+  max-width: 1128px;
+  margin-left: auto;
+  margin-right: auto;
+}

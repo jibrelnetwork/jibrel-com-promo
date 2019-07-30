@@ -15,10 +15,10 @@ function Footer() {
   return (
     <Container className={style.footer} tag='footer'>
       <div className={style.social}>
-        <a href='#' className={style.link} target='_blank'><img src={twitter} alt='twitter'/></a>
-        <a href='#' className={style.link} target='_blank'><img src={medium} alt='medium'/></a>
-        <a href='#' className={style.link} target='_blank'><img src={linkedin} alt='linkedin'/></a>
-        <a href='#' className={style.link} target='_blank'><img src={instagram} alt='instagram'/></a>
+        <a href='https://twitter.com/JibrelNetwork' className={style.link} target='_blank' rel='noopener noreferrer'><img src={twitter} alt='twitter'/></a>
+        <a href='https://medium.com/@jibrelnetwork' className={style.link} target='_blank' rel='noopener noreferrer'><img src={medium} alt='medium'/></a>
+        <a href='https://www.linkedin.com/company/jibrel-network/' className={style.link} target='_blank' rel='noopener noreferrer'><img src={linkedin} alt='linkedin'/></a>
+        <a href='https://www.instagram.com/jibrelnetwork/' className={style.link} target='_blank' rel='noopener noreferrer'><img src={instagram} alt='instagram'/></a>
       </div>
       <div>
         <a className={style.logo}><img src={logoFooter} /></a>

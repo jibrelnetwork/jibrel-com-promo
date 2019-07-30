@@ -1,0 +1,86 @@
+@value from-tablet, to-tablet, from-tablet-portrait, from-mobile, main-blue-5 from '/theme/vars.css';
+@value radius, normal-padding, large-padding, normal-title, large-title, weight-title, size-descr, offset-descr from '/theme/card.css';
+
+.whats-for-you {
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @media (min-width: from-mobile) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  @media (min-width: from-tablet) {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: radius;
+  padding: normal-padding normal-padding 0 normal-padding;
+  background-color: main-blue-5;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: from-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    height: 416px;
+    padding: large-padding;
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      .img {
+        right: auto;
+        left: -15.58%;
+      }
+    }
+  }
+
+  @media (max-width: to-tablet) {
+    padding-bottom: 0;
+  }
+}
+
+.text {
+  @media (min-width: from-tablet) {
+    width: 50%;
+  }
+}
+
+.img {
+  width: 100%;
+  min-width: 549px;
+
+  @media (min-width: from-tablet-portrait) {
+    width: calc(100% - 88px);
+  }
+  @media (min-width: from-tablet) {
+    position: absolute;
+    right: -15.58%;
+    width: 73.05%;
+  } 
+}
+
+.title {
+  font-size: normal-title;
+  font-weight: weight-title;
+  line-height: 1.2;
+
+  @media (min-width: from-mobile) {
+    font-size: large-title;
+  }
+}
+
+.descr {
+  font-size: size-descr;
+  margin-top: offset-descr;
+}

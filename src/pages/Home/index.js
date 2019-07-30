@@ -1,15 +1,19 @@
 import React from 'react'
 
-import { useI18n } from '/hooks/i18n'
 import Layout from '/layout'
+import Welcome from './Welcome'
+import Advantages from './Advantages'
+import WhatsForYou from './WhatsForYou'
+import Tagline from './Tagline'
 
 export default function Home() {
-  const i18n = useI18n()
-
   return (
     <Layout>
       <main>
-        <h1>{i18n._('Home.title')}</h1>
+        <Welcome />
+        <Advantages />
+        <WhatsForYou />
+        <Tagline />
       </main>
     </Layout>
   )

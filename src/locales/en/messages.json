@@ -1,5 +1,34 @@
 {
-  "Home.title": "Home.title",
+  "Welcome.title": "Startup investing made simple, for everyone",
+  "Welcome.descr": "Jibrel enables startups and investors to connect in a previously unimaginable way to create capital formation.",
+  "Welcome.offer": "Sign up for early access today!",
+
+  "LeadTile.investor": "I’m an Investor",
+  "LeadTile.founder": "I’m a Founder",
+  "LeadTile.signUp": "Sign up",
+
+  "Advantages.title": "Advantages",
+  "Advantages.card_1.title": "Access to Global Markets",
+  "Advantages.card_1.descr": "Jibrel empowers startups with tech tools that facilitate leaner, quicker and cheaper testing of their value propositions.",
+  "Advantages.card_2.title": "Transparency for Investors",
+  "Advantages.card_2.descr": "Jibrel provides retail and professional investors globally with transparency of opportunities eliminating information asymmetries and subjectivity from the investment process. ",
+  "Advantages.card_3.title": "Reach to Startups",
+  "Advantages.card_3.descr": "Jibrel does not only bring better access to international investors, but also makes managing thousands of investors is now just as easy as managing three.",
+
+  "WhatsForYou.title": "What’s for you?",
+  "WhatsForYou.card_1.title": "Global Liquidity at a Fraction of the Cost and Time",
+  "WhatsForYou.card_1.descr": "Jibrel stimulates global capital formation and reduces market frictions by deploying best-in-class financial and regulatory technology empowering startups with reach and investors with access to a historically exclusive and marginal asset class.  ",
+  "WhatsForYou.card_2.title": "Get in Early ",
+  "WhatsForYou.card_2.descr": "Invest early in the disruption of multi-billion dollar industries alongside seasoned investors and industry veterans. Support the companies you believe in and want to see succeed in the future.",
+  "WhatsForYou.card_3.title": "It’s Secure, Simple and Fast",
+  "WhatsForYou.card_3.descr": "We’ve done the complicated stuff so you won’t have to. Jibrel is a regulated full-service online investment platform which offers a compliant, seamless and smart investor experience. To start investing, simply sign up, select your startup and invest!",
+  "WhatsForYou.card_4.title": "Experience the Potential of Exponential Technologies",
+  "WhatsForYou.card_4.descr": "Tokenization of equity is a more efficient means of securitization which can unlock value beyond financial returns for startups, investors and ecosystem enablers. It redefines how companies are built, funded and managed.",
+
+  "Tagline.jibrel": "Jibrel:",
+  "Tagline.message": "Reimagining how companies are built, funded and managed",
+  "Tagline.offer": "Sign up for early access",
+
   "SubscribeFounder.title": "SubscribeFounder.title",
   "SubscribeInvestor.title": "SubscribeInvestor.title"
 }

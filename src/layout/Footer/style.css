@@ -1,8 +1,13 @@
 @value main-black-50, to-mobile, from-mobile from '/theme/vars.css';
 
 .footer {
+  padding-top: 52px;
+  padding-bottom: 32px;
+
   @media (min-width: from-mobile) {
     justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 43px;
   }
 
   @media (max-width: to-mobile) {
