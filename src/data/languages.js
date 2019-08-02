@@ -2,9 +2,12 @@ export const LANGUAGE_CODES = {
   EN: 'en',
   AR: 'ar',
   ZH: 'zh-hans',
+  KO: 'ko',
 }
 
 export const DEFAULT_LANGUAGE_CODE = LANGUAGE_CODES.EN
+
+export const LANGUAGE_PATHS_AVAILABLE = Object.values(LANGUAGE_CODES)
 
 export const LANGUAGES = {
   [LANGUAGE_CODES.EN]: {
@@ -24,5 +27,11 @@ export const LANGUAGES = {
     dir: 'ltr',
     title: '中文',
     shorthand: '中文',
+  },
+  [LANGUAGE_CODES.KO]: {
+    tag: 'ko',
+    dir: 'ltr',
+    title: '한국어',
+    shorthand: '한국어',
   },
 }
