@@ -100,7 +100,7 @@ export default function SubscribeFounder() {
           <Success />
         )}
         {resultOfSending === 'error' && (
-          <Error />
+          <Error onClick={() => setResultOfSending(null)} />
         )}
       </div>
     </Layout>
