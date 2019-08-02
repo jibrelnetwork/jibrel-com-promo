@@ -16,10 +16,10 @@ function Success() {
     <section>
       <div className={resultOfSending.wrapper}>
         <div>
-          <h1 className={cc([title.title, title.offset])}>{i18n._('success.title')}</h1>
-          <p className={resultOfSending.message}>{i18n._('success.message')}</p>
+          <h1 className={cc([title.title, title.offset])}>{i18n._('Subscribe.success.title')}</h1>
+          <p className={resultOfSending.message}>{i18n._('Subscribe.success.message')}</p>
           <LanguageLink routeName='Home' className={link.link}>
-            {i18n._('success.backToMain')}
+            {i18n._('Subscribe.success.backToMain')}
           </LanguageLink>
         </div>
         <img src={picSuccess} alt='' className={resultOfSending.img} />

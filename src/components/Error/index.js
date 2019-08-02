@@ -16,10 +16,10 @@ function Error() {
     <section>
       <div className={resultOfSending.wrapper}>
         <div>
-          <h1 className={cc([title.title, title.offset])}>{i18n._('error.title')}</h1>
-          <p className={resultOfSending.message}>{i18n._('error.message')}</p>
+          <h1 className={cc([title.title, title.offset])}>{i18n._('Subscribe.error.title')}</h1>
+          <p className={resultOfSending.message}>{i18n._('Subscribe.error.message')}</p>
           <LanguageLink routeName='Home' className={link.link}>
-            {i18n._('error.tryAgain')}
+            {i18n._('Subscribe.error.tryAgain')}
           </LanguageLink>
         </div>
         <img src={picError} alt='' className={resultOfSending.img} />

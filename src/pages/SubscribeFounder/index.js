@@ -22,6 +22,7 @@ export default function SubscribeFounder() {
   const [resultOfSending, setResultOfSending] = useState(null)
   function handleFormSubmit(values) {
     setResultOfSending('error')
+    // FIXME Delete after integrating form logic
     console.log(values)
   }
   return (
@@ -62,6 +63,7 @@ export default function SubscribeFounder() {
                     placeholder={i18n._('SubscribeFounder.input.fullName.placeholder')}
                   />
                 </label>
+                {/* FIXME Move 'select' to a separate component */}
                 <label className={form.box}>
                   <h2 className={form.title}>{i18n._('SubscribeFounder.input.countryOfResidence.title')}</h2>
                   <Field

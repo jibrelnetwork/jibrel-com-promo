@@ -21,6 +21,7 @@ export default function SubscribeFounder() {
   const [resultOfSending, setResultOfSending] = useState(null)
   function handleFormSubmit(values) {
     setResultOfSending('success')
+    // FIXME Delete after integrating form logic
     console.log(values)
   }
 
@@ -40,7 +41,7 @@ export default function SubscribeFounder() {
               }) => (
                 <form className={form.form} onSubmit={handleSubmit}>
                   <div className={form.box}>
-                    <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.titleGroup')}</h2>
+                    <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.title')}</h2>
                     <label className={form.radio}>
                       <Field
                         name='account'
@@ -76,7 +77,7 @@ export default function SubscribeFounder() {
                       </div>
                     </label>
                   </div>
-                  {typeOfAccount !== 'organization' ? (
+                  {typeOfAccount === 'individual' ? (
                       <>
                         <label className={form.box}>
                           <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullName.title')}</h2>
@@ -89,6 +90,7 @@ export default function SubscribeFounder() {
                             placeholder={i18n._('SubscribeInvestor.input.fullName.placeholder')}
                           />
                         </label>
+                        {/* FIXME Move 'select' to a separate component */}
                         <label className={form.box}>
                           <h2 className={form.title}>{i18n._('SubscribeInvestor.input.countryOfResidence.title')}</h2>
                           <Field
