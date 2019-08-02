@@ -40,11 +40,9 @@
   "SubscribeFounder.head.useFounderAccount": "Use Founder account if you want to raise funds for your company.",
   "SubscribeFounder.input.organizationName.title": "Full Organization Name",
   "SubscribeFounder.input.fullName.title": "Contact Person Full Name",
-  "SubscribeFounder.input.fullName.placeholder": "John Appleseed",
   "SubscribeFounder.input.countryOfResidence.title": "Country of Incorporation",
   "SubscribeFounder.input.countryOfResidence.empty": "select country",
   "SubscribeFounder.input.email.title": "Email",
-  "SubscribeFounder.input.email.placeholder": "name@example.com",
   "SubscribeFounder.form.action.continue": "Continue",
 
 
@@ -56,12 +54,10 @@
   "SubscribeInvestor.input.typeOfAccount.option.organization.title": "Organization",
   "SubscribeInvestor.input.typeOfAccount.option.organization.info": "Use organizational account if you want to invest on behalf of an accredited organization, such as a fund.",
   "SubscribeInvestor.input.fullName.title": "Full Name",
-  "SubscribeInvestor.input.fullName.placeholder": "John Appleseed",
   "SubscribeInvestor.input.fullNameOrganization.title": "Full Organization Name",
   "SubscribeInvestor.input.contactNameOrganization.title": "Contact Person Full Name",
   "SubscribeInvestor.input.countryOfResidence.title": "Country of Residence",
   "SubscribeInvestor.input.countryOfResidence.empty": "select country",
   "SubscribeInvestor.input.email.title": "Email",
-  "SubscribeInvestor.input.email.placeholder": "name@example.com",
   "SubscribeInvestor.form.action.continue": "Continue"
 }

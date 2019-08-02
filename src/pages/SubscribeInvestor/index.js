@@ -87,7 +87,6 @@ export default function SubscribeFounder() {
                             required
                             className={form.input}
                             disabled={submitting}
-                            placeholder={i18n._('SubscribeInvestor.input.fullName.placeholder')}
                           />
                         </label>
                         {/* FIXME Move 'select' to a separate component */}
@@ -126,7 +125,6 @@ export default function SubscribeFounder() {
                           required
                           disabled={submitting}
                           className={form.input}
-                          placeholder={i18n._('SubscribeInvestor.input.fullName.placeholder')}
                         />
                       </label>
                       </>
@@ -139,7 +137,6 @@ export default function SubscribeFounder() {
                       component='input'
                       required
                       className={form.input}
-                      placeholder={i18n._('SubscribeInvestor.input.email.placeholder')}
                     />
                   </label>
                   <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeInvestor.form.action.continue')}</button>
