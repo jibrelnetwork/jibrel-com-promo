@@ -1,0 +1,25 @@
+@value from-tablet-portrait, send-result-break-point from '/theme/vars.css';
+
+.wrapper {
+  @media (min-width: send-result-break-point) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.message {
+  max-width: 466px;
+  font-size: 18px;
+
+  @media (min-width: from-tablet-portrait) {
+    font-size: 24px;
+  }
+}
+
+.img {
+  max-width: 100%;
+
+  @media (min-width: send-result-break-point) {
+    margin-left: 120px;
+  }
+}

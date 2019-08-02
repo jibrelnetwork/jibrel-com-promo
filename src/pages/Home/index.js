@@ -9,12 +9,10 @@ import Tagline from './Tagline'
 export default function Home() {
   return (
     <Layout>
-      <main>
-        <Welcome />
-        <Advantages />
-        <WhatsForYou />
-        <Tagline />
-      </main>
+      <Welcome />
+      <Advantages />
+      <WhatsForYou />
+      <Tagline />
     </Layout>
   )
 }

@@ -1,0 +1,21 @@
+@value main-blue from '/theme/vars.css';
+
+.link {
+  color: main-blue;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.1875;
+  margin-top: 16px;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  display: inline-block;
+
+  &:hover {
+    border-color: main-blue;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}

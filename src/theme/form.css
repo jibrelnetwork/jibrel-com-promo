@@ -1,0 +1,56 @@
+@value main-black-60 from '/theme/vars.css';
+
+.form {}
+
+.box {
+  margin-top: 32px;
+  display: block;
+  max-width: 426px;
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.054em;
+  margin-bottom: 8px;
+}
+
+.radio {
+  display: flex;
+  align-items: flex-start;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.radio-box {
+  padding-left: 8px;
+  transform: translateY(-3px);
+}
+
+.radio-title {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.radio-description {
+  margin-top: 4px;
+  letter-spacing: -0.054em;
+  font-size: 12px;
+  line-height: 1.4;
+  color: main-black-60;
+}
+
+.input,
+.select {
+  max-width: 264px;
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: -0.05em;
+}
+
+.submit {
+  margin-top: 42px;
+}
