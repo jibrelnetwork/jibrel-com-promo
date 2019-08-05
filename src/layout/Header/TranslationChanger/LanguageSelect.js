@@ -1,6 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
-import { map } from 'lodash-es'
+import { map, noop } from 'lodash-es'
+import PropTypes from 'prop-types'
+
 import {
   LANGUAGES,
 } from '/data/languages'
@@ -33,4 +35,13 @@ export const LanguageSelect = ({
       </select>
     </div> 
   )
+}
+
+LanguageSelect.propTypes = {
+  defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
+}
+
+LanguageSelect.defaultProps = {
+  onChange: noop,
 }

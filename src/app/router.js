@@ -1,6 +1,8 @@
 import createRouter from 'router5'
 import browserPlugin from 'router5-plugin-browser'
 
+import { setLanguageCookieMiddleware } from './set-language-cookie-middleware'
+
 import { LANGUAGE_CODES, DEFAULT_LANGUAGE_CODE } from '../data/languages'
 
 const LANGUAGE_TAGS_AVAILABLE = Object.values(LANGUAGE_CODES)
@@ -43,5 +45,6 @@ const routes = [
 export const router = createRouter(routes)
 
 router.usePlugin(browserPlugin())
+router.useMiddleware(setLanguageCookieMiddleware)
 
 router.start()
