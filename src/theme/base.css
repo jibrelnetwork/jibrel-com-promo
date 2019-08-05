@@ -1,4 +1,4 @@
-@value main-black, font from '/theme/vars.css';
+@value main-black, font, font-ar from '/theme/vars.css';
 
 * {
   margin: 0;
