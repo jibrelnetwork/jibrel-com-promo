@@ -35,7 +35,7 @@ RUN wget https://github.com/jibrelnetwork/dockerize/releases/latest/download/doc
 
 COPY --from=build /app/dist/. /app/
 COPY version.txt /app/
-COPY nginx.tpl.conf /etc/nginx/
+COPY nginx/. /etc/nginx/
 
 COPY run.sh /bin/run.sh
 
