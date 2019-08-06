@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import cc from 'classcat'
+import map from 'lodash-es/map'
 import { Form, Field } from 'react-final-form'
 import { useI18n } from '/hooks/i18n'
+import { COUNTRIES } from '/constants/countries'
 
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
@@ -73,8 +75,9 @@ export default function SubscribeFounder() {
                     className={form.input}
                   >
                     <option>{i18n._('SubscribeFounder.input.countryOfResidence.empty')}</option>
-                    <option value='Moskow'>Moskow</option>
-                    <option value='St. Petersburg'>St. Petersburg</option>
+                    {map(COUNTRIES, (country, code) => (
+                      <option value={code} key={code}>{i18n._(country)}</option>
+                    ))}
                   </Field>
                 </label>
                 <label className={form.box}>

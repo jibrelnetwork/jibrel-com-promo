@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import cc from 'classcat'
+import map from 'lodash-es/map'
 import { Form, Field } from 'react-final-form'
 import { useI18n } from '/hooks/i18n'
+import { COUNTRIES } from '/constants/countries'
 
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
@@ -89,7 +91,6 @@ export default function SubscribeFounder() {
                             disabled={submitting}
                           />
                         </label>
-                        {/* FIXME Move 'select' to a separate component */}
                         <label className={form.box}>
                           <h2 className={form.title}>{i18n._('SubscribeInvestor.input.countryOfResidence.title')}</h2>
                           <Field
@@ -100,8 +101,9 @@ export default function SubscribeFounder() {
                             className={form.input}
                           >
                             <option>{i18n._('SubscribeInvestor.input.countryOfResidence.empty')}</option>
-                            <option value='Moskow'>Moskow</option>
-                            <option value='St. Petersburg'>St. Petersburg</option>
+                            {map(COUNTRIES, (country, code) => (
+                              <option value={code} key={code}>{i18n._(country)}</option>
+                            ))}
                           </Field>
                         </label>
                       </>
