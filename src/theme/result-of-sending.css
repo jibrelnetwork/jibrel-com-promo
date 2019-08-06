@@ -1,9 +1,21 @@
-@value from-tablet-portrait, send-result-break-point from '/theme/vars.css';
+@value from-tablet-portrait, send-result-break-point, from-mobile from '/theme/vars.css';
 
-.wrapper {
+.row {
   @media (min-width: send-result-break-point) {
     display: flex;
     align-items: flex-start;
+  }
+}
+
+.title-offset {
+  padding-bottom: 16px;
+
+  @media (min-width: from-mobile) {
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: send-result-break-point) {
+    padding-bottom: 64px;
   }
 }
 
@@ -17,9 +29,18 @@
 }
 
 .img {
-  max-width: 100%;
+  width: 240px;
+  margin-bottom: 16px;
+
+  @media (min-width: from-mobile) {
+    margin-bottom: 32px;
+  }
 
   @media (min-width: send-result-break-point) {
+    order: 2;
     margin-left: 120px;
+    margin-top: -140px;
+    margin-bottom: 0;
+    width: 360px;
   }
 }

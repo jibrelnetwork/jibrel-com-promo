@@ -12,6 +12,7 @@
 @value from-tablet: 1024px;
 @value to-tablet: 1023px;
 @value from-tablet-portrait: 768px;
+@value to-tablet-portrait: 767px;
 @value from-mobile: 600px;
 @value to-mobile: 599px;
 
