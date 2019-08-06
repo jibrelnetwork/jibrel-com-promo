@@ -15,14 +15,16 @@ function Success() {
   return ( 
     <section>
       <div className={resultOfSending.wrapper}>
-        <div>
-          <h1 className={cc([title.title, title.offset])}>{i18n._('Subscribe.success.title')}</h1>
-          <p className={resultOfSending.message}>{i18n._('Subscribe.success.message')}</p>
-          <LanguageLink routeName='Home' className={link.link}>
-            {i18n._('Subscribe.success.backToMain')}
-          </LanguageLink>
+        <h1 className={cc([title.title, resultOfSending.titleOffset])}>{i18n._('Subscribe.success.title')}</h1>
+        <div className={resultOfSending.row}>
+          <img src={picSuccess} alt='' className={resultOfSending.img} />
+          <div>
+            <p className={resultOfSending.message}>{i18n._('Subscribe.success.message')}</p>
+            <LanguageLink routeName='Home' className={link.link}>
+              {i18n._('Subscribe.success.backToMain')}
+            </LanguageLink>
+          </div>
         </div>
-        <img src={picSuccess} alt='' className={resultOfSending.img} />
       </div>
     </section>
   )
