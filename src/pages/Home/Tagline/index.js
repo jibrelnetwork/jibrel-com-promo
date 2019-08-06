@@ -12,7 +12,7 @@ import container from '/theme/container.css'
 function Tagline() {  
   const i18n = useI18n()
   function handledScroll() {
-    const id = document.querySelector('#offer')
+    const id = document.getElementById('offer')
     const offsetTop = id.offsetTop
     window.scrollTo({
       top: offsetTop - 30,
