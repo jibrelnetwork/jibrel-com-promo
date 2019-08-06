@@ -76,7 +76,7 @@ export default function SubscribeFounder() {
                   >
                     <option>{i18n._('SubscribeFounder.input.countryOfResidence.empty')}</option>
                     {map(COUNTRIES, (country, code) => (
-                      <option value={code} key={code}>{i18n._(country)}</option>
+                      <option value={code} key={code}>{country}</option>
                     ))}
                   </Field>
                 </label>
