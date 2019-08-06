@@ -18,14 +18,16 @@ function Error({ onClick }) {
   return ( 
     <section>
       <div className={resultOfSending.wrapper}>
-        <div>
-          <h1 className={cc([title.title, title.offset])}>{i18n._('Subscribe.error.title')}</h1>
-          <p className={resultOfSending.message}>{i18n._('Subscribe.error.message')}</p>
-          <button className={link.link} {...props}>
-            {i18n._('Subscribe.error.tryAgain')}
-          </button>
+        <h1 className={cc([title.title, title.offset])}>{i18n._('Subscribe.error.title')}</h1>
+        <div className={resultOfSending.row}>
+          <img src={picError} alt='' className={resultOfSending.img} />
+          <div>
+            <p className={resultOfSending.message}>{i18n._('Subscribe.error.message')}</p>
+            <button className={link.link} {...props}>
+              {i18n._('Subscribe.error.tryAgain')}
+            </button>
+          </div>
         </div>
-        <img src={picError} alt='' className={resultOfSending.img} />
       </div>
     </section>
   )
