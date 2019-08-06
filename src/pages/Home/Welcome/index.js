@@ -20,7 +20,7 @@ function Welcome() {
     <section className={cc([style.welcome, container.container])}>
       <h1 className={cc([title.title, title.blue, title.center])}>{i18n._('Home.welcome.title')}</h1>
       <p className={style.description}>{i18n._('Home.welcome.description')}</p>
-      <p className={style.offer}>{i18n._('Home.welcome.offer')}</p>
+      <p className={style.offer} id='offer'>{i18n._('Home.welcome.offer')}</p>
       <div className={style.cards}>
         <div className={style.card}>
           <img src={picInvestor} alt='' className={style.img} />
