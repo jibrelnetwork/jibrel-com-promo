@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import cc from 'classcat'
 import { Form, Field } from 'react-final-form'
 import { useI18n } from '/hooks/i18n'
+import { I18nContext } from '/app/i18n-provider'
+
+import COUNTRIES from '/constants/countries.json'
 
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
@@ -15,21 +18,37 @@ import title from '/theme/title.css'
 import link from '/theme/link.css'
 import style from './style.css'
 
-
-
 export default function SubscribeFounder() {
   const i18n = useI18n()
   const [resultOfSending, setResultOfSending] = useState(null)
   function handleFormSubmit(values) {
-    setResultOfSending('error')
-    // FIXME Delete after integrating form logic
-    console.log(values)
+    const data = {
+      'email': values.email,
+      'name': values.name,
+      'fields': {
+        'country': values.country,
+        'user_type': 'startup',
+        'company': values.company,
+        'language': values.language,
+      }
+    }
+    
+    fetch('/api/subscribe', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then(() => {
+        setResultOfSending('success')
+      })
+      .catch(() => {
+        setResultOfSending('error')
+      })      
   }
   return (
     <Layout>
       <div className={container.container}>
         {resultOfSending !== 'success' && (
-          <div className={resultOfSending === 'error' && form.hideForm}>
+          <div className={resultOfSending === 'error' ? form.hideForm : ''}>
             <h1 className={title.title}>{i18n._('SubscribeFounder.head.title')}</h1>
             <LanguageLink routeName='SubscribeInvestor' className={link.link}>
               {i18n._('SubscribeFounder.head.goToSignUp')}
@@ -45,7 +64,7 @@ export default function SubscribeFounder() {
                   <label className={form.box}>
                     <h2 className={form.title}>{i18n._('SubscribeFounder.input.organizationName.title')}</h2>
                     <Field 
-                      name='organizationName' 
+                      name='company' 
                       component='input' 
                       required
                       className={form.input}
@@ -55,38 +74,50 @@ export default function SubscribeFounder() {
                   <label className={form.box}>
                     <h2 className={form.title}>{i18n._('SubscribeFounder.input.fullName.title')}</h2>
                     <Field
-                      name='fullName'
+                      name='name'
                       component='input'
                       required
                       className={form.input}
                       disabled={submitting}
                     />
                   </label>
-                  {/* FIXME Move 'select' to a separate component */}
                   <label className={form.box}>
                     <h2 className={form.title}>{i18n._('SubscribeFounder.input.countryOfResidence.title')}</h2>
                     <Field
-                      name='countryOfResidence'
+                      name='country'
                       component='select'
                       required
                       disabled={submitting}
                       className={form.input}
                     >
                       <option>{i18n._('SubscribeFounder.input.countryOfResidence.empty')}</option>
-                      <option value='Moskow'>Moskow</option>
-                      <option value='St. Petersburg'>St. Petersburg</option>
-                    </Field>
+                      {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
+                    </Field>                    
                   </label>
                   <label className={form.box}>
                     <h2 className={form.title}>{i18n._('SubscribeFounder.input.email.title')}</h2>
                     <Field
                       name='email'
+                      type='email'
                       component='input'
                       required
                       className={form.input}
                       disabled={submitting}
                     />
                   </label>
+                  <I18nContext.Consumer>
+                    {({ languageCode }) => (   
+                      <Field
+                        name='language'
+                        component='input'
+                        type='hidden'
+                        required
+                        initialValue={languageCode}
+                        className={form.input}
+                        disabled
+                      />
+                    )}
+                  </I18nContext.Consumer>
                   <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeFounder.form.action.continue')}</button>
                 </form>
               )}
