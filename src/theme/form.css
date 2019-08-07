@@ -1,6 +1,8 @@
 @value main-black-60 from '/theme/vars.css';
 
-.form {}
+.hide-form {
+  display: none;
+}
 
 .box {
   margin-top: 32px;

@@ -28,71 +28,71 @@ export default function SubscribeFounder() {
   return (
     <Layout>
       <div className={container.container}>
-        {!resultOfSending && (
-        <>
-          <h1 className={title.title}>{i18n._('SubscribeFounder.head.title')}</h1>
-          <LanguageLink routeName='SubscribeInvestor' className={link.link}>
-            {i18n._('SubscribeFounder.head.goToSignUp')}
-          </LanguageLink>
-          <div className={style.message}>{i18n._('SubscribeFounder.head.useFounderAccount')}</div>
-          <Form
-            render={({
-              handleSubmit,
-              submitting,
-            }) => (
-              <form className={form.form} onSubmit={handleSubmit}>
+        {resultOfSending !== 'success' && (
+          <div className={resultOfSending === 'error' && form.hideForm}>
+            <h1 className={title.title}>{i18n._('SubscribeFounder.head.title')}</h1>
+            <LanguageLink routeName='SubscribeInvestor' className={link.link}>
+              {i18n._('SubscribeFounder.head.goToSignUp')}
+            </LanguageLink>
+            <div className={style.message}>{i18n._('SubscribeFounder.head.useFounderAccount')}</div>
+            <Form
+              render={({
+                handleSubmit,
+                submitting,
+              }) => (
+                <form className={form.form} onSubmit={handleSubmit}>
 
-                <label className={form.box}>
-                  <h2 className={form.title}>{i18n._('SubscribeFounder.input.organizationName.title')}</h2>
-                  <Field 
-                    name='organizationName' 
-                    component='input' 
-                    required
-                    className={form.input}
-                    disabled={submitting}
-                  />
-                </label>
-                <label className={form.box}>
-                  <h2 className={form.title}>{i18n._('SubscribeFounder.input.fullName.title')}</h2>
-                  <Field
-                    name='fullName'
-                    component='input'
-                    required
-                    className={form.input}
-                    disabled={submitting}
-                  />
-                </label>
-                {/* FIXME Move 'select' to a separate component */}
-                <label className={form.box}>
-                  <h2 className={form.title}>{i18n._('SubscribeFounder.input.countryOfResidence.title')}</h2>
-                  <Field
-                    name='countryOfResidence'
-                    component='select'
-                    required
-                    disabled={submitting}
-                    className={form.input}
-                  >
-                    <option>{i18n._('SubscribeFounder.input.countryOfResidence.empty')}</option>
-                    <option value='Moskow'>Moskow</option>
-                    <option value='St. Petersburg'>St. Petersburg</option>
-                  </Field>
-                </label>
-                <label className={form.box}>
-                  <h2 className={form.title}>{i18n._('SubscribeFounder.input.email.title')}</h2>
-                  <Field
-                    name='email'
-                    component='input'
-                    required
-                    className={form.input}
-                    disabled={submitting}
-                  />
-                </label>
-                <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeFounder.form.action.continue')}</button>
-              </form>
-            )}
-            onSubmit={handleFormSubmit}
-          />
-        </>
+                  <label className={form.box}>
+                    <h2 className={form.title}>{i18n._('SubscribeFounder.input.organizationName.title')}</h2>
+                    <Field 
+                      name='organizationName' 
+                      component='input' 
+                      required
+                      className={form.input}
+                      disabled={submitting}
+                    />
+                  </label>
+                  <label className={form.box}>
+                    <h2 className={form.title}>{i18n._('SubscribeFounder.input.fullName.title')}</h2>
+                    <Field
+                      name='fullName'
+                      component='input'
+                      required
+                      className={form.input}
+                      disabled={submitting}
+                    />
+                  </label>
+                  {/* FIXME Move 'select' to a separate component */}
+                  <label className={form.box}>
+                    <h2 className={form.title}>{i18n._('SubscribeFounder.input.countryOfResidence.title')}</h2>
+                    <Field
+                      name='countryOfResidence'
+                      component='select'
+                      required
+                      disabled={submitting}
+                      className={form.input}
+                    >
+                      <option>{i18n._('SubscribeFounder.input.countryOfResidence.empty')}</option>
+                      <option value='Moskow'>Moskow</option>
+                      <option value='St. Petersburg'>St. Petersburg</option>
+                    </Field>
+                  </label>
+                  <label className={form.box}>
+                    <h2 className={form.title}>{i18n._('SubscribeFounder.input.email.title')}</h2>
+                    <Field
+                      name='email'
+                      component='input'
+                      required
+                      className={form.input}
+                      disabled={submitting}
+                    />
+                  </label>
+                  <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeFounder.form.action.continue')}</button>
+                </form>
+              )}
+              onSubmit={handleFormSubmit}
+            />
+          </div>
         )}
         {resultOfSending === 'success' && (
           <Success />

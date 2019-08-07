@@ -28,8 +28,8 @@ export default function SubscribeFounder() {
   return (
     <Layout>
       <div className={container.container}>
-        {!resultOfSending && (
-          <>
+        {resultOfSending !== 'success' && (
+          <div className={resultOfSending === 'error' && form.hideForm}>
             <h1 className={title.title}>{i18n._('SubscribeInvestor.head.title')}</h1>
             <LanguageLink routeName='SubscribeFounder' className={link.link}>
               {i18n._('SubscribeInvestor.head.goToSignUp')}
@@ -144,7 +144,7 @@ export default function SubscribeFounder() {
               )}
               onSubmit={handleFormSubmit}
             />
-          </>
+          </div>
         )}
         {resultOfSending === 'success' && (
           <Success />
