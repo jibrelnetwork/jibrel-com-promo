@@ -1,5 +1,5 @@
 export const planet = () => import('./animations/planet.json')
-export const tranparency = () => import('./animations/tranparency.json')
+export const transparency = () => import('./animations/transparency.json')
 export const radar = () => import('./animations/radar.json')
 export const hourglass = () => import('./animations/hourglass.json')
 export const error = () => import('./animations/error.json')
