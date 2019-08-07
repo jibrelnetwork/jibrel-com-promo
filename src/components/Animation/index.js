@@ -5,49 +5,26 @@ import * as PropTypes from 'prop-types'
 import Lottie from 'react-lottie'
 
 class Animation extends React.PureComponent {
+  static propTypes = {
+    loadAnimation: PropTypes.func,
+    className: PropTypes.string,
+    isPlayed: PropTypes.bool,
+  }
+  static defaultProps = {
+    isPlayed: false,
+  }
+
   state = {
     animationData: null,
   }
 
-  switchAnimation = (value) => {
-    switch (value) {
-      case 'planet': this.animationPlanet()
-        break
-      case 'tranparency': this.animationTranparency()
-        break
-      case 'radar': this.animationRadar()
-        break
-      case 'hourglass': this.animationHourglass()
-        break
-      case 'error': this.animationError()
-        break
-    }
+  componentDidMount () {
+    this.props.loadAnimation()
+      .then(animationData => this.setState({ animationData }))
   }
-
-  animationPlanet = () => import('./animations/planet.json')
-    .then((animationData) => { 
-      this.setState({ animationData })
-    })
-  animationTranparency = () => import('./animations/tranparency.json')
-    .then((animationData) => { 
-      this.setState({ animationData })
-    })
-  animationRadar = () => import('./animations/radar.json')
-    .then((animationData) => {
-      this.setState({ animationData }) 
-    })
-  animationHourglass = () => import('./animations/hourglass.json')
-    .then((animationData) => {
-      this.setState({ animationData }) 
-    })
-  animationError = () => import('./animations/error.json')
-    .then((animationData) => {
-      this.setState({ animationData }) 
-    })
   
   render() {
-    const { className, isPlayed, animationName } = this.props
-    this.switchAnimation(animationName)
+    const { className, isPlayed } = this.props
     const defaultOptions = {
       loop: true,
       animationData: this.state.animationData,
@@ -63,15 +40,6 @@ class Animation extends React.PureComponent {
         />
       </div>
     )
-  }
-
-  static propTypes = {
-    animationName: PropTypes.string,
-    className: PropTypes.string,
-    isPlayed: PropTypes.bool,
-  }
-  static defaultProps = {
-    isPlayed: false,
   }
 }
 

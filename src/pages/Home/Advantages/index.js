@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
 import Animation from '/components/Animation'
+import { planet, tranparency, radar } from '/components/Animation/animationLoaders'
 
 import style from './style.css'
 import title from '/theme/title.css'
@@ -16,7 +17,6 @@ function Advantages() {
   const i18n = useI18n()
   const [animationName, setAnimationName] = useState(null)
 
-
   return (
     <section className={style.advantages}>
       <div className={container.container}>
@@ -28,7 +28,7 @@ function Advantages() {
             onMouseLeave={() => setAnimationName(null)}
           >
             <img src={picPlanet} className={style.img} alt=''/>
-            <Animation animationName='planet' className={style.anim} isPlayed={animationName === 'planet'} />
+            <Animation loadAnimation={planet} className={style.anim} isPlayed={animationName === 'planet'} />
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.markets.title')}</div>
               <p className={style.description}>{i18n._('Home.advantages.markets.description')}</p>
@@ -41,7 +41,7 @@ function Advantages() {
             onMouseLeave={() => setAnimationName(null)}
           >
             <img src={picTransparency} className={style.img} alt=''/>
-            <Animation animationName='tranparency' className={style.anim} isPlayed={animationName === 'tranparency'} />
+            <Animation loadAnimation={tranparency} className={style.anim} isPlayed={animationName === 'tranparency'} />
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.transparency.title')}</div>
               <p className={style.description}>{i18n._('Home.advantages.transparency.description')}</p>
@@ -53,7 +53,7 @@ function Advantages() {
             onMouseLeave={() => setAnimationName(null)}
           >
             <img src={picRadar} className={style.img} alt=''/>
-            <Animation animationName='radar' className={style.anim} isPlayed={animationName === 'radar'} />
+            <Animation loadAnimation={radar} className={style.anim} isPlayed={animationName === 'radar'} />
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.reach.title')}</div>
               <p className={style.description}>{i18n._('Home.advantages.reach.description')}</p>

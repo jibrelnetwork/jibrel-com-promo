@@ -4,6 +4,7 @@ import * as PropTypes from 'prop-types'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
 import Animation from '/components/Animation'
+import { error } from '/components/Animation/animationLoaders'
 
 import link from '/theme/link.css'
 import title from '/theme/title.css'
@@ -23,7 +24,7 @@ function Error({ onClick }) {
         <div className={resultOfSending.row}>
           <div className={resultOfSending.images}>
             <img src={picError} alt='' className={resultOfSending.img} />
-            <Animation animationName='error' className={resultOfSending.anim} isPlayed />
+            <Animation loadAnimation={error} className={resultOfSending.anim} isPlayed />
           </div>
           <div>
             <p className={resultOfSending.message}>{i18n._('Subscribe.error.message')}</p>
