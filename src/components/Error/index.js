@@ -3,6 +3,7 @@ import React from 'react'
 import * as PropTypes from 'prop-types'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
+import Animation from '/components/Animation'
 
 import link from '/theme/link.css'
 import title from '/theme/title.css'
@@ -20,7 +21,10 @@ function Error({ onClick }) {
       <div className={resultOfSending.wrapper}>
         <h1 className={cc([title.title, title.offset])}>{i18n._('Subscribe.error.title')}</h1>
         <div className={resultOfSending.row}>
-          <img src={picError} alt='' className={resultOfSending.img} />
+          <div className={resultOfSending.images}>
+            <img src={picError} alt='' className={resultOfSending.img} />
+            <Animation animationName='error' className={resultOfSending.anim} isPlayed />
+          </div>
           <div>
             <p className={resultOfSending.message}>{i18n._('Subscribe.error.message')}</p>
             <button className={link.link} {...props}>

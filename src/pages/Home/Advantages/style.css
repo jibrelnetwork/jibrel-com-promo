@@ -27,6 +27,7 @@
   border-radius: radius;
   background-color: #fff;
   width: 100%;
+  position: relative;
 
   @media (max-width: to-tablet) and (min-width: from-mobile) {
     width: calc(50% - 12px);
@@ -78,8 +79,10 @@
   }
 }
 
-.img {
+.img,
+.anim {
   max-width: 100%;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -91,6 +94,15 @@
   @media (max-width: to-tablet-portrait) {
     max-width: 240px;
   }
+}
+
+.anim {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: radius;
 }
 
 .title {

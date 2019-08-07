@@ -3,6 +3,7 @@ import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
 import LanguageLink from '/components/LanguageLink'
+import Animation from '/components/Animation'
 
 import link from '/theme/link.css'
 import title from '/theme/title.css'
@@ -17,7 +18,10 @@ function Success() {
       <div className={resultOfSending.wrapper}>
         <h1 className={cc([title.title, resultOfSending.titleOffset])}>{i18n._('Subscribe.success.title')}</h1>
         <div className={resultOfSending.row}>
-          <img src={picSuccess} alt='' className={resultOfSending.img} />
+          <div className={resultOfSending.images}>
+            <img src={picSuccess} alt='' className={resultOfSending.img} />
+            <Animation animationName='hourglass' className={resultOfSending.anim} isPlayed />
+          </div>
           <div>
             <p className={resultOfSending.message}>{i18n._('Subscribe.success.message')}</p>
             <LanguageLink routeName='Home' className={link.link}>

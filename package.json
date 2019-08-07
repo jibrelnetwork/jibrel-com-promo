@@ -60,6 +60,7 @@
     "react-dom": "~16.8.6",
     "react-final-form": "~6.3.0",
     "react-helmet": "~5.2.1",
+    "react-lottie": "~1.2.3",
     "react-router5": "~7.1.0",
     "router5": "~7.0.2",
     "router5-plugin-browser": "~7.0.2"
