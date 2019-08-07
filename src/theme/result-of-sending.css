@@ -28,9 +28,10 @@
   }
 }
 
-.img {
+.images {
   width: 240px;
   margin-bottom: 16px;
+  position: relative;
 
   @media (min-width: from-mobile) {
     margin-bottom: 32px;
@@ -43,4 +44,16 @@
     margin-bottom: 0;
     width: 360px;
   }
+}
+
+.img,
+.anim {
+  width: 100%;
+}
+
+.anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
 }
