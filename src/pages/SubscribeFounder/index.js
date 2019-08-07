@@ -4,7 +4,7 @@ import { Form, Field } from 'react-final-form'
 import { useI18n } from '/hooks/i18n'
 import { I18nContext } from '/app/i18n-provider'
 
-import { COUNTRIES } from '/constants/countries'
+import COUNTRIES from '/constants/countries.json'
 
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
@@ -33,7 +33,7 @@ export default function SubscribeFounder() {
       }
     }
     
-    fetch('http://jibrelcom.localhost/api/subscribe', {
+    fetch('/api/subscribe', {
       method: 'POST',
       body: JSON.stringify(data),
     })
@@ -92,7 +92,7 @@ export default function SubscribeFounder() {
                     >
                       <option>{i18n._('SubscribeFounder.input.countryOfResidence.empty')}</option>
                       {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
-                    </Field>
+                    </Field>                    
                   </label>
                   <label className={form.box}>
                     <h2 className={form.title}>{i18n._('SubscribeFounder.input.email.title')}</h2>

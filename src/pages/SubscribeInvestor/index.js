@@ -4,7 +4,7 @@ import { Form, Field } from 'react-final-form'
 import { useI18n } from '/hooks/i18n'
 import { I18nContext } from '/app/i18n-provider'
 
-import { COUNTRIES } from '/constants/countries'
+import COUNTRIES from '/constants/countries.json'
 
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
@@ -32,7 +32,7 @@ export default function SubscribeFounder() {
         'language': values.language,
       }
     }
-    fetch('http://jibrelcom.localhost/api/subscribe', {
+    fetch('/api/subscribe', {
       method: 'POST',
       body: JSON.stringify(data),
     })
