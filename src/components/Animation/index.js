@@ -1,47 +1,48 @@
-// @flow strict
-
-import React from 'react'
+import React, { useState } from 'react'
 import * as PropTypes from 'prop-types'
+import { noop } from 'lodash-es'
 import Lottie from 'react-lottie'
 
-class Animation extends React.PureComponent {
-  static propTypes = {
-    loadAnimation: PropTypes.func,
-    className: PropTypes.string,
-    isPlayed: PropTypes.bool,
-  }
-  static defaultProps = {
-    isPlayed: false,
-  }
+const Animation = ({
+  loadAnimation,
+  className,
+  isPlayed,
+}) => {
+  const [animationData, setAnimationData] = useState(null)
 
-  state = {
-    animationData: null,
-  }
+  Promise.resolve()
+    .then(loadAnimation)
+    .then(setAnimationData)
+    .catch((err) => {
+      console.error(err)
+      setAnimationData(null)
+    })
 
-  componentDidMount () {
-    this.props.loadAnimation()
-      .then(animationData => this.setState({ animationData }))
-  }
-  
-  render() {
-    const { className, isPlayed } = this.props
-    const defaultOptions = {
-      loop: true,
-      animationData: this.state.animationData,
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
-    }    
-
-    return (
-      <div className={className}>
-        <Lottie options={defaultOptions}
-          isStopped={!isPlayed}
-        />
-      </div>
-    )
-  }
+  return (
+    <div className={className}>
+      <Lottie
+        options={{
+          loop: true,
+          animationData,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        }}
+        isStopped={!isPlayed}
+      />
+    </div>
+  )
 }
 
+Animation.propTypes = {
+  loadAnimation: PropTypes.func,
+  className: PropTypes.string,
+  isPlayed: PropTypes.bool,
+}
 
-export default React.memo(Animation)
+Animation.defaultProps = {
+  loadAnimation: noop,
+  isPlayed: false,
+}
+
+export default Animation
