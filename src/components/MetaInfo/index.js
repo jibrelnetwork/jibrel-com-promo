@@ -1,15 +1,15 @@
 
 import React from 'react'
-import MetaTags from 'react-meta-tags'
+import { Helmet } from 'react-helmet'
 
 
 function MetaInfo() {
   return ( 
-    <MetaTags>
+    <Helmet>
       <title>Jibrel.com</title>
       <meta name='description' content='Jibrel.com Promo Page' />
       <meta property='og:title' content='Jibrel.com' />
-    </MetaTags>
+    </Helmet>
   )
 }
 
