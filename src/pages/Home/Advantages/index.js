@@ -27,8 +27,10 @@ function Advantages() {
             onMouseEnter={() => setAnimationName('planet')}
             onMouseLeave={() => setAnimationName(null)}
           >
-            <img src={picPlanet} className={style.img} alt=''/>
-            <Animation loadAnimation={planet} className={style.anim} isPlayed={animationName === 'planet'} />
+            <div className={style.images}>
+              <img src={picPlanet} className={style.img} alt=''/>
+              <Animation loadAnimation={planet} className={style.anim} isPlayed={animationName === 'planet'} />
+            </div>
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.markets.title')}</div>
               <p className={style.description}>{i18n._('Home.advantages.markets.description')}</p>
@@ -40,8 +42,10 @@ function Advantages() {
             onMouseEnter={() => setAnimationName('transparency')}
             onMouseLeave={() => setAnimationName(null)}
           >
-            <img src={picTransparency} className={style.img} alt=''/>
-            <Animation loadAnimation={transparency} className={style.anim} isPlayed={animationName === 'transparency'} />
+            <div className={style.images}>
+              <img src={picTransparency} className={style.img} alt=''/>
+              <Animation loadAnimation={transparency} className={style.anim} isPlayed={animationName === 'transparency'} />
+            </div>
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.transparency.title')}</div>
               <p className={style.description}>{i18n._('Home.advantages.transparency.description')}</p>
@@ -52,8 +56,10 @@ function Advantages() {
             onMouseEnter={() => setAnimationName('radar')}
             onMouseLeave={() => setAnimationName(null)}
           >
-            <img src={picRadar} className={style.img} alt=''/>
-            <Animation loadAnimation={radar} className={style.anim} isPlayed={animationName === 'radar'} />
+            <div className={style.images}>
+              <img src={picRadar} className={style.img} alt=''/>
+              <Animation loadAnimation={radar} className={style.anim} isPlayed={animationName === 'radar'} />
+            </div>
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.reach.title')}</div>
               <p className={style.description}>{i18n._('Home.advantages.reach.description')}</p>
