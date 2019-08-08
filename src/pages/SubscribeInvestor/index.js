@@ -68,7 +68,6 @@ export default function SubscribeFounder() {
                         type='radio'
                         initialValue='investor_individual'
                         required
-                        className={form.radioBox}
                         disabled={submitting}
                         checked={typeOfAccount === 'investor_individual'}
                         onChange={() => setTypeOfAccount('investor_individual')}
@@ -85,7 +84,6 @@ export default function SubscribeFounder() {
                         type='radio'
                         initialValue='investor_organization'
                         required
-                        className={form.radioBox}
                         disabled={submitting}
                         checked={typeOfAccount === 'investor_organization'}
                         onChange={() => setTypeOfAccount('investor_organization')}
