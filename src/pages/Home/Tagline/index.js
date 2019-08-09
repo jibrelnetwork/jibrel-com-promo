@@ -3,6 +3,7 @@ import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
 import { Trans } from '@lingui/react'
+import { sendEventGTM } from '/utils/send-gtm'
 
 import style from './style.css'
 import title from '/theme/title.css'
@@ -14,6 +15,7 @@ function Tagline() {
   function handledScroll() {
     const id = document.getElementById('offer')
     const offsetTop = id.offsetTop
+    sendEventGTM('lead', 'goToUserType', 'footerButton')
     window.scrollTo({
       top: offsetTop - 30,
       behavior: 'smooth'

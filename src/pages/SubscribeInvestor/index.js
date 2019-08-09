@@ -3,6 +3,7 @@ import cc from 'classcat'
 import { Form, Field } from 'react-final-form'
 import { useI18n } from '/hooks/i18n'
 import { I18nContext } from '/app/i18n-provider'
+import { sendEventGTM, sendEventGTMAccountType } from '/utils/send-gtm'
 
 import COUNTRIES from '/constants/countries.json'
 
@@ -21,6 +22,19 @@ export default function SubscribeFounder() {
   const i18n = useI18n()
   const [typeOfAccount, setTypeOfAccount] = useState('investor_individual')
   const [resultOfSending, setResultOfSending] = useState(null)
+  function onChangeTypeOfAccount(typeOfAccount) {
+    setTypeOfAccount(typeOfAccount)
+    sendEventGTMAccountType('lead', 'completeForm', 'chooseType', typeOfAccount)
+  }
+  function onChageField(event) {
+    if (event.target.value > 3) {
+      sendEventGTM('lead', 'completeForm', 'chooseType', 'fieldName')
+    }
+    return event.target.value
+  }
+  function onChageCountry() {
+    sendEventGTM('lead', 'completeForm', 'chooseType', 'chooseCountry')
+  }
   function handleFormSubmit(values) {
     const data = {
       'email': values.email,
@@ -38,9 +52,11 @@ export default function SubscribeFounder() {
     })
       .then(() => {
         setResultOfSending('success')
+        sendEventGTM('lead', 'sendSuccess', 'mainForm')
       })
       .catch(() => {
         setResultOfSending('error')
+        sendEventGTM('lead', 'sendDenied', 'mainForm')
       })
   }  
 
@@ -70,7 +86,7 @@ export default function SubscribeFounder() {
                         required
                         disabled={submitting}
                         checked={typeOfAccount === 'investor_individual'}
-                        onChange={() => setTypeOfAccount('investor_individual')}
+                        onChange={() => onChangeTypeOfAccount('investor_individual') }
                       />
                       <div className={form.radioBox}>
                         <p className={form.radioTitle}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.title')}</p>
@@ -86,7 +102,7 @@ export default function SubscribeFounder() {
                         required
                         disabled={submitting}
                         checked={typeOfAccount === 'investor_organization'}
-                        onChange={() => setTypeOfAccount('investor_organization')}
+                        onChange={() => onChangeTypeOfAccount('investor_organization')}
                       />
                       <div className={form.radioBox}>
                         <p className={form.radioTitle}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.title')}</p>
@@ -104,6 +120,7 @@ export default function SubscribeFounder() {
                             required
                             className={form.input}
                             disabled={submitting}
+                            onChange={() => onChageField(event)}
                           />
                         </label>
                         <label className={form.box}>
@@ -114,6 +131,7 @@ export default function SubscribeFounder() {
                             required
                             disabled={submitting}
                             className={form.input}
+                            onChange={() => onChageCountry}
                           >
                             <option>{i18n._('SubscribeInvestor.input.countryOfResidence.empty')}</option>
                             {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
