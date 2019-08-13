@@ -1,5 +1,7 @@
 {
   "layout.copyright": "© 2019 Jibrel Network. All rights reserved.",
+  "meta.website.title": "",
+  "meta.website.description": "",
   "Subscribe.success.title": "成功！",
   "Subscribe.success.message": "感谢您订阅 Jibrel 更新。您将第一个知道我们的发布信息。敬请期待!",
   "Subscribe.success.backToMain": "返回主页",
@@ -53,22 +55,19 @@
   "SubscribeInvestor.input.countryOfResidence.empty": "选择国家",
   "SubscribeInvestor.input.email.title": "电子邮件",
   "SubscribeInvestor.form.action.continue": "继续",
-
-  "email.template.social.twitter.title": "",
-  "email.template.social.facebook.title": "",
-  "email.template.social.medium.title": "",
-  "email.template.social.telegram.title": "",
-  "email.template.social.kakaotalk.title": "",
-  "email.template.signature.name": "",
-  "email.template.copyright": "",
-
-  "email.InvestorGreeting.meta.subject": "",
-  "email.InvestorGreeting.title": "",
-  "email.InvestorGreeting.content": "",
-  "email.InvestorGreeting.signature.content": "",
-
-  "email.FounderGreeting.meta.subject": "",
-  "email.FounderGreeting.title": "",
-  "email.FounderGreeting.content": "",
-  "email.FounderGreeting.signature.content": ""
+  "email.template.social.twitter.title": "Twitter",
+  "email.template.social.facebook.title": "Facebook",
+  "email.template.social.medium.title": "Medium",
+  "email.template.social.telegram.title": "Telegram",
+  "email.template.social.kakaotalk.title": "KakaoTalk",
+  "email.template.signature.name": "Jibrel 团队",
+  "email.template.copyright": "© 2019 Jibrel A.G. 保留所有权利。",
+  "email.InvestorGreeting.meta.subject": "欢迎使用 Jibrel！",
+  "email.InvestorGreeting.title": "'{$name}'你好，<br\/>欢迎使用 Jibrel！",
+  "email.InvestorGreeting.content": "感谢您表达对 Jibrel 的兴趣。你是第一批有机会投资破坏性中东与北非初创公司的人。我们将发送最近的更新到此电子邮件，平台上线时您就会第一个收到通知。",
+  "email.InvestorGreeting.signature.content": "感谢您选择 Jibrel！",
+  "email.FounderGreeting.meta.subject": "欢迎使用 Jibrel！",
+  "email.FounderGreeting.title": "'{$name}'你好，<br\/>欢迎使用 Jibrel！",
+  "email.FounderGreeting.content": "感谢您表达对 Jibrel 的兴趣。只需要再几个步骤，您就能在我们的全球投资者社区为您的公司筹集资金。我们将发送最近的更新到此电子邮件，平台上线时您就会第一个收到通知。",
+  "email.FounderGreeting.signature.content": "感谢您选择 Jibrel！"
 }

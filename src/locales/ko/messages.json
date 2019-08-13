@@ -1,5 +1,7 @@
 {
   "layout.copyright": "© 2019 Jibrel Network. All rights reserved.",
+  "meta.website.title": "",
+  "meta.website.description": "",
   "Subscribe.success.title": "성공!",
   "Subscribe.success.message": "Jibrel 업데이트를 구독해 주셔서 감사합니다. 당사의 출시 소식을 가장 먼저 받아보시게 되었습니다. 기대해 주십시오!",
   "Subscribe.success.backToMain": "메인 페이지로 돌아가기",
@@ -53,22 +55,19 @@
   "SubscribeInvestor.input.countryOfResidence.empty": "국가 선택",
   "SubscribeInvestor.input.email.title": "이메일",
   "SubscribeInvestor.form.action.continue": "계속",
-
-  "email.template.social.twitter.title": "",
-  "email.template.social.facebook.title": "",
-  "email.template.social.medium.title": "",
-  "email.template.social.telegram.title": "",
-  "email.template.social.kakaotalk.title": "",
-  "email.template.signature.name": "",
-  "email.template.copyright": "",
-
-  "email.InvestorGreeting.meta.subject": "",
-  "email.InvestorGreeting.title": "",
-  "email.InvestorGreeting.content": "",
-  "email.InvestorGreeting.signature.content": "",
-
-  "email.FounderGreeting.meta.subject": "",
-  "email.FounderGreeting.title": "",
-  "email.FounderGreeting.content": "",
-  "email.FounderGreeting.signature.content": ""
+  "email.template.social.twitter.title": "Twitter",
+  "email.template.social.facebook.title": "Facebook",
+  "email.template.social.medium.title": "Medium",
+  "email.template.social.telegram.title": "Telegram",
+  "email.template.social.kakaotalk.title": "Kakao Talk",
+  "email.template.signature.name": "Jibrel 팀",
+  "email.template.copyright": "© 2019 Jibrel Network. All rights reserved.",
+  "email.InvestorGreeting.meta.subject": "Jibrel에 오신 것을 환영합니다!",
+  "email.InvestorGreeting.title": "안녕하세요 '{$name}' 님,<br\/> Jibrel에 오신 것을 환영합니다!",
+  "email.InvestorGreeting.content": "Jibrel에 관심을 가져 주셔서 감사합니다. 이제 혁신을 몰고 올 MENA 스타트업 기업에 투자할 기회를 가장 먼저 손에 쥘 수 있습니다. 당사의 최신 업데이트 소식 또한 앞으로 이 이메일 주소로 보내드려 언제 플랫폼이 개시되는지 바로 아실 수 있도록 하겠습니다.",
+  "email.InvestorGreeting.signature.content": "Jibrel을 선택해 주셔서 감사합니다!",
+  "email.FounderGreeting.meta.subject": "Jibrel에 오신 것을 환영합니다!",
+  "email.FounderGreeting.title": "안녕하세요 '{$name}' 님,<br\/> Jibrel에 오신 것을 환영합니다!",
+  "email.FounderGreeting.content": "Jibrel에 관심을 가져 주셔서 감사합니다. 이제 간단한 절차만 거치면 당사의 글로벌 투자자 커뮤니티에서 귀사를 위한 자금을 조달할 수 있게 됩니다. 당사의 최신 업데이트 소식 또한 앞으로 이 이메일 주소로 보내드려 언제 플랫폼이 개시되는지 바로 아실 수 있도록 하겠습니다.",
+  "email.FounderGreeting.signature.content": "Jibrel을 선택해 주셔서 감사합니다!"
 }
