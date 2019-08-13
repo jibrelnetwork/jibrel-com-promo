@@ -66,12 +66,12 @@
   "email.template.copyright": "© 2019 Jibrel A.G. All rights reserved.",
 
   "email.InvestorGreeting.meta.subject": "Welcome to Jibrel!",
-  "email.InvestorGreeting.title": "Hi {$name},<br\/> welcome to Jibrel!",
+  "email.InvestorGreeting.title": "Hi '{$name}',<br\/> welcome to Jibrel!",
   "email.InvestorGreeting.content": "Thank you for expressing your interest in Jibrel. You’re first in line for the chance to invest in disruptive MENA startups. Our latest updates will be sent to this email so you’ll be the first to know when the platform goes live.",
   "email.InvestorGreeting.signature.content": "Thank you for choosing Jibrel!",
 
   "email.FounderGreeting.meta.subject": "Welcome to Jibrel!",
-  "email.FounderGreeting.title": "Hi {$name},<br\/> welcome to Jibrel!",
+  "email.FounderGreeting.title": "Hi '{$name}',<br\/> welcome to Jibrel!",
   "email.FounderGreeting.content": "Thank you for expressing your interest in Jibrel. You are a few steps away from being able to raise finance for your company from our global investor community. Our latest updates will be sent to this email so you’ll be the first to know when the platform goes live.",
   "email.FounderGreeting.signature.content": "Thank you for choosing Jibrel!"
 }
