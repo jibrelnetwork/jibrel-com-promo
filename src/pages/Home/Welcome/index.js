@@ -2,6 +2,7 @@
 import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
+import { sendEventGTM } from '/utils/send-gtm'
 import LanguageLink from '/components/LanguageLink'
 
 import { arrowRightWhite, arrowRightBlue } from '/assets/icons/'
@@ -16,6 +17,9 @@ import picFounder from '/assets/img/pic_founder.svg'
  
 function Welcome() {
   const i18n = useI18n()
+  function handleClick(eventLabel) {
+    sendEventGTM('lead', 'goToForm', eventLabel)   
+  }
   return ( 
     <section className={cc([style.welcome, container.container])}>
       <h1 className={cc([title.title, title.blue, title.center])}>{i18n._('Home.welcome.title')}</h1>
@@ -26,7 +30,11 @@ function Welcome() {
           <img src={picInvestor} alt='' className={style.img} />
           <div className={style.text}>
             <div className={style.title}>{i18n._('Home.welcome.investor')}</div>
-            <LanguageLink routeName='SubscribeInvestor' className={cc([button.button, button.blue, button.normal, button.withIcon])}>
+            <LanguageLink 
+              routeName='SubscribeInvestor'
+              className={cc([button.button, button.blue, button.normal, button.withIcon])}
+              onClick={() => handleClick('investor')}
+            >
               {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
@@ -37,7 +45,11 @@ function Welcome() {
           <img src={picFounder} alt='' className={style.img} />
           <div className={style.text}>
             <div className={style.title}>{i18n._('Home.welcome.founder')}</div>
-            <LanguageLink routeName='SubscribeFounder' className={cc([button.button, button.blue, button.normal, button.withIcon])}>
+            <LanguageLink
+              routeName='SubscribeFounder'
+              className={cc([button.button, button.blue, button.normal, button.withIcon])}
+              onClick={() => handleClick('founder')}
+            >
               {i18n._('Home.welcome.signUp')}
               <img src={arrowRightWhite} className={button.icon} alt='' />
               <img src={arrowRightBlue} className={button.hoverIcon} alt='' />

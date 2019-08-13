@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouteNode } from 'react-router5'
 import { Helmet } from 'react-helmet'
 import { useI18n } from '/hooks/i18n'
+import { sendVirtualPageviewGTM } from '/utils/send-gtm'
 import map from 'lodash-es/map'
 
 import { LANGUAGES } from '../data/languages'
@@ -37,6 +38,8 @@ export default function Pages() {
     console.error(error)
     return null
   }
+
+  sendVirtualPageviewGTM(route.name, route.path)
 
   const language = LANGUAGES[route.params.lang]  
 

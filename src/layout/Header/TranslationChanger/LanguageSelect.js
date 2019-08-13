@@ -1,6 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 import { map, noop } from 'lodash-es'
+import { sendEventGTM } from '/utils/send-gtm'
 import PropTypes from 'prop-types'
 
 import {
@@ -15,7 +16,10 @@ export const LanguageSelect = ({
   defaultValue,
   onChange,
 }) => {
-  const onChangeSelect = (event) => onChange(event.target.value)
+  const onChangeSelect = (event) => {
+    sendEventGTM('settings', 'changeLang', event.target.value)
+    onChange(event.target.value)
+  }
 
   return (
     <div className={cc([button.button, button.lightBlue, button.normal, button.withIcon, style.languages])}>
