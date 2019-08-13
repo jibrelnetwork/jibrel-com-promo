@@ -11,6 +11,15 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+.webversion__cell {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.webversion__link {
+  font-size: 12px;
+}
+
 .logo {
   padding-top: 42px;
   padding-bottom: 44px;
@@ -70,7 +79,7 @@ body {
 .social {
   color: rgba(8, 30, 57, 0.5);
   font-size: 0;
-  padding-top: 260px;
+  padding-top: 112px;
   padding-bottom: 16px;
 }
 
@@ -79,8 +88,12 @@ body {
   text-decoration: none;
 }
 
-.copyright {
+.copyright, .unsubscribe {
   color: rgba(8, 30, 57, 0.5);
   letter-spacing: -0.54px;
   font-size: 12px;
+}
+
+.copyright {
+  padding-bottom: 32px;
 }

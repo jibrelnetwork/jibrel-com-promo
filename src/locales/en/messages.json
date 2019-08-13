@@ -62,6 +62,8 @@
   "email.template.social.kakaotalk.title": "Kakao Talk",
   "email.template.signature.name": "Jibrel Team",
   "email.template.copyright": "© 2019 Jibrel A.G. All rights reserved.",
+  "email.template.unsubscribe": "You received this email because you signed up for Jibrel updates on our site. <a href=\"'{$unsubscribe}'\">Unsubscribe</a>.",
+  "email.template.webversion": "View this email in your browser",
   "email.InvestorGreeting.meta.subject": "Welcome to Jibrel!",
   "email.InvestorGreeting.title": "Hi '{$name}',<br\/> welcome to Jibrel!",
   "email.InvestorGreeting.content": "Thank you for expressing your interest in Jibrel. You’re first in line for the chance to invest in disruptive MENA startups. Our latest updates will be sent to this email so you’ll be the first to know when the platform goes live.",

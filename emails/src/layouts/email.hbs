@@ -6,8 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="src/styles/common.css" />
     <style>
+        a {
+            color: rgba(8, 30, 57, 0.5);
+            text-decoration-skip-ink: auto;
+        }
+
         a:hover {
-            text-decoration: none;
+            color: #003DC6;
         }
 
         @media (max-width: 520px) {
@@ -27,14 +32,11 @@
             .description, .signature {
                 font-size: 14px !important;
             }
-
-            .social {
-                padding-top: 110px;
-            }
         }
     </style>
 </head>
 <body>
+    {{> partials/webversion }}
     <table class="container" border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td align="center" class="content-wrapper">
