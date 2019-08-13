@@ -20,27 +20,49 @@ import link from '/theme/link.css'
 
 export default function SubscribeFounder() {
   const i18n = useI18n()
-  const [typeOfAccount, setTypeOfAccount] = useState('investor_individual')
   const [resultOfSending, setResultOfSending] = useState(null)
-  function onChangeTypeOfAccount(typeOfAccount) {
-    setTypeOfAccount(typeOfAccount)
-    sendEventGTMAccountType('lead', 'completeForm', 'chooseType', typeOfAccount)
-  }
-  function onChageField(event) {
-    if (event.target.value > 3) {
-      sendEventGTM('lead', 'completeForm', 'chooseType', 'fieldName')
+  const [fieldsValue, setFieldsValue] = useState({
+    name: '',
+    email: '',
+    country: '',
+    company: '',
+    user_type: 'investor_individual'
+  })
+
+  function changeValue(value, fieldName) {
+    return {
+      name: fieldName === 'name' ? value : fieldsValue.name,
+      email: fieldName === 'email' ? value : fieldsValue.email,
+      country: fieldName === 'country' ? value : fieldsValue.country,
+      company: fieldName === 'company' ? value : fieldsValue.company,
+      user_type: fieldName === 'user_type' ? value : fieldsValue.user_type,
     }
-    return event.target.value
   }
-  function onChageCountry() {
-    sendEventGTM('lead', 'completeForm', 'chooseType', 'chooseCountry')
+
+  function onChageInput(e) {
+    const fieldName = e.target.getAttribute('name')    
+    setFieldsValue(changeValue(e.target.value, fieldName))
+    if (e.target.value.length > 3) {
+      sendEventGTM('lead', 'completeForm', fieldName)
+    }
   }
+
+  function onChangeTypeOfAccount(e) {    
+    setFieldsValue(changeValue(e.target.value, 'user_type'))
+    sendEventGTMAccountType('lead', 'completeForm', 'chooseType', fieldsValue.user_type)
+  }
+  
+  function onChangeCountry(e) {    
+    setFieldsValue(changeValue(e.target.value, 'country'))
+    sendEventGTM('lead', 'completeForm', 'chooseCountry')
+  }
+
   function handleFormSubmit(values) {
     const data = {
       'email': values.email,
       'name': values.name,
       'fields': {
-        'country': typeOfAccount === 'investor_individual' ? values.country : undefined,
+        'country': fieldsValue.user_type === 'investor_individual' ? values.country : undefined,
         'user_type': values.user_type,
         'company': values.company,
         'language': values.language,
@@ -82,11 +104,11 @@ export default function SubscribeFounder() {
                         name='user_type'
                         component='input'
                         type='radio'
-                        initialValue='investor_individual'
+                        value='investor_individual'
                         required
                         disabled={submitting}
-                        checked={typeOfAccount === 'investor_individual'}
-                        onChange={() => onChangeTypeOfAccount('investor_individual') }
+                        checked={fieldsValue.user_type === 'investor_individual'}
+                        onChange={ onChangeTypeOfAccount }
                       />
                       <div className={form.radioBox}>
                         <p className={form.radioTitle}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.title')}</p>
@@ -98,11 +120,11 @@ export default function SubscribeFounder() {
                         name='user_type'
                         component='input'
                         type='radio'
-                        initialValue='investor_organization'
+                        value='investor_organization'
                         required
                         disabled={submitting}
-                        checked={typeOfAccount === 'investor_organization'}
-                        onChange={() => onChangeTypeOfAccount('investor_organization')}
+                        checked={fieldsValue.user_type === 'investor_organization'}
+                        onChange={ onChangeTypeOfAccount }
                       />
                       <div className={form.radioBox}>
                         <p className={form.radioTitle}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.title')}</p>
@@ -110,7 +132,7 @@ export default function SubscribeFounder() {
                       </div>
                     </label>
                   </div>
-                  {typeOfAccount === 'investor_individual' ? (
+                  {fieldsValue.user_type === 'investor_individual' ? (
                       <>
                         <label className={form.box}>
                           <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullName.title')}</h2>
@@ -120,7 +142,8 @@ export default function SubscribeFounder() {
                             required
                             className={form.input}
                             disabled={submitting}
-                            onChange={() => onChageField(event)}
+                            initialValue={fieldsValue.name}
+                            onChange={onChageInput}
                           />
                         </label>
                         <label className={form.box}>
@@ -131,7 +154,8 @@ export default function SubscribeFounder() {
                             required
                             disabled={submitting}
                             className={form.input}
-                            onChange={() => onChageCountry}
+                            initialValue={fieldsValue.country}
+                            onChange={onChangeCountry}
                           >
                             <option>{i18n._('SubscribeInvestor.input.countryOfResidence.empty')}</option>
                             {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
@@ -148,6 +172,8 @@ export default function SubscribeFounder() {
                           required
                           disabled={submitting}
                           className={form.input}
+                          initialValue={fieldsValue.company}
+                          onChange={onChageInput}
                         />
                       </label>
                       <label className={form.box}>
@@ -158,6 +184,8 @@ export default function SubscribeFounder() {
                           required
                           disabled={submitting}
                           className={form.input}
+                          initialValue={fieldsValue.name}
+                          onChange={onChageInput}
                         />
                       </label>
                       </>
@@ -170,6 +198,8 @@ export default function SubscribeFounder() {
                       component='input'
                       required
                       className={form.input}
+                      initialValue={fieldsValue.email}
+                      onChange={onChageInput}
                     />
                   </label>
                   <I18nContext.Consumer>
