@@ -52,5 +52,23 @@
   "SubscribeInvestor.input.countryOfResidence.title": "居住国家",
   "SubscribeInvestor.input.countryOfResidence.empty": "选择国家",
   "SubscribeInvestor.input.email.title": "电子邮件",
-  "SubscribeInvestor.form.action.continue": "继续"
+  "SubscribeInvestor.form.action.continue": "继续",
+
+  "email.template.social.twitter.title": "",
+  "email.template.social.facebook.title": "",
+  "email.template.social.medium.title": "",
+  "email.template.social.telegram.title": "",
+  "email.template.social.kakaotalk.title": "",
+  "email.template.signature.name": "",
+  "email.template.copyright": "",
+
+  "email.InvestorGreeting.meta.subject": "",
+  "email.InvestorGreeting.title": "",
+  "email.InvestorGreeting.content": "",
+  "email.InvestorGreeting.signature.content": "",
+
+  "email.FounderGreeting.meta.subject": "",
+  "email.FounderGreeting.title": "",
+  "email.FounderGreeting.content": "",
+  "email.FounderGreeting.signature.content": ""
 }

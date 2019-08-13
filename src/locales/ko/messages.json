@@ -52,5 +52,23 @@
   "SubscribeInvestor.input.countryOfResidence.title": "거주 국가",
   "SubscribeInvestor.input.countryOfResidence.empty": "국가 선택",
   "SubscribeInvestor.input.email.title": "이메일",
-  "SubscribeInvestor.form.action.continue": "계속"
+  "SubscribeInvestor.form.action.continue": "계속",
+
+  "email.template.social.twitter.title": "",
+  "email.template.social.facebook.title": "",
+  "email.template.social.medium.title": "",
+  "email.template.social.telegram.title": "",
+  "email.template.social.kakaotalk.title": "",
+  "email.template.signature.name": "",
+  "email.template.copyright": "",
+
+  "email.InvestorGreeting.meta.subject": "",
+  "email.InvestorGreeting.title": "",
+  "email.InvestorGreeting.content": "",
+  "email.InvestorGreeting.signature.content": "",
+
+  "email.FounderGreeting.meta.subject": "",
+  "email.FounderGreeting.title": "",
+  "email.FounderGreeting.content": "",
+  "email.FounderGreeting.signature.content": ""
 }

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ dir }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="src/styles/common.css" />
+    <style>
+        a:hover {
+            text-decoration: none;
+        }
+
+        @media (max-width: 520px) {
+            .logo {
+                padding-top: 20px !important;
+                padding-bottom: 20px !important;
+            }
+
+            .pic {
+                padding-bottom: 20px !important;
+            }
+
+            .title {
+                font-size: 20px !important;
+            }
+
+            .description {
+                font-size: 14px !important;
+            }
+
+            .social {
+                padding-top: 110px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table class="container" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center" class="content-wrapper">
+                <table border="0" cellpadding="0" cellspacing="0" class="container" style="max-width: 552px;">
+                    {{> partials/header}}
+                    <tr>
+                        <td>
+                            {{> @partial-block }}
+                        </td>
+                    </tr>
+                    {{> partials/contacts}}
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
