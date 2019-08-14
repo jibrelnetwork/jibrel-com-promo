@@ -59,7 +59,6 @@ export default function SubscribeFounder() {
         'language': fieldsValue.language,
       }
     }
-    console.log(data)
     setSubmitting(true)
     fetch('/api/subscribe', {
       method: 'POST',
@@ -87,8 +86,7 @@ export default function SubscribeFounder() {
             </LanguageLink>
             <div className={style.message}>{i18n._('SubscribeFounder.head.useFounderAccount')}</div>
             <form className={form.form} onSubmit={handleFormSubmit}>
-              <h2 className={form.title}>{i18n._('SubscribeFounder.head.title')}</h2>
-
+              <h2 className={form.title}>{i18n._('SubscribeFounder.About.title')}</h2>
               <Input 
                 name='company'
                 className={form.box}

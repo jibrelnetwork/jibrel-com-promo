@@ -123,9 +123,9 @@ export default function SubscribeFounder() {
               </div>
               {fieldsValue.user_type && (
                 <>
-                  <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.title')}</h2>
                   {fieldsValue.user_type === 'investor_individual' ? (
                     <>
+                      <h2 className={form.title}>{i18n._('SubscribeInvestor.AboutIndividual.title')}</h2>
                       <Input 
                         name='name'
                         className={form.box}
@@ -146,6 +146,7 @@ export default function SubscribeFounder() {
                     </>
                   ) : (
                     <>
+                    <h2 className={form.title}>{i18n._('SubscribeInvestor.AboutOrganization.title')}</h2>
                     <Input 
                       name='company'
                       className={form.box}
