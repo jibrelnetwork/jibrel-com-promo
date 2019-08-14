@@ -8,13 +8,14 @@ const UserType = ({
   value,
   title,
   description,
+  className,
   img,
   isChecked,
   isDisabled
 }) => {
 
   return (
-    <label className={style.radio}>
+    <label className={className}>
       <input
         name='user_type'
         type='radio'
@@ -39,6 +40,7 @@ UserType.propTypes = {
   value: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
+  className: PropTypes.string,
   img: PropTypes.node,
   isChecked: PropTypes.bool,
   isDisabled: PropTypes.bool,

@@ -1,0 +1,30 @@
+@value from-mobile, to-mobile from '/theme/vars.css';
+
+.user-type-wrap {
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  @media (min-width: from-mobile) {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: from-mobile) {
+    margin-bottom: 64px;
+  }
+}
+
+.user-type {
+  display: block;
+
+  &:not(:last-child) {
+    @media (min-width: from-mobile) {
+      margin-right: 24px;
+    }
+
+    @media (max-width: to-mobile) {
+      margin-bottom: 16px;
+    }
+  }
+}

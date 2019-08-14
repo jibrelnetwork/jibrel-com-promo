@@ -1,10 +1,4 @@
-@value main-black, main-blue, main-blue-5, main-black-5 from '/theme/vars.css';
-
-.radio {
-  display: flex;
-  align-items: flex-start;
-  margin-right: 24px;
-}
+@value main-black, main-blue, main-blue-5, main-black-5, from-mobile, from-tablet from '/theme/vars.css';
 
 .radio-box {
   cursor: pointer;
@@ -12,14 +6,23 @@
   background-color: main-black-5;
   border-radius: 12px;
   padding: 12px;
-  max-width: 275px;
+  max-width: 304px;
   height: 100%;
   fill: main-black;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, fill 0.2s ease-in-out;
 
+  @media (min-width: from-mobile) {
+    max-width: 244px;
+  }
+
+  @media (min-width: from-tablet) {
+    max-width: 274px;
+  } 
+
   &:hover {
     background-color: main-blue-5;
   }
+
   &:active {
     border-color: main-blue;
     fill: main-blue;

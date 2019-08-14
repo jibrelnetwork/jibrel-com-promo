@@ -1,25 +1,34 @@
-@value main-black-60 from '/theme/vars.css';
+@value main-black-60, from-tablet, from-mobile from '/theme/vars.css';
 
 .hide-form {
   display: none;
 }
 
 .form {
-  margin-top: 60px;
+  margin-top: 32px;
+
+  @media (min-width: from-mobile) {
+    margin-top: 48px;
+  }
+
+  @media (min-width: from-tablet) {
+    margin-top: 64px;
+  }
 }
 
 .box {
   margin-bottom: 32px;
   display: block;
-  max-width: 426px;
+  max-width: 404px;
   width: 100%;
-}
 
-.radio-wrap {
-  display: flex;
-  align-items: stretch;
-  margin-top: 32px;
-  margin-bottom: 64px;
+  @media (min-width: from-mobile) {
+    max-width: 378px;
+  }
+
+  @media (min-width: from-tablet) {
+    max-width: 424px;
+  } 
 }
 
 .title {

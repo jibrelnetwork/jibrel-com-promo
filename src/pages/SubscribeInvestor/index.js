@@ -11,6 +11,7 @@ import { Success, Error, UserType, Input, CountrySelect } from '/components/form
 const i_case = <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path fillRule='evenodd' clipRule='evenodd' d='M11 5a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2V8a3 3 0 0 0-3-3h-2zm3 4V8a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v1h4z' /></svg>
 const i_human = <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 17.667C6 14.75 8.686 13 12 13s6 1.75 6 4.667V18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-.333z' /></svg>
 
+import style from './style.css'
 import button from '/theme/button.css'
 import form from '/theme/form.css'
 import container from '/theme/container.css'
@@ -100,12 +101,13 @@ export default function SubscribeFounder() {
             <form className={form.form} onSubmit={handleFormSubmit}>
               <div className={form.boxd}>
                 <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.title')}</h2>
-                <div className={form.radioWrap}>
+                <div className={style.userTypeWrap}>
                   <UserType 
                     onChange={onChangeTypeOfAccount}
                     value='investor_individual'
                     title={i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.title')}
                     description={i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.info')}
+                    className={style.userType}
                     img={i_human}
                     isChecked={fieldsValue.user_type === 'investor_individual'}
                     isDisabled={submitting}
@@ -115,6 +117,7 @@ export default function SubscribeFounder() {
                     value='investor_organization'
                     title={i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.title')}
                     description={i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.info')}
+                    className={style.userType}
                     img={i_case}
                     isChecked={fieldsValue.user_type === 'investor_organization'}
                     isDisabled={submitting}
