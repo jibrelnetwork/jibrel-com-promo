@@ -51,6 +51,9 @@
 }
 
 .text {
+  position: relative;
+  z-index: 1;
+
   @media (min-width: from-tablet) {
     width: 50%;
   }

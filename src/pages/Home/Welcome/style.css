@@ -73,6 +73,11 @@
   right: 0;
 }
 
+[dir=rtl] .img {
+  right: 0;
+  left: auto !important;
+}
+
 .text {
   position: relative;
   display: flex;
