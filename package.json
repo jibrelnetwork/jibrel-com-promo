@@ -7,7 +7,7 @@
     "dev": "npm run lingui:compile && parcel src/index.html",
     "build": "rimraf dist/* && npm run lingui:compile && parcel build ./src/index.html --experimental-scope-hoisting",
     "lint:js": "eslint src/**/*.js",
-    "lingui:extract": "lingui extract --clean",
+    "lingui:extract": "lingui extract",
     "lingui:compile": "lingui compile"
   },
   "repository": {

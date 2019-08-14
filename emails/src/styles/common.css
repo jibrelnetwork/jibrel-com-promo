@@ -1,0 +1,99 @@
+body {
+  background-color: #fff;
+  color: #081E39;
+  font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.webversion__cell {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.webversion__link {
+  font-size: 12px;
+}
+
+.logo {
+  padding-top: 42px;
+  padding-bottom: 44px;
+}
+
+.container {
+  border-collapse: separate;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+  width: 100%;
+}
+
+.content-wrapper {
+  padding-left: 44px;
+  padding-right: 44px;
+}
+
+.signature p,
+.copyright p,
+.description p {
+  padding: 0;
+  margin: 0;
+}
+
+.pic {
+  padding-bottom: 40px;
+}
+
+.title-cell {
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #003dc6;
+  margin: 0;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.signature-cell {
+  font-size: 18px;
+  line-height: 1.4;
+  padding-top: 32px;
+}
+
+.signature {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.social {
+  color: rgba(8, 30, 57, 0.5);
+  font-size: 0;
+  padding-top: 112px;
+  padding-bottom: 16px;
+}
+
+.social-link {
+  margin-right: 24px;
+  text-decoration: none;
+}
+
+.copyright, .unsubscribe {
+  color: rgba(8, 30, 57, 0.5);
+  letter-spacing: -0.54px;
+  font-size: 12px;
+}
+
+.copyright {
+  padding-bottom: 32px;
+}
