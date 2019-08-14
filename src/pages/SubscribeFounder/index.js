@@ -4,12 +4,9 @@ import { useI18n } from '/hooks/i18n'
 import { I18nContext } from '/app/i18n-provider'
 import { sendEventGTM } from '/utils/send-gtm'
 
-import COUNTRIES from '/constants/countries.json'
-
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
-import Success from '/components/form/Success'
-import Error from '/components/form/Error'
+import { Success, Error, Input, CountrySelect } from '/components/form'
 
 import form from '/theme/form.css'
 import button from '/theme/button.css'
@@ -27,7 +24,6 @@ export default function SubscribeFounder() {
     email: '',
     country: '',
     company: '',
-    user_type: 'investor_individual'
   })
 
   function changeValue(value, fieldName) {
@@ -36,7 +32,6 @@ export default function SubscribeFounder() {
       email: fieldName === 'email' ? value : fieldsValue.email,
       country: fieldName === 'country' ? value : fieldsValue.country,
       company: fieldName === 'company' ? value : fieldsValue.company,
-      user_type: fieldName === 'user_type' ? value : fieldsValue.user_type,
     }
   }
 
@@ -64,6 +59,7 @@ export default function SubscribeFounder() {
         'language': fieldsValue.language,
       }
     }
+    console.log(data)
     setSubmitting(true)
     fetch('/api/subscribe', {
       method: 'POST',
@@ -90,60 +86,50 @@ export default function SubscribeFounder() {
               {i18n._('SubscribeFounder.head.goToSignUp')}
             </LanguageLink>
             <div className={style.message}>{i18n._('SubscribeFounder.head.useFounderAccount')}</div>
-    
             <form className={form.form} onSubmit={handleFormSubmit}>
+              <h2 className={form.title}>{i18n._('SubscribeFounder.head.title')}</h2>
 
-              <label className={form.box}>
-                <h2 className={form.title}>{i18n._('SubscribeFounder.input.organizationName.title')}</h2>
-                <input 
-                  name='company' 
-                  required
-                  className={form.input}
-                  disabled={submitting}
-                  onChange={onChageInput}
-                />
-              </label>
-              <label className={form.box}>
-                <h2 className={form.title}>{i18n._('SubscribeFounder.input.fullName.title')}</h2>
-                <input
-                  name='name'
-                  required
-                  className={form.input}
-                  disabled={submitting}
-                  onChange={onChageInput}
-                />
-              </label>
-              <label className={form.box}>
-                <h2 className={form.title}>{i18n._('SubscribeFounder.input.countryOfResidence.title')}</h2>
-                <select
-                  name='country'
-                  required
-                  disabled={submitting}
-                  className={form.input}
-                  onChange={onChangeCountry}
-                >
-                  <option value=''>{i18n._('SubscribeFounder.input.countryOfResidence.empty')}</option>
-                  {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
-                </select>                    
-              </label>
-              <label className={form.box}>
-                <h2 className={form.title}>{i18n._('SubscribeFounder.input.email.title')}</h2>
-                <input
-                  name='email'
-                  type='email'
-                  required
-                  className={form.input}
-                  disabled={submitting}
-                  onChange={onChageInput}
-                />
-              </label>
+              <Input 
+                name='company'
+                className={form.box}
+                isDisabled={submitting}
+                onChange={onChageInput}
+                label={i18n._('SubscribeFounder.input.organizationName.title')}
+                required
+              />
+              <Input 
+                name='name'
+                className={form.box}
+                isDisabled={submitting}
+                onChange={onChageInput}
+                label={i18n._('SubscribeFounder.input.fullName.title')}
+                required
+              />
+              <CountrySelect 
+                required
+                label={i18n._('SubscribeFounder.input.countryOfResidence.title')}
+                placeholder={i18n._('SubscribeFounder.input.countryOfResidence.empty')}
+                className={form.box}
+                value={fieldsValue.country}
+                onChange={onChangeCountry}
+                isDisabled={submitting}
+              />
+              <Input 
+                name='email'
+                type='email'
+                className={form.box}
+                isDisabled={submitting}
+                onChange={onChageInput}
+                label={i18n._('SubscribeFounder.input.email.title')}
+                required
+              />
               <I18nContext.Consumer>
                 {({ languageCode }) => (   
                   <input
                     name='language'
                     type='hidden'
                     required
-                    initialValue={languageCode}
+                    value={languageCode}
                     className={form.input}
                     disabled
                   />

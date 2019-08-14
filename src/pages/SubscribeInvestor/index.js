@@ -4,13 +4,9 @@ import { useI18n } from '/hooks/i18n'
 import { I18nContext } from '/app/i18n-provider'
 import { sendEventGTM, sendEventGTMAccountType } from '/utils/send-gtm'
 
-import COUNTRIES from '/constants/countries.json'
-
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
-import Success from '/components/form/Success'
-import Error from '/components/form/Error'
-import UserType from '/components/form/UserType'
+import { Success, Error, UserType, Input, CountrySelect } from '/components/form'
 
 const i_case = <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path fillRule='evenodd' clipRule='evenodd' d='M11 5a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2V8a3 3 0 0 0-3-3h-2zm3 4V8a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v1h4z' /></svg>
 const i_human = <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 17.667C6 14.75 8.686 13 12 13s6 1.75 6 4.667V18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-.333z' /></svg>
@@ -61,10 +57,9 @@ export default function SubscribeFounder() {
     sendEventGTM('lead', 'completeForm', 'chooseCountry')
   }
 
-  function handleFormSubmit(e) {
-    console.log(e)
-    
+  function handleFormSubmit(e) {    
     e.preventDefault()
+
     const data = {
       'email': fieldsValue.email,
       'name': fieldsValue.name,
@@ -80,16 +75,17 @@ export default function SubscribeFounder() {
       method: 'POST',
       body: JSON.stringify(data),
     })
-      .then(() => {
-        setResultOfSending('success')
-        sendEventGTM('lead', 'sendSuccess', 'mainForm')
-        setSubmitting(false)
-      })
       .catch(() => {
         setResultOfSending('error')
         sendEventGTM('lead', 'sendDenied', 'mainForm')
         setSubmitting(false)
       })
+      .then(() => {
+        setResultOfSending('success')
+        sendEventGTM('lead', 'sendSuccess', 'mainForm')
+        setSubmitting(false)
+      })
+      
   }  
 
   return (
@@ -127,67 +123,57 @@ export default function SubscribeFounder() {
               </div>
               {fieldsValue.user_type && (
                 <>
+                  <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.title')}</h2>
                   {fieldsValue.user_type === 'investor_individual' ? (
                     <>
-                      <label className={form.box}>
-                        <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullName.title')}</h2>
-                        <input
-                          name='name'
-                          required
-                          className={form.input}
-                          disabled={submitting}
-                          onChange={onChageInput}
-                        />
-                      </label>
-                      <label className={form.box}>
-                        <h2 className={form.title}>{i18n._('SubscribeInvestor.input.countryOfResidence.title')}</h2>
-                        <select
-                          name='country'
-                          required
-                          disabled={submitting}
-                          className={form.input}
-                          onChange={onChangeCountry}
-                          defaultValue=''
-                        >
-                          <option value='' disabled>{i18n._('SubscribeInvestor.input.countryOfResidence.empty')}</option>
-                          {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
-                        </select>
-                      </label>
+                      <Input 
+                        name='name'
+                        className={form.box}
+                        isDisabled={submitting}
+                        onChange={onChageInput}
+                        label={i18n._('SubscribeInvestor.input.fullName.title')}
+                        required
+                      />
+                      <CountrySelect 
+                        required
+                        label={i18n._('SubscribeFounder.input.countryOfResidence.title')}
+                        placeholder={i18n._('SubscribeFounder.input.countryOfResidence.empty')}
+                        className={form.box}
+                        value={fieldsValue.country}
+                        onChange={onChangeCountry}
+                        isDisabled={submitting}
+                      />
                     </>
                   ) : (
                     <>
-                    <label className={form.box}>
-                      <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullNameOrganization.title')}</h2>
-                      <input
-                        name='company'
-                        required
-                        disabled={submitting}
-                        className={form.input}
-                        onChange={onChageInput}
-                      />
-                    </label>
-                    <label className={form.box}>
-                      <h2 className={form.title}>{i18n._('SubscribeInvestor.input.contactNameOrganization.title')}</h2>
-                      <input
-                        name='name'
-                        required
-                        disabled={submitting}
-                        className={form.input}
-                        onChange={onChageInput}
-                      />
-                    </label>
+                    <Input 
+                      name='company'
+                      className={form.box}
+                      isDisabled={submitting}
+                      onChange={onChageInput}
+                      label={i18n._('SubscribeInvestor.input.fullNameOrganization.title')}
+                      required
+                    />
+                    <Input 
+                      name='name'
+                      className={form.box}
+                      isDisabled={submitting}
+                      onChange={onChageInput}
+                      label={i18n._('SubscribeInvestor.input.contactNameOrganization.title')}
+                      required
+                    />
                     </>
                   )}
-                        
-                  <label className={form.box}>
-                    <h2 className={form.title}>{i18n._('SubscribeInvestor.input.email.title')}</h2>
-                    <input
-                      name='email'
-                      required
-                      className={form.input}
-                      onChange={onChageInput}
-                    />
-                  </label>
+                  <Input 
+                    name='email'
+                    type='email'
+                    className={form.box}
+                    isDisabled={submitting}
+                    onChange={onChageInput}
+                    label={i18n._('SubscribeInvestor.input.email.title')}
+                    required
+                  />      
+
                   <I18nContext.Consumer>
                     {({ languageCode }) => (   
                       <input

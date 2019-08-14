@@ -1,0 +1,53 @@
+@value main-black-30, main-black-60, main-blue, main-blue-40, main-blue-60 from '/theme/vars.css';
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  letter-spacing: -0.54px;
+  font-size: 12px;
+  line-height: 140%;
+  color: main-black-60;
+  transition: color 0.2s ease-in-out;
+}
+
+.field {
+  position: relative;
+  display: block;
+
+  &:hover {
+    .input {
+      box-shadow: inset 0 0 0 1px main-blue-40;
+
+      &:focus {
+        box-shadow: inset 0 0 0 2px main-blue;
+      }
+    }
+    
+    .label {
+      color: main-blue-60;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  height: 64px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px main-black-30;
+  border-width: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  padding-top: 18px;
+  padding-left: 16px;
+  padding-right: 16px;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px main-blue;
+
+    ~ .label {
+      color: main-blue;
+    }
+  }
+}
