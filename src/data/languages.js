@@ -1,3 +1,5 @@
+import { values } from 'lodash-es'
+
 export const LANGUAGE_CODES = {
   EN: 'en',
   AR: 'ar',
@@ -7,7 +9,7 @@ export const LANGUAGE_CODES = {
 
 export const DEFAULT_LANGUAGE_CODE = LANGUAGE_CODES.EN
 
-export const LANGUAGE_PATHS_AVAILABLE = Object.values(LANGUAGE_CODES)
+export const LANGUAGE_PATHS_AVAILABLE = values(LANGUAGE_CODES)
 
 export const LANGUAGES = {
   [LANGUAGE_CODES.EN]: {
