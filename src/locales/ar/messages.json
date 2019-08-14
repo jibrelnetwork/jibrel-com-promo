@@ -1,5 +1,7 @@
 {
   "layout.copyright": "© 2019 Jibrel Network. All rights reserved.",
+  "meta.website.title": "",
+  "meta.website.description": "",
   "Subscribe.success.title": "تم بنجاح!",
   "Subscribe.success.message": "شكرا للاشتراك في تحديثات Jibrel. ستكون أول من يعرف عن بدء عملنا. تابع أخبارنا!",
   "Subscribe.success.backToMain": "العودة إلى الصفحة الرئيسية",
@@ -52,5 +54,20 @@
   "SubscribeInvestor.input.countryOfResidence.title": "بلد الإقامة",
   "SubscribeInvestor.input.countryOfResidence.empty": "حدد البلد",
   "SubscribeInvestor.input.email.title": "البريد الإلكتروني",
-  "SubscribeInvestor.form.action.continue": "متابعة"
+  "SubscribeInvestor.form.action.continue": "متابعة",
+  "email.template.social.twitter.title": "",
+  "email.template.social.facebook.title": "",
+  "email.template.social.medium.title": "",
+  "email.template.social.telegram.title": "",
+  "email.template.social.kakaotalk.title": "",
+  "email.template.signature.name": "",
+  "email.template.copyright": "",
+  "email.InvestorGreeting.meta.subject": "",
+  "email.InvestorGreeting.title": "",
+  "email.InvestorGreeting.content": "",
+  "email.InvestorGreeting.signature.content": "",
+  "email.FounderGreeting.meta.subject": "",
+  "email.FounderGreeting.title": "",
+  "email.FounderGreeting.content": "",
+  "email.FounderGreeting.signature.content": ""
 }

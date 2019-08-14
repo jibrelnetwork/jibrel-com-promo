@@ -2,7 +2,6 @@
   "layout.copyright": "© 2019 Jibrel Network. All rights reserved.",
   "meta.website.title": "Startup investing made simple",
   "meta.website.description": "Jibrel enables startups and investors to connect in previously unimaginable ways to create capital formation.",
-
   "Subscribe.success.title": "Success!",
   "Subscribe.success.message": "Thank you for subscribing for Jibrel updates. You will be the first one to learn about our launch. Stay tuned!",
   "Subscribe.success.backToMain": "Back to the Main Page",
@@ -55,5 +54,22 @@
   "SubscribeInvestor.input.countryOfResidence.title": "Country of Residence",
   "SubscribeInvestor.input.countryOfResidence.empty": "select country",
   "SubscribeInvestor.input.email.title": "Email",
-  "SubscribeInvestor.form.action.continue": "Continue"
+  "SubscribeInvestor.form.action.continue": "Continue",
+  "email.template.social.twitter.title": "Twitter",
+  "email.template.social.facebook.title": "Facebook",
+  "email.template.social.medium.title": "Medium",
+  "email.template.social.telegram.title": "Telegram",
+  "email.template.social.kakaotalk.title": "Kakao Talk",
+  "email.template.signature.name": "Jibrel Team",
+  "email.template.copyright": "© 2019 Jibrel A.G. All rights reserved.",
+  "email.template.unsubscribe": "You received this email because you signed up for Jibrel updates on our site. <a href=\"'{$unsubscribe}'\">Unsubscribe</a>.",
+  "email.template.webversion": "View this email in your browser",
+  "email.InvestorGreeting.meta.subject": "Welcome to Jibrel!",
+  "email.InvestorGreeting.title": "Hi '{$name}',<br\/> welcome to Jibrel!",
+  "email.InvestorGreeting.content": "Thank you for expressing your interest in Jibrel. You’re first in line for the chance to invest in disruptive MENA startups. Our latest updates will be sent to this email so you’ll be the first to know when the platform goes live.",
+  "email.InvestorGreeting.signature.content": "Thank you for choosing Jibrel!",
+  "email.FounderGreeting.meta.subject": "Welcome to Jibrel!",
+  "email.FounderGreeting.title": "Hi '{$name}',<br\/> welcome to Jibrel!",
+  "email.FounderGreeting.content": "Thank you for expressing your interest in Jibrel. You are a few steps away from being able to raise finance for your company from our global investor community. Our latest updates will be sent to this email so you’ll be the first to know when the platform goes live.",
+  "email.FounderGreeting.signature.content": "Thank you for choosing Jibrel!"
 }
