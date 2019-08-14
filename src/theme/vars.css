@@ -1,5 +1,8 @@
 /* Color */
 @value main-black: #081e39;
+@value main-black-5: rgba(8, 30, 57, 0.05);
+@value main-black-30: rgba(8, 30, 57, 0.3);
+@value main-black-40: rgba(8, 30, 57, 0.4);
 @value main-black-50: rgba(8, 30, 57, 0.5);
 @value main-black-60: rgba(8, 30, 57, 0.6);
 @value main-blue: #003dc6;
@@ -7,6 +10,8 @@
 @value main-blue-10: #eaeef9;
 @value main-blue-20: #d5dcf4;
 @value main-blue-30: #bfcaee;
+@value main-blue-40: rgba(0, 61, 198, 0.4);
+@value main-blue-60: rgba(0, 61, 198, 0.6);
 
 /* Break point */
 @value from-tablet: 1024px;

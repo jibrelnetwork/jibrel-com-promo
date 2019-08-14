@@ -1,58 +1,43 @@
-@value main-black-60 from '/theme/vars.css';
+@value main-black-60, from-tablet, from-mobile from '/theme/vars.css';
 
 .hide-form {
   display: none;
 }
 
-.box {
+.form {
   margin-top: 32px;
+
+  @media (min-width: from-mobile) {
+    margin-top: 48px;
+  }
+
+  @media (min-width: from-tablet) {
+    margin-top: 64px;
+  }
+}
+
+.box {
+  margin-bottom: 32px;
   display: block;
-  max-width: 426px;
+  max-width: 404px;
   width: 100%;
+
+  @media (min-width: from-mobile) {
+    max-width: 378px;
+  }
+
+  @media (min-width: from-tablet) {
+    max-width: 424px;
+  } 
 }
 
 .title {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: -0.054em;
-  margin-bottom: 8px;
-}
-
-.radio {
-  display: flex;
-  align-items: flex-start;
-
-  &:not(:last-child) {
-    margin-bottom: 8px;
-  }
-}
-
-.radio-box {
-  padding-left: 8px;
-  transform: translateY(-4px);
-}
-
-.radio-title {
-  font-size: 18px;
-  line-height: 1.4;
-}
-
-.radio-description {
-  margin-top: 4px;
-  letter-spacing: -0.054em;
-  font-size: 12px;
-  line-height: 1.4;
-  color: main-black-60;
-}
-
-.input,
-.select {
-  max-width: 264px;
-  width: 100%;
-  font-size: 11px;
-  letter-spacing: -0.05em;
+  margin-bottom: 32px;
 }
 
 .submit {
-  margin-top: 42px;
+  margin-top: 10px;
 }

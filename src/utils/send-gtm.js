@@ -1,5 +1,5 @@
 
-function sendEventGTM(eventCategory, eventAction, eventLabel) {
+function sendEventGTM(eventCategory, eventAction, eventLabel) {  
   window.dataLayer.push({
     event: 'autoEvent',
     eventCategory: eventCategory,
