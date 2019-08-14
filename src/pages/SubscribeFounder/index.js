@@ -48,7 +48,7 @@ export default function SubscribeFounder() {
     sendEventGTM('lead', 'completeForm', 'chooseCountry')
   }
   function handleFormSubmit(e) {
-    e.preventDefault()
+    e.preventDefault()    
     const data = {
       'email': fieldsValue.email,
       'name': fieldsValue.name,
@@ -56,7 +56,7 @@ export default function SubscribeFounder() {
         'country': fieldsValue.country,
         'user_type': 'startup',
         'company': fieldsValue.company,
-        'language': fieldsValue.language,
+        'language': e.target.language.value,
       }
     }
     setSubmitting(true)

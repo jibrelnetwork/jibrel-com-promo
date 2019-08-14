@@ -67,7 +67,7 @@ export default function SubscribeFounder() {
         'country': fieldsValue.user_type === 'investor_individual' ? fieldsValue.country : undefined,
         'user_type': fieldsValue.user_type,
         'company': fieldsValue.company,
-        'language': fieldsValue.language,
+        'language': e.target.language.value,
       }
     }
     setSubmitting(true)
