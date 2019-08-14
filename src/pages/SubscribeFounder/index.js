@@ -8,8 +8,8 @@ import COUNTRIES from '/constants/countries.json'
 
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
-import Success from '/components/Success'
-import Error from '/components/Error'
+import Success from '/components/form/Success'
+import Error from '/components/form/Error'
 
 import form from '/theme/form.css'
 import button from '/theme/button.css'

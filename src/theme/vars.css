@@ -2,6 +2,7 @@
 @value main-black: #081e39;
 @value main-black-50: rgba(8, 30, 57, 0.5);
 @value main-black-60: rgba(8, 30, 57, 0.6);
+@value main-black-5: rgba(8, 30, 57, 0.05);
 @value main-blue: #003dc6;
 @value main-blue-5: rgba(0, 61, 198, 0.05);
 @value main-blue-10: #eaeef9;

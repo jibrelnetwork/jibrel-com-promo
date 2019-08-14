@@ -8,8 +8,12 @@ import COUNTRIES from '/constants/countries.json'
 
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
-import Success from '/components/Success'
-import Error from '/components/Error'
+import Success from '/components/form/Success'
+import Error from '/components/form/Error'
+import UserType from '/components/form/UserType'
+
+const i_case = <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path fillRule='evenodd' clipRule='evenodd' d='M11 5a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2V8a3 3 0 0 0-3-3h-2zm3 4V8a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v1h4z' /></svg>
+const i_human = <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 17.667C6 14.75 8.686 13 12 13s6 1.75 6 4.667V18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-.333z' /></svg>
 
 import button from '/theme/button.css'
 import form from '/theme/form.css'
@@ -26,7 +30,7 @@ export default function SubscribeFounder() {
     email: '',
     country: '',
     company: '',
-    user_type: 'investor_individual'
+    user_type: ''
   })
 
   function changeValue(value, fieldName) {
@@ -98,112 +102,107 @@ export default function SubscribeFounder() {
               {i18n._('SubscribeInvestor.head.goToSignUp')}
             </LanguageLink>
             <form className={form.form} onSubmit={handleFormSubmit}>
-              <div className={form.box}>
+              <div className={form.boxd}>
                 <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.title')}</h2>
-                <label className={form.radio}>
-                  <input
-                    name='user_type'
-                    type='radio'
+                <div className={form.radioWrap}>
+                  <UserType 
+                    onChange={onChangeTypeOfAccount}
                     value='investor_individual'
-                    required
-                    disabled={submitting}
-                    checked={fieldsValue.user_type === 'investor_individual'}
-                    onChange={ onChangeTypeOfAccount }
-                  />
-                  <div className={form.radioBox}>
-                    <p className={form.radioTitle}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.title')}</p>
-                    <p className={form.radioDescription}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.info')}</p>
-                  </div>
-                </label>            
-                <label className={form.radio}>
-                  <input
-                    name='user_type'
-                    type='radio'
+                    title={i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.title')}
+                    description={i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.info')}
+                    img={i_human}
+                    isChecked={fieldsValue.user_type === 'investor_individual'}
+                    isDisabled={submitting}
+                  />    
+                  <UserType 
+                    onChange={onChangeTypeOfAccount}
                     value='investor_organization'
-                    required
-                    disabled={submitting}
-                    checked={fieldsValue.user_type === 'investor_organization'}
-                    onChange={ onChangeTypeOfAccount }
+                    title={i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.title')}
+                    description={i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.info')}
+                    img={i_case}
+                    isChecked={fieldsValue.user_type === 'investor_organization'}
+                    isDisabled={submitting}
                   />
-                  <div className={form.radioBox}>
-                    <p className={form.radioTitle}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.title')}</p>
-                    <p className={form.radioDescription}>{i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.info')}</p>
-                  </div>
-                </label>
+                </div>
               </div>
-              {fieldsValue.user_type === 'investor_individual' ? (
+              {fieldsValue.user_type && (
                 <>
+                  {fieldsValue.user_type === 'investor_individual' ? (
+                    <>
+                      <label className={form.box}>
+                        <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullName.title')}</h2>
+                        <input
+                          name='name'
+                          required
+                          className={form.input}
+                          disabled={submitting}
+                          onChange={onChageInput}
+                        />
+                      </label>
+                      <label className={form.box}>
+                        <h2 className={form.title}>{i18n._('SubscribeInvestor.input.countryOfResidence.title')}</h2>
+                        <select
+                          name='country'
+                          required
+                          disabled={submitting}
+                          className={form.input}
+                          onChange={onChangeCountry}
+                          defaultValue=''
+                        >
+                          <option value='' disabled>{i18n._('SubscribeInvestor.input.countryOfResidence.empty')}</option>
+                          {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
+                        </select>
+                      </label>
+                    </>
+                  ) : (
+                    <>
+                    <label className={form.box}>
+                      <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullNameOrganization.title')}</h2>
+                      <input
+                        name='company'
+                        required
+                        disabled={submitting}
+                        className={form.input}
+                        onChange={onChageInput}
+                      />
+                    </label>
+                    <label className={form.box}>
+                      <h2 className={form.title}>{i18n._('SubscribeInvestor.input.contactNameOrganization.title')}</h2>
+                      <input
+                        name='name'
+                        required
+                        disabled={submitting}
+                        className={form.input}
+                        onChange={onChageInput}
+                      />
+                    </label>
+                    </>
+                  )}
+                        
                   <label className={form.box}>
-                    <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullName.title')}</h2>
+                    <h2 className={form.title}>{i18n._('SubscribeInvestor.input.email.title')}</h2>
                     <input
-                      name='name'
+                      name='email'
                       required
                       className={form.input}
-                      disabled={submitting}
                       onChange={onChageInput}
                     />
                   </label>
-                  <label className={form.box}>
-                    <h2 className={form.title}>{i18n._('SubscribeInvestor.input.countryOfResidence.title')}</h2>
-                    <select
-                      name='country'
-                      required
-                      disabled={submitting}
-                      className={form.input}
-                      onChange={onChangeCountry}
-                    >
-                      <option value=''>{i18n._('SubscribeInvestor.input.countryOfResidence.empty')}</option>
-                      {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
-                    </select>
-                  </label>
-                </>
-              ) : (
-                <>
-                <label className={form.box}>
-                  <h2 className={form.title}>{i18n._('SubscribeInvestor.input.fullNameOrganization.title')}</h2>
-                  <input
-                    name='company'
-                    required
-                    disabled={submitting}
-                    className={form.input}
-                    onChange={onChageInput}
-                  />
-                </label>
-                <label className={form.box}>
-                  <h2 className={form.title}>{i18n._('SubscribeInvestor.input.contactNameOrganization.title')}</h2>
-                  <input
-                    name='name'
-                    required
-                    disabled={submitting}
-                    className={form.input}
-                    onChange={onChageInput}
-                  />
-                </label>
+                  <I18nContext.Consumer>
+                    {({ languageCode }) => (   
+                      <input
+                        name='language'
+                        type='hidden'
+                        required
+                        value={languageCode}
+                        className={form.input}
+                        disabled
+                      />
+                    )}
+                  </I18nContext.Consumer>
+                  <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeInvestor.form.action.continue')}</button>
                 </>
               )}
-                    
-              <label className={form.box}>
-                <h2 className={form.title}>{i18n._('SubscribeInvestor.input.email.title')}</h2>
-                <input
-                  name='email'
-                  required
-                  className={form.input}
-                  onChange={onChageInput}
-                />
-              </label>
-              <I18nContext.Consumer>
-                {({ languageCode }) => (   
-                  <input
-                    name='language'
-                    type='hidden'
-                    required
-                    value={languageCode}
-                    className={form.input}
-                    disabled
-                  />
-                )}
-              </I18nContext.Consumer>
-              <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeInvestor.form.action.continue')}</button>
             </form>
           </div>
         )}
