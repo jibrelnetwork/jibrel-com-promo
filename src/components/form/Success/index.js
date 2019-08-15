@@ -9,19 +9,19 @@ import { hourglass } from '/components/Animation/animationLoaders'
 import link from '/theme/link.css'
 import title from '/theme/title.css'
 import resultOfSending from '/theme/result-of-sending.css'
- 
+
 import picSuccess from '/assets/img/pic_hourglass_360.svg'
 
 function Success() {
   const i18n = useI18n()
-  return ( 
+  return (
     <section>
       <div className={resultOfSending.wrapper}>
         <h1 className={cc([title.title, resultOfSending.titleOffset])}>{i18n._('Subscribe.success.title')}</h1>
         <div className={resultOfSending.row}>
           <div className={resultOfSending.images}>
             <img src={picSuccess} alt='' className={resultOfSending.img} />
-            <Animation loadAnimation={hourglass} className={resultOfSending.anim} isPlayed />
+            <Animation loadAnimation={hourglass} className={resultOfSending.anim} isHovered />
           </div>
           <div>
             <p className={resultOfSending.message}>{i18n._('Subscribe.success.message')}</p>

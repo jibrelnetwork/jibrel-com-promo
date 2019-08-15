@@ -9,7 +9,7 @@ import { error } from '/components/Animation/animationLoaders'
 import link from '/theme/link.css'
 import title from '/theme/title.css'
 import resultOfSending from '/theme/result-of-sending.css'
- 
+
 import picError from '/assets/img/pic_error_360.svg'
 
 function Error({ onClick }) {
@@ -17,14 +17,14 @@ function Error({ onClick }) {
     onClick: onClick,
   }
   const i18n = useI18n()
-  return ( 
+  return (
     <section>
       <div className={resultOfSending.wrapper}>
         <h1 className={cc([title.title, title.offset])}>{i18n._('Subscribe.error.title')}</h1>
         <div className={resultOfSending.row}>
           <div className={resultOfSending.images}>
             <img src={picError} alt='' className={resultOfSending.img} />
-            <Animation loadAnimation={error} className={resultOfSending.anim} isPlayed />
+            <Animation loadAnimation={error} className={resultOfSending.anim} isHovered />
           </div>
           <div>
             <p className={resultOfSending.message}>{i18n._('Subscribe.error.message')}</p>
