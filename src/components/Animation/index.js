@@ -28,7 +28,7 @@ const Animation = ({
             preserveAspectRatio: 'xMidYMid slice'
           }
         }}
-        isStopped={!isPlayed}
+        isPaused={!isPlayed}
       />
     </div>
   )
