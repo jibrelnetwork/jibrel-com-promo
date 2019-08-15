@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
-import LanguageLink from '/components/LanguageLink'
+import Logo from '/components/Logo'
 
 import style from './style.css'
 import container from '/theme/container.css'
@@ -45,9 +45,7 @@ function Footer() {
         </a>
       </div>
       <div>
-        <LanguageLink routeName='Home'>
-          <img src={logoFooter} className={style.logo} />
-        </LanguageLink>
+        <Logo img={logoFooter} className={style.logo} />
         <div className={style.info}>{i18n._('layout.copyright')}</div>
       </div>
     </footer>
