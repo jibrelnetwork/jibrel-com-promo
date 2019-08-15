@@ -9,7 +9,7 @@ import container from '/theme/container.css'
 
 import picDoor from '/assets/img/pic_door.svg'
 import picSunrise from '/assets/img/pic_sunrise.svg'
-import picButton from '/assets/img/pic_button.svg'
+import picDocs from '/assets/img/pic_docs.svg'
 import picStairs from '/assets/img/pic_stairs.svg'
 
 function WhatsForYou() {  
@@ -36,7 +36,7 @@ function WhatsForYou() {
           <h2 className={style.title}>{i18n._('Home.whatsForYou.secureSimpleFast.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.secureSimpleFast.description')}</p>
         </div>
-        <img src={picButton} className={style.img} alt=''/>
+        <img src={picDocs} className={style.img} alt=''/>
       </div> 
       <div className={style.card}>
         <div className={style.text}>
