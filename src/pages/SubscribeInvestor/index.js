@@ -76,17 +76,22 @@ export default function SubscribeFounder() {
       method: 'POST',
       body: JSON.stringify(data),
     })
-      .catch(() => {
-        setResultOfSending('error')
-        sendEventGTM('lead', 'sendDenied', 'mainForm')
-        setSubmitting(false)
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        } 
+        throw new Error()
       })
       .then(() => {
         setResultOfSending('success')
         sendEventGTM('lead', 'sendSuccess', 'mainForm')
         setSubmitting(false)
       })
-      
+      .catch(() => {
+        setResultOfSending('error')
+        sendEventGTM('lead', 'sendDenied', 'mainForm')
+        setSubmitting(false)
+      })
   }  
 
   return (

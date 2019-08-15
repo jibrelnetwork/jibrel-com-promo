@@ -64,6 +64,12 @@ export default function SubscribeFounder() {
       method: 'POST',
       body: JSON.stringify(data),
     })
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        } 
+        throw new Error()
+      })
       .then(() => {
         setResultOfSending('success')
         sendEventGTM('lead', 'sendSuccess', 'mainForm')
