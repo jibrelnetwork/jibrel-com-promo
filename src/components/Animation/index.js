@@ -6,9 +6,21 @@ import Lottie from 'react-lottie'
 const Animation = ({
   loadAnimation,
   className,
-  isPlayed,
+  isHovered,
 }) => {
+  const [isPaused, setPaused] = useState(true)
+  const [speed, setSpeed] = useState(1)
+  const [direction, setDirection] = useState(1)
   const [animationData, setAnimationData] = useState(null)
+
+  if (isHovered && (isPaused || direction === -1)) {
+    setDirection(1)
+    setPaused(false)
+    setSpeed(1)
+  } else if (!isHovered && !isPaused && direction === 1) {
+    setDirection(-1)
+    setSpeed(4)
+  }
 
   Promise.resolve()
     .then(loadAnimation)
@@ -22,13 +34,15 @@ const Animation = ({
     <div className={className}>
       <Lottie
         options={{
-          loop: true,
+          loop: 1,
           animationData,
           rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
           }
         }}
-        isPaused={!isPlayed}
+        speed={speed}
+        direction={direction}
+        isPaused={isPaused}
       />
     </div>
   )
@@ -37,12 +51,12 @@ const Animation = ({
 Animation.propTypes = {
   loadAnimation: PropTypes.func,
   className: PropTypes.string,
-  isPlayed: PropTypes.bool,
+  isHovered: PropTypes.bool,
 }
 
 Animation.defaultProps = {
   loadAnimation: noop,
-  isPlayed: false,
+  isHovered: false,
 }
 
 export default Animation
