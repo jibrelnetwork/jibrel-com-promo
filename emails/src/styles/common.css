@@ -12,17 +12,18 @@ body {
 }
 
 .webversion__cell {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .webversion__link {
   font-size: 12px;
+  letter-spacing: -0.54px;
 }
 
 .logo {
-  padding-top: 42px;
-  padding-bottom: 44px;
+  padding-top: 41px;
+  padding-bottom: 36px;
 }
 
 .container {
@@ -45,46 +46,49 @@ body {
 }
 
 .pic {
-  padding-bottom: 40px;
+  padding-bottom: 34px;
 }
 
 .title-cell {
-  padding-bottom: 20px;
+  padding-bottom: 34px;
 }
 
 .title {
   font-size: 32px;
-  line-height: 1.4;
+  line-height: 1.1875;
   font-weight: bold;
   color: #003dc6;
   margin: 0;
+  letter-spacing: 0.012em;
 }
 
 .description {
   font-size: 18px;
   line-height: 1.4;
+  letter-spacing: -0.039em;
 }
 
 .signature-cell {
   font-size: 18px;
-  line-height: 1.4;
-  padding-top: 32px;
+  padding-top: 25px;
 }
 
 .signature {
   font-size: 18px;
   line-height: 1.4;
+  letter-spacing: -0.039em;
 }
 
 .social {
   color: rgba(8, 30, 57, 0.5);
   font-size: 0;
   padding-top: 112px;
-  padding-bottom: 16px;
+  padding-bottom: 5px;
 }
 
 .social-link {
   margin-right: 24px;
+  display: inline-block;
   text-decoration: none;
 }
 
