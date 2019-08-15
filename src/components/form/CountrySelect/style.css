@@ -71,9 +71,5 @@
     ~ .toggle .arrow {
       color: main-blue;
     }
-
-    ~ .toggle .arrow {
-      transform: scaleY(-1)
-    }
   }
 }
