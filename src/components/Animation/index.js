@@ -7,6 +7,7 @@ const Animation = ({
   loadAnimation,
   className,
   isHovered,
+  isLooped,
 }) => {
   const [isPaused, setPaused] = useState(true)
   const [speed, setSpeed] = useState(1)
@@ -34,7 +35,7 @@ const Animation = ({
     <div className={className}>
       <Lottie
         options={{
-          loop: 1,
+          loop: isLooped,
           animationData,
           rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
@@ -52,11 +53,13 @@ Animation.propTypes = {
   loadAnimation: PropTypes.func,
   className: PropTypes.string,
   isHovered: PropTypes.bool,
+  isLooped: PropTypes.bool,
 }
 
 Animation.defaultProps = {
   loadAnimation: noop,
   isHovered: false,
+  isLooped: false,
 }
 
 export default Animation
