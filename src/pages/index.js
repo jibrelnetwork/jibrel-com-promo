@@ -41,7 +41,9 @@ export default function Pages() {
 
   sendVirtualPageviewGTM(route.name, route.path)
 
-  const language = LANGUAGES[route.params.lang]  
+  const language = LANGUAGES[route.params.lang]
+
+  window.scrollTo(0, 0)
 
   return (
     <>
