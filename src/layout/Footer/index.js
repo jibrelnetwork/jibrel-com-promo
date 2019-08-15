@@ -46,7 +46,7 @@ function Footer() {
       </div>
       <div>
         <LanguageLink routeName='Home'>
-          <img src={logoFooter} />
+          <img src={logoFooter} className={style.logo} />
         </LanguageLink>
         <div className={style.info}>{i18n._('layout.copyright')}</div>
       </div>
