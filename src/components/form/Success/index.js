@@ -21,7 +21,7 @@ function Success() {
         <div className={resultOfSending.row}>
           <div className={resultOfSending.images}>
             <img src={picSuccess} alt='' className={resultOfSending.img} />
-            <Animation loadAnimation={hourglass} className={resultOfSending.anim} isPlayed />
+            <Animation loadAnimation={hourglass} className={resultOfSending.anim} isPlayed isLooped />
           </div>
           <div>
             <p className={resultOfSending.message}>{i18n._('Subscribe.success.message')}</p>

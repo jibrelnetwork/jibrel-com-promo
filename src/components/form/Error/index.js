@@ -24,7 +24,7 @@ function Error({ onClick }) {
         <div className={resultOfSending.row}>
           <div className={resultOfSending.images}>
             <img src={picError} alt='' className={resultOfSending.img} />
-            <Animation loadAnimation={error} className={resultOfSending.anim} isPlayed />
+            <Animation loadAnimation={error} className={resultOfSending.anim} isPlayed isLooped />
           </div>
           <div>
             <p className={resultOfSending.message}>{i18n._('Subscribe.error.message')}</p>

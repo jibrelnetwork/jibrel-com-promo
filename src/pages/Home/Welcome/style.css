@@ -66,14 +66,20 @@
   }
 }
 
-.img {
+.anim {
+  background-color: main-blue-5;
+}
+
+.img,
+.anim {
   position: absolute;
   height: 100%;
   top: 0;
   right: 0;
 }
 
-[dir=rtl] .img {
+[dir=rtl] .img,
+[dir=rtl] .anim {
   right: 0;
   left: auto !important;
 }

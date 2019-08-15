@@ -28,7 +28,7 @@ function Advantages() {
           >
             <div className={style.images}>
               <img src={picPlanet} className={style.img} alt=''/>
-              <Animation loadAnimation={planet} className={style.anim} isHovered={animationName === 'planet'} />
+              <Animation loadAnimation={planet} className={style.anim} isLooped isHovered={animationName === 'planet'} />
             </div>
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.markets.title')}</div>
@@ -43,7 +43,7 @@ function Advantages() {
           >
             <div className={style.images}>
               <img src={picTransparency} className={style.img} alt=''/>
-              <Animation loadAnimation={transparency} className={style.anim} isHovered={animationName === 'transparency'} />
+              <Animation loadAnimation={transparency} className={style.anim} isLooped isHovered={animationName === 'transparency'} />
             </div>
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.transparency.title')}</div>
@@ -57,7 +57,7 @@ function Advantages() {
           >
             <div className={style.images}>
               <img src={picRadar} className={style.img} alt=''/>
-              <Animation loadAnimation={radar} className={style.anim} isHovered={animationName === 'radar'} />
+              <Animation loadAnimation={radar} className={style.anim} isLooped isHovered={animationName === 'radar'} />
             </div>
             <div className={style.body}>
               <div className={style.title}>{i18n._('Home.advantages.reach.title')}</div>
