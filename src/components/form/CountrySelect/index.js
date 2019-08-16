@@ -1,9 +1,10 @@
 import React from 'react'
 import cc from 'classcat'
 import * as PropTypes from 'prop-types'
+import { keyBy } from 'lodash-es'
 
 import COUNTRIES from '/constants/countries.json'
-
+const COUNTRIES_INDEX = keyBy(COUNTRIES, 'id')
 import style from './style.css'
 
 export default function CountrySelect ({
@@ -15,14 +16,6 @@ export default function CountrySelect ({
   isDisabled,
   isRequired,
 }) {
-  function getFlag(value) {
-    const currentCountry = COUNTRIES.filter(country => country.id === value)
-    return currentCountry[0].flag
-  }
-  function getCountry(value) {
-    const currentCountry = COUNTRIES.filter(country => country.id === value)
-    return currentCountry[0].title
-  }
   return (
     <div className={cc([style.field, className])}>
       <select
@@ -39,8 +32,8 @@ export default function CountrySelect ({
       <div className={style.toggle}>
         {value ? (
           <>
-          <span className={style.flag}>{getFlag(value)}</span> 
-          <span className={style.name}>{getCountry(value)}</span>
+          <span className={style.flag}>{COUNTRIES_INDEX[value].flag}</span> 
+          <span className={style.name}>{COUNTRIES_INDEX[value].title}</span>
           </>
         ) : (
           <span className={style.placeholder}>{placeholder}</span>
