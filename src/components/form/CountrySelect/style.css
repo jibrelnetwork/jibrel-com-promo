@@ -73,3 +73,10 @@
     }
   }
 }
+
+/* Hiding flags in EDGE */
+@supports (-ms-ime-align:auto) {
+  .flag {
+    display: none;
+  }
+}
