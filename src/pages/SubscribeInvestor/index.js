@@ -18,7 +18,7 @@ import container from '/theme/container.css'
 import title from '/theme/title.css'
 import link from '/theme/link.css'
 
-export default function SubscribeFounder() {
+export default function SubscribeInvestor() {
   const i18n = useI18n()
   const [resultOfSending, setResultOfSending] = useState(null)
   const [submitting, setSubmitting] = useState(false)
@@ -144,8 +144,8 @@ export default function SubscribeFounder() {
                       />
                       <CountrySelect 
                         required
-                        label={i18n._('SubscribeFounder.input.countryOfResidence.title')}
-                        placeholder={i18n._('SubscribeFounder.input.countryOfResidence.empty')}
+                        label={i18n._('SubscribeInvestor.input.countryOfResidence.title')}
+                        placeholder={i18n._('SubscribeInvestor.input.countryOfResidence.empty')}
                         className={form.box}
                         value={fieldsValue.country}
                         onChange={onChangeCountry}
