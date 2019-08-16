@@ -68,6 +68,8 @@
 
 .anim {
   background-color: main-blue-5;
+  width: 100%;
+  max-width: 552px;
 }
 
 .img,

@@ -35,7 +35,7 @@ const Animation = ({
     <div className={className}>
       <Lottie
         options={{
-          loop: isLooped,
+          loop: isLooped ? 1 : false,
           animationData,
           rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'

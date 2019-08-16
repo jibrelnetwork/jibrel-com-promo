@@ -35,15 +35,15 @@ export default function SubscribeFounder() {
     }
   }
 
-  function onChageInput(e) {
-    const fieldName = e.target.getAttribute('name')    
+  function onChangeInput(e) {
+    const fieldName = e.target.getAttribute('name')
     setFieldsValue(changeValue(e.target.value, fieldName))
     if (e.target.value.length > 3) {
       sendEventGTM('lead', 'completeForm', fieldName)
     }
   }
 
-  function onChangeCountry(e) {    
+  function onChangeCountry(e) {
     setFieldsValue(changeValue(e.target.value, 'country'))
     sendEventGTM('lead', 'completeForm', 'chooseCountry')
   }
@@ -67,7 +67,7 @@ export default function SubscribeFounder() {
       .then((response) => {
         if (response.ok) {
           return response.json()
-        } 
+        }
         throw new Error()
       })
       .then(() => {
@@ -79,7 +79,7 @@ export default function SubscribeFounder() {
         setResultOfSending('error')
         sendEventGTM('lead', 'sendDenied', 'mainForm')
         setSubmitting(false)
-      })      
+      })
   }
   return (
     <Layout>
@@ -93,19 +93,19 @@ export default function SubscribeFounder() {
             <div className={style.message}>{i18n._('SubscribeFounder.head.useFounderAccount')}</div>
             <form className={form.form} onSubmit={handleFormSubmit}>
               <h2 className={form.title}>{i18n._('SubscribeFounder.About.title')}</h2>
-              <Input 
+              <Input
                 name='company'
                 className={form.box}
                 isDisabled={submitting}
-                onChange={onChageInput}
+                onChange={onChangeInput}
                 label={i18n._('SubscribeFounder.input.organizationName.title')}
                 isRequired
               />
-              <Input 
+              <Input
                 name='name'
                 className={form.box}
                 isDisabled={submitting}
-                onChange={onChageInput}
+                onChange={onChangeInput}
                 label={i18n._('SubscribeFounder.input.fullName.title')}
                 isRequired
               />
@@ -118,17 +118,17 @@ export default function SubscribeFounder() {
                 onChange={onChangeCountry}
                 isDisabled={submitting}
               />
-              <Input 
+              <Input
                 name='email'
                 type='email'
                 className={form.box}
                 isDisabled={submitting}
-                onChange={onChageInput}
+                onChange={onChangeInput}
                 label={i18n._('SubscribeFounder.input.email.title')}
                 isRequired
               />
               <I18nContext.Consumer>
-                {({ languageCode }) => (   
+                {({ languageCode }) => (
                   <input
                     name='language'
                     type='hidden'

@@ -40,25 +40,25 @@ export default function SubscribeInvestor() {
     }
   }
 
-  function onChageInput(e) {
-    const fieldName = e.target.getAttribute('name')    
+  function onChangeInput(e) {
+    const fieldName = e.target.getAttribute('name')
     setFieldsValue(changeValue(e.target.value, fieldName))
     if (e.target.value.length > 3) {
       sendEventGTM('lead', 'completeForm', fieldName)
     }
   }
 
-  function onChangeTypeOfAccount(e) {    
+  function onChangeTypeOfAccount(e) {
     setFieldsValue(changeValue(e.target.value, 'user_type'))
     sendEventGTMAccountType('lead', 'completeForm', 'chooseType', fieldsValue.user_type)
   }
-  
-  function onChangeCountry(e) {    
+
+  function onChangeCountry(e) {
     setFieldsValue(changeValue(e.target.value, 'country'))
     sendEventGTM('lead', 'completeForm', 'chooseCountry')
   }
 
-  function handleFormSubmit(e) {    
+  function handleFormSubmit(e) {
     e.preventDefault()
     const data = {
       'email': fieldsValue.email,
@@ -78,7 +78,7 @@ export default function SubscribeInvestor() {
       .then((response) => {
         if (response.ok) {
           return response.json()
-        } 
+        }
         throw new Error()
       })
       .then(() => {
@@ -91,7 +91,7 @@ export default function SubscribeInvestor() {
         sendEventGTM('lead', 'sendDenied', 'mainForm')
         setSubmitting(false)
       })
-  }  
+  }
 
   return (
     <Layout>
@@ -106,7 +106,7 @@ export default function SubscribeInvestor() {
               <div className={form.boxd}>
                 <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.title')}</h2>
                 <div className={style.userTypeWrap}>
-                  <UserType 
+                  <UserType
                     onChange={onChangeTypeOfAccount}
                     value='investor_individual'
                     title={i18n._('SubscribeInvestor.input.typeOfAccount.option.individual.title')}
@@ -115,8 +115,8 @@ export default function SubscribeInvestor() {
                     img={i_human}
                     isChecked={fieldsValue.user_type === 'investor_individual'}
                     isDisabled={submitting}
-                  />    
-                  <UserType 
+                  />
+                  <UserType
                     onChange={onChangeTypeOfAccount}
                     value='investor_organization'
                     title={i18n._('SubscribeInvestor.input.typeOfAccount.option.organization.title')}
@@ -133,11 +133,11 @@ export default function SubscribeInvestor() {
                   {fieldsValue.user_type === 'investor_individual' ? (
                     <>
                       <h2 className={form.title}>{i18n._('SubscribeInvestor.AboutIndividual.title')}</h2>
-                      <Input 
+                      <Input
                         name='name'
                         className={form.box}
                         isDisabled={submitting}
-                        onChange={onChageInput}
+                        onChange={onChangeInput}
                         label={i18n._('SubscribeInvestor.input.fullName.title')}
                         isRequired
                       />
@@ -154,36 +154,35 @@ export default function SubscribeInvestor() {
                   ) : (
                     <>
                     <h2 className={form.title}>{i18n._('SubscribeInvestor.AboutOrganization.title')}</h2>
-                    <Input 
+                    <Input
                       name='company'
                       className={form.box}
                       isDisabled={submitting}
-                      onChange={onChageInput}
+                      onChange={onChangeInput}
                       label={i18n._('SubscribeInvestor.input.fullNameOrganization.title')}
                       isRequired
                     />
-                    <Input 
+                    <Input
                       name='name'
                       className={form.box}
                       isDisabled={submitting}
-                      onChange={onChageInput}
+                      onChange={onChangeInput}
                       label={i18n._('SubscribeInvestor.input.contactNameOrganization.title')}
                       isRequired
                     />
                     </>
                   )}
-                  <Input 
+                  <Input
                     name='email'
                     type='email'
                     className={form.box}
                     isDisabled={submitting}
-                    onChange={onChageInput}
+                    onChange={onChangeInput}
                     label={i18n._('SubscribeInvestor.input.email.title')}
                     isRequired
                   />      
-
                   <I18nContext.Consumer>
-                    {({ languageCode }) => (   
+                    {({ languageCode }) => (
                       <input
                         name='language'
                         type='hidden'
