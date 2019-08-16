@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cc from 'classcat'
 import * as PropTypes from 'prop-types'
 
 import COUNTRIES from '/constants/countries.json'
 
 import style from './style.css'
-
 
 export default function CountrySelect ({
   onChange,
@@ -16,8 +15,6 @@ export default function CountrySelect ({
   isDisabled,
   isRequired,
 }) {
-  // const [currentCountry, setCurrentCountry] = useState(null)
-
   function getFlag(value) {
     const currentCountry = COUNTRIES.filter(country => country.id === value)
     return currentCountry[0].flag
