@@ -1,5 +1,6 @@
 import createRouter from 'router5'
 import browserPlugin from 'router5-plugin-browser'
+import { includes } from 'lodash-es'
 
 import { setLanguageCookieMiddleware } from './set-language-cookie-middleware'
 
@@ -11,7 +12,7 @@ import {
 const redirectToEnIfLanguageNotAvailable = () => (toState, fromState, done) => {
   const lang = toState.params.lang.toLowerCase()
 
-  if (!LANGUAGE_PATHS_AVAILABLE.find((tag) => tag === lang)) {
+  if (!includes(LANGUAGE_PATHS_AVAILABLE, lang)) {
     return done({
       redirect: {
         name: toState.name,
