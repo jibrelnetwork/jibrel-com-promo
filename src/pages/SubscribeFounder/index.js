@@ -48,7 +48,7 @@ export default function SubscribeFounder() {
     sendEventGTM('lead', 'completeForm', 'chooseCountry')
   }
   function handleFormSubmit(e) {
-    e.preventDefault()    
+    e.preventDefault()
     const data = {
       'email': fieldsValue.email,
       'name': fieldsValue.name,
@@ -99,7 +99,7 @@ export default function SubscribeFounder() {
                 isDisabled={submitting}
                 onChange={onChageInput}
                 label={i18n._('SubscribeFounder.input.organizationName.title')}
-                required
+                isRequired
               />
               <Input 
                 name='name'
@@ -107,10 +107,10 @@ export default function SubscribeFounder() {
                 isDisabled={submitting}
                 onChange={onChageInput}
                 label={i18n._('SubscribeFounder.input.fullName.title')}
-                required
+                isRequired
               />
               <CountrySelect 
-                required
+                isRequired
                 label={i18n._('SubscribeFounder.input.countryOfResidence.title')}
                 placeholder={i18n._('SubscribeFounder.input.countryOfResidence.empty')}
                 className={form.box}
@@ -125,7 +125,7 @@ export default function SubscribeFounder() {
                 isDisabled={submitting}
                 onChange={onChageInput}
                 label={i18n._('SubscribeFounder.input.email.title')}
-                required
+                isRequired
               />
               <I18nContext.Consumer>
                 {({ languageCode }) => (   

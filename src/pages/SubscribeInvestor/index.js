@@ -60,7 +60,6 @@ export default function SubscribeInvestor() {
 
   function handleFormSubmit(e) {    
     e.preventDefault()
-
     const data = {
       'email': fieldsValue.email,
       'name': fieldsValue.name,
@@ -140,10 +139,10 @@ export default function SubscribeInvestor() {
                         isDisabled={submitting}
                         onChange={onChageInput}
                         label={i18n._('SubscribeInvestor.input.fullName.title')}
-                        required
+                        isRequired
                       />
                       <CountrySelect 
-                        required
+                        isRequired
                         label={i18n._('SubscribeInvestor.input.countryOfResidence.title')}
                         placeholder={i18n._('SubscribeInvestor.input.countryOfResidence.empty')}
                         className={form.box}
@@ -161,7 +160,7 @@ export default function SubscribeInvestor() {
                       isDisabled={submitting}
                       onChange={onChageInput}
                       label={i18n._('SubscribeInvestor.input.fullNameOrganization.title')}
-                      required
+                      isRequired
                     />
                     <Input 
                       name='name'
@@ -169,7 +168,7 @@ export default function SubscribeInvestor() {
                       isDisabled={submitting}
                       onChange={onChageInput}
                       label={i18n._('SubscribeInvestor.input.contactNameOrganization.title')}
-                      required
+                      isRequired
                     />
                     </>
                   )}
@@ -180,7 +179,7 @@ export default function SubscribeInvestor() {
                     isDisabled={submitting}
                     onChange={onChageInput}
                     label={i18n._('SubscribeInvestor.input.email.title')}
-                    required
+                    isRequired
                   />      
 
                   <I18nContext.Consumer>
