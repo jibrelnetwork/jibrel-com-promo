@@ -18,7 +18,7 @@ import container from '/theme/container.css'
 import title from '/theme/title.css'
 import link from '/theme/link.css'
 
-export default function SubscribeFounder() {
+export default function SubscribeInvestor() {
   const i18n = useI18n()
   const [resultOfSending, setResultOfSending] = useState(null)
   const [submitting, setSubmitting] = useState(false)
@@ -60,7 +60,6 @@ export default function SubscribeFounder() {
 
   function handleFormSubmit(e) {
     e.preventDefault()
-
     const data = {
       'email': fieldsValue.email,
       'name': fieldsValue.name,
@@ -140,12 +139,12 @@ export default function SubscribeFounder() {
                         isDisabled={submitting}
                         onChange={onChangeInput}
                         label={i18n._('SubscribeInvestor.input.fullName.title')}
-                        required
+                        isRequired
                       />
-                      <CountrySelect
-                        required
-                        label={i18n._('SubscribeFounder.input.countryOfResidence.title')}
-                        placeholder={i18n._('SubscribeFounder.input.countryOfResidence.empty')}
+                      <CountrySelect 
+                        isRequired
+                        label={i18n._('SubscribeInvestor.input.countryOfResidence.title')}
+                        placeholder={i18n._('SubscribeInvestor.input.countryOfResidence.empty')}
                         className={form.box}
                         value={fieldsValue.country}
                         onChange={onChangeCountry}
@@ -161,7 +160,7 @@ export default function SubscribeFounder() {
                       isDisabled={submitting}
                       onChange={onChangeInput}
                       label={i18n._('SubscribeInvestor.input.fullNameOrganization.title')}
-                      required
+                      isRequired
                     />
                     <Input
                       name='name'
@@ -169,7 +168,7 @@ export default function SubscribeFounder() {
                       isDisabled={submitting}
                       onChange={onChangeInput}
                       label={i18n._('SubscribeInvestor.input.contactNameOrganization.title')}
-                      required
+                      isRequired
                     />
                     </>
                   )}
@@ -180,9 +179,8 @@ export default function SubscribeFounder() {
                     isDisabled={submitting}
                     onChange={onChangeInput}
                     label={i18n._('SubscribeInvestor.input.email.title')}
-                    required
-                  />
-
+                    isRequired
+                  />      
                   <I18nContext.Consumer>
                     {({ languageCode }) => (
                       <input

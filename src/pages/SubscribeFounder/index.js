@@ -99,7 +99,7 @@ export default function SubscribeFounder() {
                 isDisabled={submitting}
                 onChange={onChangeInput}
                 label={i18n._('SubscribeFounder.input.organizationName.title')}
-                required
+                isRequired
               />
               <Input
                 name='name'
@@ -107,10 +107,10 @@ export default function SubscribeFounder() {
                 isDisabled={submitting}
                 onChange={onChangeInput}
                 label={i18n._('SubscribeFounder.input.fullName.title')}
-                required
+                isRequired
               />
-              <CountrySelect
-                required
+              <CountrySelect 
+                isRequired
                 label={i18n._('SubscribeFounder.input.countryOfResidence.title')}
                 placeholder={i18n._('SubscribeFounder.input.countryOfResidence.empty')}
                 className={form.box}
@@ -125,7 +125,7 @@ export default function SubscribeFounder() {
                 isDisabled={submitting}
                 onChange={onChangeInput}
                 label={i18n._('SubscribeFounder.input.email.title')}
-                required
+                isRequired
               />
               <I18nContext.Consumer>
                 {({ languageCode }) => (

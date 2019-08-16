@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 import * as PropTypes from 'prop-types'
+import { keyBy } from 'lodash-es'
 
 import COUNTRIES from '/constants/countries.json'
-
+const COUNTRIES_INDEX = keyBy(COUNTRIES, 'id')
 import style from './style.css'
-
 
 export default function CountrySelect ({
   onChange,
@@ -16,11 +16,6 @@ export default function CountrySelect ({
   isDisabled,
   isRequired,
 }) {
-  function setCountry(value) {
-    const currentCountry = COUNTRIES.filter(country => country.id === value)
-    
-    return `${currentCountry[0].flag} ${currentCountry[0].title}`
-  }
   return (
     <div className={cc([style.field, className])}>
       <select
@@ -35,7 +30,14 @@ export default function CountrySelect ({
         {COUNTRIES.map(item => <option value={item.id} key={item.id}>{item.title}</option> )}
       </select>     
       <div className={style.toggle}>
-        {value ? setCountry(value) : <span className={style.placeholder}>{placeholder}</span>}
+        {value ? (
+          <>
+          <span className={style.flag}>{COUNTRIES_INDEX[value].flag}</span> 
+          <span className={style.name}>{COUNTRIES_INDEX[value].title}</span>
+          </>
+        ) : (
+          <span className={style.placeholder}>{placeholder}</span>
+        )}
         <svg className={style.arrow} width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path fillRule='evenodd' clipRule='evenodd' d='M12.707 14.707a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L12 12.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4z' /></svg>
       </div>               
       <p className={style.label}>{label}</p>
