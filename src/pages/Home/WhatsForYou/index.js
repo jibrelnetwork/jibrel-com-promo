@@ -17,33 +17,29 @@ function WhatsForYou() {
   return (  
     <section className={cc([style.whatsForYou, container.container])}>
       <h2 className={cc([title.title, title.center, title.offset])}>{i18n._('Home.whatsForYou.title')}</h2>
-      <div className={style.card}>
+      <div className={cc([style.card, style.card1])}>
         <div className={style.text}>
           <h2 className={style.title}>{i18n._('Home.whatsForYou.globalLiquidity.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.globalLiquidity.description')}</p>
         </div> 
-        <img src={picDoor} className={style.img} alt=''/> 
       </div>  
-      <div className={style.card}>
+      <div className={cc([style.card, style.card2])}>
         <div className={style.text}>
           <h2 className={style.title}>{i18n._('Home.whatsForYou.getInEarly.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.getInEarly.description')}</p>
         </div>
-        <img src={picSunrise} className={style.img} alt=''/>
       </div> 
-      <div className={style.card}>
+      <div className={cc([style.card, style.card3])}>
         <div className={style.text}> 
           <h2 className={style.title}>{i18n._('Home.whatsForYou.secureSimpleFast.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.secureSimpleFast.description')}</p>
         </div>
-        <img src={picDocs} className={style.img} alt=''/>
       </div> 
-      <div className={style.card}>
+      <div className={cc([style.card, style.card4])}>
         <div className={style.text}>
           <h2 className={style.title}>{i18n._('Home.whatsForYou.experience.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.experience.description')}</p>
         </div>
-        <img src={picStairs} className={style.img} alt=''/>
       </div> 
     </section>
   )

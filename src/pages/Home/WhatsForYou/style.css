@@ -24,6 +24,42 @@
   border-radius: radius;
   padding: normal-padding normal-padding 0 normal-padding;
   background-color: main-blue-5;
+  background-repeat: no-repeat;
+  background-size: 549px;
+  padding-bottom: 74%;
+  background-position: center bottom;
+
+  @media (min-width: from-tablet-portrait) {
+    background-size: 73%;
+  }
+  
+  &-1 {
+    background-image: url(/assets/img/pic_door.svg);
+    @media (min-width: from-tablet-portrait) {
+      background-position-x: -58%;
+    }
+  }
+  
+  &-2 {
+    background-image: url(/assets/img/pic_sunrise.svg);
+    @media (min-width: from-tablet-portrait) {
+      background-position-x: 158%;
+    }
+  }
+  
+  &-3 {
+    background-image: url(/assets/img/pic_docs.svg);
+    @media (min-width: from-tablet-portrait) {
+      background-position-x: -58%;
+    }
+  }
+  
+  &-4 {
+    background-image: url(/assets/img/pic_stairs.svg);
+    @media (min-width: from-tablet-portrait) {
+      background-position-x: 158%;
+    }
+  }
 
   &:not(:last-child) {
     margin-bottom: 24px;
@@ -38,15 +74,12 @@
 
     &:nth-child(2n) {
       flex-direction: row-reverse;
-      .img {
-        right: auto;
-        left: -15.58%;
-      }
     }
   }
 
-  @media (max-width: to-tablet) {
-    padding-bottom: 0;
+  @media (min-width: from-tablet) {
+    padding-bottom: 34%;
+    background-position: center bottom;
   }
 }
 
