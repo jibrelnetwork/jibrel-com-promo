@@ -52,6 +52,7 @@
     "@lingui/react": "~2.8.3",
     "axios": "~0.19.0",
     "classcat": "~4.0.2",
+    "core-js": "~3.2.1",
     "js-cookie": "~2.2.0",
     "lodash-es": "~4.17.15",
     "normalize.css": "~8.0.1",
@@ -60,6 +61,7 @@
     "react-helmet": "~5.2.1",
     "react-lottie": "~1.2.3",
     "react-router5": "~7.1.0",
+    "regenerator-runtime": "~0.13.3",
     "router5": "~7.0.2",
     "router5-plugin-browser": "~7.0.2"
   }
