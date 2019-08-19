@@ -1,3 +1,5 @@
+import 'core-js/es/promise'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { RouterProvider } from 'react-router5'
