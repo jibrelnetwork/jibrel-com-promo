@@ -3,7 +3,7 @@ import cc from 'classcat'
 import { useI18n } from '/hooks/i18n'
 import { I18nContext } from '/app/i18n-provider'
 import { sendEventGTM, sendEventGTMAccountType } from '/utils/send-gtm'
-
+import 'whatwg-fetch'
 import Layout from '/layout'
 import LanguageLink from '/components/LanguageLink'
 import { Success, Error, UserType, Input, CountrySelect } from '/components/form'
