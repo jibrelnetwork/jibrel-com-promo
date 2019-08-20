@@ -84,3 +84,10 @@
     display: none;
   }
 }
+
+/* Hiding flags in IE > 10 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .flag {
+    display: none;
+  }
+}
