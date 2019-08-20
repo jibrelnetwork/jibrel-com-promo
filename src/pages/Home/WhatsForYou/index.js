@@ -22,28 +22,28 @@ function WhatsForYou() {
           <h2 className={style.title}>{i18n._('Home.whatsForYou.globalLiquidity.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.globalLiquidity.description')}</p>
         </div> 
-        <img src={picDoor} className={style.img} alt=''/> 
+        <div className={style.imgBox}><img src={picDoor} className={style.img} alt=''/> </div>
       </div>  
       <div className={style.card}>
         <div className={style.text}>
           <h2 className={style.title}>{i18n._('Home.whatsForYou.getInEarly.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.getInEarly.description')}</p>
         </div>
-        <img src={picSunrise} className={style.img} alt=''/>
+        <div className={style.imgBox}><img src={picSunrise} className={style.img} alt=''/></div>
       </div> 
       <div className={style.card}>
         <div className={style.text}> 
           <h2 className={style.title}>{i18n._('Home.whatsForYou.secureSimpleFast.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.secureSimpleFast.description')}</p>
         </div>
-        <img src={picDocs} className={style.img} alt=''/>
+        <div className={style.imgBox}><img src={picDocs} className={style.img} alt=''/></div>
       </div> 
       <div className={style.card}>
         <div className={style.text}>
           <h2 className={style.title}>{i18n._('Home.whatsForYou.experience.title')}</h2>
           <p className={style.description}>{i18n._('Home.whatsForYou.experience.description')}</p>
         </div>
-        <img src={picStairs} className={style.img} alt=''/>
+        <div className={style.imgBox}><img src={picStairs} className={style.img} alt=''/></div>
       </div> 
     </section>
   )

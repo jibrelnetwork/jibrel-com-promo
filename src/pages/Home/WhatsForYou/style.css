@@ -38,7 +38,7 @@
 
     &:nth-child(2n) {
       flex-direction: row-reverse;
-      .img {
+      .img-box {
         right: auto;
         left: -15.58%;
       }
@@ -53,15 +53,16 @@
 .text {
   position: relative;
   z-index: 1;
+  width: 100%;
 
   @media (min-width: from-tablet) {
     width: 50%;
   }
 }
 
-.img {
-  width: 100%;
+.img-box {
   min-width: 549px;
+  bottom: 0;
 
   @media (min-width: from-tablet-portrait) {
     width: calc(100% - 88px);
@@ -70,7 +71,12 @@
     position: absolute;
     right: -15.58%;
     width: 73.05%;
-  } 
+  }
+}
+
+.img {
+  width: 100%;
+  display: block;
 }
 
 .title {
