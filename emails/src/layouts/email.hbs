@@ -1,18 +1,37 @@
 <!doctype html>
-<html lang="{{ lang }}" dir="{{ dir }}">
+<html lang="{{ lang }}" dir="{{ dir }}" style="font-family: sans-serif">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="src/styles/common.css" />
+
+    <!--[if !mso]><!-- -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <!--[if mso]>
+        <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml>
+    <![endif]-->
     <style>
         a {
-            color: rgba(8, 30, 57, 0.5);
+            color: #969ca6;
             text-decoration-skip-ink: auto;
         }
 
         a:hover {
             color: #003DC6;
+        }
+
+        html,
+        body,
+        table,
+        .container {
+            background: #FFFFFF !important;
         }
 
         @media (max-width: 520px) {
@@ -35,22 +54,44 @@
         }
     </style>
 </head>
-<body>
-    {{> partials/webversion }}
-    <table class="container" border="0" cellpadding="0" cellspacing="0">
+<body bgcolor="#FFFFFF" style="background: #FFFFFF; background-color: #FFFFFF;">
+    <!--[if mso | IE]>
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:552px;" width="552">
         <tr>
-            <td align="center" class="content-wrapper">
-                <table border="0" cellpadding="0" cellspacing="0" class="container" style="max-width: 552px;">
-                    {{> partials/header}}
+            <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+        <![endif]-->
+        {{> partials/webversion }}
+        <table class="container" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" style="background: #FFFFFF; background-color: #FFFFFF;">
+            <tr>
+                <td align="center" class="content-wrapper">
+                    <!--[if mso | IE]>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td>
-                            {{> @partial-block }}
-                        </td>
+                    <td class="" style="vertical-align:top;width:522px;">
+                    <![endif]-->
+                    <div class="content-container">
+                        <table border="0" cellpadding="0" cellspacing="0" class="container" style="max-width: 552px;">
+                            {{> partials/header}}
+                            <tr>
+                                <td>
+                                    {{> @partial-block }}
+                                </td>
+                            </tr>
+                            {{> partials/contacts}}
+                        </table>
+                    </div>
+                    <!--[if mso | IE]>
+                    </td>
                     </tr>
-                    {{> partials/contacts}}
-                </table>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+        </table>
+    <!--[if mso | IE]>
             </td>
         </tr>
     </table>
+    <![endif]-->
 </body>
 </html>

@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #000;
   color: #081E39;
   font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,19 +28,28 @@ body {
 
 .container {
   border-collapse: separate;
+  background-color: #fff;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
   width: 100%;
 }
 
 .content-wrapper {
-  padding-left: 44px;
-  padding-right: 44px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 522px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .signature p,
 .copyright p,
-.description p {
+.description p,
+.unsubscribe p {
   padding: 0;
   margin: 0;
 }
@@ -86,16 +95,30 @@ body {
   padding-bottom: 5px;
 }
 
-.social-link {
-  margin-right: 24px;
+.social-container {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.social-item {
   display: inline-block;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.social-link {
   text-decoration: none;
 }
 
 .copyright, .unsubscribe {
-  color: rgba(8, 30, 57, 0.5);
+  color: rgb(150, 156, 166);
   letter-spacing: -0.54px;
   font-size: 12px;
+}
+
+.unsubscribe {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .copyright {
