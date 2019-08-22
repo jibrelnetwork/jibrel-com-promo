@@ -15,7 +15,8 @@ export default function CountrySelect ({
   className,
   isDisabled,
   isRequired,
-}) {
+}) {  
+  const isWindowsSystem = navigator.appVersion.indexOf('Win') !== -1
   return (
     <div className={cc([style.field, className])}>
       <select
@@ -32,7 +33,7 @@ export default function CountrySelect ({
       <div className={style.toggle}>
         {value ? (
           <>
-          <span className={style.flag}>{COUNTRIES_INDEX[value].flag}</span> 
+          {!isWindowsSystem && <span className={style.flag}>{COUNTRIES_INDEX[value].flag}</span> }
           <span className={style.name}>{COUNTRIES_INDEX[value].title}</span>
           </>
         ) : (
