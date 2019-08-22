@@ -26,6 +26,8 @@ export default function SubscribeFounder() {
     company: '',
   })
 
+  const formRef = React.createRef()
+
   function changeValue(value, fieldName) {
     return {
       name: fieldName === 'name' ? value : fieldsValue.name,
@@ -47,6 +49,13 @@ export default function SubscribeFounder() {
     setFieldsValue(changeValue(e.target.value, 'country'))
     sendEventGTM('lead', 'completeForm', 'chooseCountry')
   }
+  
+  function checkValidity() {
+    if (!formRef.current.checkValidity()) {
+      sendEventGTM('error', 'sendDenied', 'mainForm')
+    }
+  }
+
   function handleFormSubmit(e) {
     e.preventDefault()
     const data = {
@@ -77,7 +86,7 @@ export default function SubscribeFounder() {
       })
       .catch(() => {
         setResultOfSending('error')
-        sendEventGTM('lead', 'sendDenied', 'mainForm')
+        sendEventGTM('error', 'sendDenied', 'mainForm')
         setSubmitting(false)
       })
   }
@@ -91,7 +100,7 @@ export default function SubscribeFounder() {
               {i18n._('SubscribeFounder.head.goToSignUp')}
             </LanguageLink>
             <div className={style.message}>{i18n._('SubscribeFounder.head.useFounderAccount')}</div>
-            <form className={form.form} onSubmit={handleFormSubmit}>
+            <form className={form.form} onSubmit={handleFormSubmit} ref={formRef}>
               <h2 className={form.title}>{i18n._('SubscribeFounder.About.title')}</h2>
               <Input
                 name='company'
@@ -139,7 +148,14 @@ export default function SubscribeFounder() {
                   />
                 )}
               </I18nContext.Consumer>
-              <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeFounder.form.action.continue')}</button>
+              <button 
+                className={cc([button.button, button.blue, button.normal, form.submit])} 
+                disabled={submitting}
+                type='submit'
+                onClick={checkValidity}
+              >
+                {i18n._('SubscribeFounder.form.action.continue')}
+              </button>
             </form>
           </div>
         )}

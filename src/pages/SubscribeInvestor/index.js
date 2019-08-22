@@ -30,6 +30,8 @@ export default function SubscribeInvestor() {
     user_type: ''
   })
 
+  const formRef = React.createRef()
+
   function changeValue(value, fieldName) {
     return {
       name: fieldName === 'name' ? value : fieldsValue.name,
@@ -56,6 +58,12 @@ export default function SubscribeInvestor() {
   function onChangeCountry(e) {
     setFieldsValue(changeValue(e.target.value, 'country'))
     sendEventGTM('lead', 'completeForm', 'chooseCountry')
+  }
+
+  function checkValidity() {
+    if (!formRef.current.checkValidity()) {
+      sendEventGTM('error', 'sendDenied', 'mainForm')
+    }
   }
 
   function handleFormSubmit(e) {
@@ -102,7 +110,7 @@ export default function SubscribeInvestor() {
             <LanguageLink routeName='SubscribeFounder' className={link.link}>
               {i18n._('SubscribeInvestor.head.goToSignUp')}
             </LanguageLink>
-            <form className={form.form} onSubmit={handleFormSubmit}>
+            <form className={form.form} onSubmit={handleFormSubmit} ref={formRef}>
               <div className={form.boxd}>
                 <h2 className={form.title}>{i18n._('SubscribeInvestor.input.typeOfAccount.title')}</h2>
                 <div className={style.userTypeWrap}>
@@ -193,7 +201,14 @@ export default function SubscribeInvestor() {
                       />
                     )}
                   </I18nContext.Consumer>
-                  <button className={cc([button.button, button.blue, button.normal, form.submit])} disabled={submitting}>{i18n._('SubscribeInvestor.form.action.continue')}</button>
+                  <button 
+                    className={cc([button.button, button.blue, button.normal, form.submit])} 
+                    disabled={submitting}
+                    type='submit'
+                    onClick={checkValidity}
+                  >
+                    {i18n._('SubscribeInvestor.form.action.continue')}
+                  </button>
                 </>
               )}
             </form>
