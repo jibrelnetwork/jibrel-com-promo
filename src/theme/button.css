@@ -95,3 +95,7 @@
 .hover-icon {
   opacity: 0;
 }
+
+[dir=rtl] .rtl {
+  transform: translateY(-50%) scaleX(-1);
+}

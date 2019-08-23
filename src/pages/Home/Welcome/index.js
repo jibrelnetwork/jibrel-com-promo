@@ -43,8 +43,8 @@ function Welcome() {
               onClick={() => handleClick('investor')}
             >
               {i18n._('Home.welcome.signUp')}
-              <img src={arrowRightWhite} className={button.icon} alt='' />
-              <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
+              <img src={arrowRightWhite} className={cc([button.icon, button.rtl])} alt='' />
+              <img src={arrowRightBlue} className={cc([button.hoverIcon, button.rtl])} alt='' />
             </LanguageLink>
           </div>
         </div> 
@@ -63,8 +63,8 @@ function Welcome() {
               onClick={() => handleClick('founder')}
             >
               {i18n._('Home.welcome.signUp')}
-              <img src={arrowRightWhite} className={button.icon} alt='' />
-              <img src={arrowRightBlue} className={button.hoverIcon} alt='' />
+              <img src={arrowRightWhite} className={cc([button.icon, button.rtl])} alt='' />
+              <img src={arrowRightBlue} className={cc([button.hoverIcon, button.rtl])} alt='' />
             </LanguageLink>
           </div>
         </div>
