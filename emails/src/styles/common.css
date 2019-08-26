@@ -19,30 +19,43 @@ body {
 .webversion__link {
   font-size: 12px;
   letter-spacing: -0.54px;
+  text-decoration: underline;
 }
 
 .logo {
   padding-top: 41px;
   padding-bottom: 36px;
 }
-
 .container {
   border-collapse: separate;
+  background-color: #fff;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
   width: 100%;
 }
 
 .content-wrapper {
-  padding-left: 44px;
-  padding-right: 44px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 552px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .signature p,
 .copyright p,
-.description p {
+.description p,
+.unsubscribe p {
   padding: 0;
   margin: 0;
+}
+
+.unsubscribe a {
+  text-decoration: underline;
 }
 
 .pic {
@@ -86,16 +99,24 @@ body {
   padding-bottom: 5px;
 }
 
-.social-link {
-  margin-right: 24px;
+.social-item {
   display: inline-block;
+  width: 48px;
+}
+
+.social-link {
   text-decoration: none;
 }
 
 .copyright, .unsubscribe {
-  color: rgba(8, 30, 57, 0.5);
+  color: rgb(150, 156, 166);
   letter-spacing: -0.54px;
   font-size: 12px;
+}
+
+.unsubscribe {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .copyright {
