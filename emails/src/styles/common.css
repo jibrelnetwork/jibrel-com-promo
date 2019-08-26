@@ -1,5 +1,5 @@
 body {
-  background-color: #000;
+  background-color: #fff;
   color: #081E39;
   font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +41,7 @@ body {
 
 .content-container {
   width: 100%;
-  max-width: 522px;
+  max-width: 552px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -95,15 +95,9 @@ body {
   padding-bottom: 5px;
 }
 
-.social-container {
-  margin-left: -12px;
-  margin-right: -12px;
-}
-
 .social-item {
   display: inline-block;
-  padding-right: 12px;
-  padding-left: 12px;
+  width: 48px;
 }
 
 .social-link {
