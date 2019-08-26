@@ -1,6 +1,6 @@
 {
   "name": "@jibrelnetwork/jibrel-com-promo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Jibrel.com Promo Page",
   "main": "index.js",
   "scripts": {
