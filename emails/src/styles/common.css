@@ -19,13 +19,13 @@ body {
 .webversion__link {
   font-size: 12px;
   letter-spacing: -0.54px;
+  text-decoration: underline;
 }
 
 .logo {
   padding-top: 41px;
   padding-bottom: 36px;
 }
-
 .container {
   border-collapse: separate;
   background-color: #fff;
@@ -52,6 +52,10 @@ body {
 .unsubscribe p {
   padding: 0;
   margin: 0;
+}
+
+.unsubscribe a {
+  text-decoration: underline;
 }
 
 .pic {
