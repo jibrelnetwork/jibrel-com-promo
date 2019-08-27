@@ -61,7 +61,7 @@
   "email.template.signature.name": "فريق جبرل",
   "email.template.copyright": "© 2019 Jibrel A.G.",
   "email.InvestorGreeting.meta.subject": "مرحباً بك في جبرل",
-  "email.InvestorGreeting.title": "أهلاً'{$name}'<br\/> مرحباً بك في جبرل!",
+  "email.InvestorGreeting.title": "أهلاً'{$name}' ، <br\/> مرحباً بك في جبرل!",
   "email.InvestorGreeting.content": "شكراً لاهتمامك في جبرل! أنت من ضمن الصفوف الأولى للحصول على فرصة الإستثمار في الشركات الناشئة في الشرق الأوسط.\nسيتم إرسال آخر تحديثاتنا إلى هذا البريد الإلكتروني حتى تكون أول من يعلم بوقت إطلاق المنصة.",
   "email.InvestorGreeting.signature.content": "شكرًا لك على اختيارك جبرل!",
   "email.FounderGreeting.meta.subject": "مرحبا بك في جبرل!",
