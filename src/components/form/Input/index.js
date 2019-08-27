@@ -24,6 +24,7 @@ const Input = ({
         disabled={isDisabled}
         onChange={onChange}
       />
+      <div className={style.frame}></div>
       <p className={style.label}>{label}</p>
     </label> 
   )
