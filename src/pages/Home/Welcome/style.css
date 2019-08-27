@@ -70,6 +70,7 @@
   background-color: main-blue-5;
   width: 100%;
   max-width: 552px;
+
 }
 
 .img,
@@ -78,6 +79,11 @@
   height: 100%;
   top: 0;
   right: 0;
+  border-radius: radius;
+}
+
+.anim svg {
+  border-radius: radius;
 }
 
 [dir=rtl] .img,
