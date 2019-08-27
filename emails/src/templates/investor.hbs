@@ -1,29 +1,29 @@
 {{#> layouts/email }}
-    <table class="container" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td align="{{ align }}" class="pic"><img src="images/pic_graph.png" alt="" width="100%"></td>
-        </tr>
-        <tr>
-          <td align="{{ align }}" class="title-cell">
-            <h1 class="title">
-              {{{i18n @global.translation 'email.InvestorGreeting.title'}}}
-            </h1>
-          </td>
-        </tr>
-        <tr>
-          <td align="{{ align }}">
-            <div class="description">
-              {{{i18n @global.translation 'email.InvestorGreeting.content'}}}
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td align="{{ align }}" class="signature-cell">
-            <div class="signature">
-              <p>{{{i18n @global.translation 'email.InvestorGreeting.signature.content'}}}</p>
-              <p><b>{{{i18n @global.translation 'email.template.signature.name'}}}</b></p>
-            </div>
-          </td>
-        </tr>
-    </table>
+  <table class="container" dir={{ dir }} style="direction: {{ dir }}" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="{{ align }}" class="pic"><img src="images/pic_graph.png" alt="" width="100%"></td>
+    </tr>
+    <tr>
+      <td align="{{ align }}" class="title-cell">
+        <h1 class="title">
+          {{{i18n @global.translation 'email.InvestorGreeting.title'}}}
+        </h1>
+      </td>
+    </tr>
+    <tr>
+      <td align="{{ align }}">
+        <div class="description">
+          {{{i18n @global.translation 'email.InvestorGreeting.content'}}}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td align="{{ align }}" class="signature-cell">
+        <div class="signature">
+          <p>{{{i18n @global.translation 'email.InvestorGreeting.signature.content'}}}</p>
+          <p><b>{{{i18n @global.translation 'email.template.signature.name'}}}</b></p>
+        </div>
+      </td>
+    </tr>
+  </table>
 {{/layouts/email }}
