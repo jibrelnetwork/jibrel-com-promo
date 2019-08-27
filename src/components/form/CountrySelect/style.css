@@ -9,6 +9,7 @@
   line-height: 140%;
   color: main-black-60;
   transition: color 0.2s ease-in-out;
+  pointer-events: none;
 }
 
 .toggle {

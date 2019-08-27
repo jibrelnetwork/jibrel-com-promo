@@ -11,17 +11,29 @@
   transition: color 0.2s ease-in-out;
 }
 
+.frame {
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px main-black-30;
+  width: 100%;
+  height: 100%;
+  transition: box-shadow 0.2s ease-in-out;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
 .field {
   position: relative;
   display: block;
 
   &:hover {
-    .input {
+    .frame {
       box-shadow: inset 0 0 0 1px main-blue-40;
+    }
 
-      &:focus {
-        box-shadow: inset 0 0 0 2px main-blue;
-      }
+    .input:focus ~ .border {
+      box-shadow: inset 0 0 0 2px main-blue;
     }
     
     .label {
@@ -34,17 +46,18 @@
   width: 100%;
   height: 64px;
   border-radius: 4px;
-  box-shadow: inset 0 0 0 1px main-black-30;
   border-width: 0;
   font-size: 18px;
   line-height: 1.4;
   padding-top: 18px;
   padding-left: 16px;
   padding-right: 16px;
-  transition: box-shadow 0.2s ease-in-out;
+  background-color: transparent;
 
   &:focus {
-    box-shadow: inset 0 0 0 2px main-blue;
+    ~ .frame {
+      box-shadow: inset 0 0 0 2px main-blue;
+    }
 
     ~ .label {
       color: main-blue;
